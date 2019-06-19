@@ -1,0 +1,7 @@
+.main-tabbar-hidden {
+  display: none;
+}
+
+.main-tabbar-show {
+  display: flex;
+}

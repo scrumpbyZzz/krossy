@@ -1,0 +1,15 @@
+.product-size-block-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 0 4px;
+
+    box-sizing: border-box;
+    border: 1px solid rgba(174, 191, 207, 0.4);
+    border-radius: 17px;
+}
+
+.product-size-block_content {
+  font-weight: 500;
+  color: #AEBFCF;
+}

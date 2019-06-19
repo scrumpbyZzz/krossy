@@ -1,0 +1,47 @@
+.main-header {
+
+}
+
+
+
+.header-right-button-block {
+  display: flex;
+  flex-direction: row;
+  align-self: center;
+  justify-content: space-around;
+  margin-right: 6px;
+
+  width: 88px;
+  height: 32px;
+  background-color: rgba(174, 191, 207, 0.1);
+  border-radius: 10px;
+}
+
+.header-right-button-block_position {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding: 0;
+}
+
+.header-right-button-block_position:nth-child(1):after {
+  position: absolute;
+  content: '';
+  width: 1px;
+  height: 24px;
+  background-color: rgba(174, 191, 207, 0.3);
+  left: 30px;
+}
+
+.PanelHeader--ios .PanelHeader-right .HeaderButton > *:not(.Icon) {
+  padding-right: 0;
+}
+
+.PanelHeader--ios .PanelHeader-right .HeaderButton:not(:first-child) {
+  padding-left: 0;
+}
+
+.HeaderButton--android {
+  line-height: 0;
+}

@@ -1,0 +1,26 @@
+.rectangle-button {
+  box-sizing: border-box;
+  font-family: SF Pro Text, sans-serif;
+  color: #fff;
+  border: 2px solid #8EC8FF;
+  height: 48px;
+  border-radius: 50px;
+  padding: 0;
+  text-align: center;
+}
+
+.rectangle-button:hover {
+  border: 2px solid #fff;
+  opacity: 1;
+}
+
+.Button--ios.Button--sz-l {
+  border-radius: 50px;
+}
+
+.Button--sz-l .Button__content {
+  font-size: 16px;
+  font-weight: 500;
+  padding: 15px 20px;
+  text-align: center;
+}

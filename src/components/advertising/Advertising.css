@@ -1,0 +1,170 @@
+.advertising_wrap {
+  height: 244px;
+  background-color: #ffffff;
+  border-radius: 16px;
+
+  font-family: Roboto, sans-serif;
+  margin-bottom: 16px;
+}
+
+.advertising-image_wrap {
+  position: relative;
+
+}
+
+.advertising-image {
+  width: 328px;
+  height: 150px;
+}
+
+.advertising-sticker {
+  position: absolute;
+
+
+  font-size: 8px;
+  font-weight: 500;
+  color: #AEBFCF;
+
+  top: 12px;
+  left: 17px;
+}
+
+.advertising-info {
+  display: flex;
+  flex-direction: column;
+
+  margin-left: 16px;
+}
+
+.advertising-product-name {
+  font-size: 10px;
+  font-weight: 500;
+  color: #AEBFCF;
+}
+
+.advertising-product-price_wrap {
+  margin-bottom: 8px;
+}
+
+.advertising-product-price_wrap .product-price_old {
+  margin-right: 5px;
+}
+
+.advertising-product-price_wrap .product-price_new {
+  margin-right: 5px;
+}
+
+.advertising-product-price_wrap .product-price_currency {
+  margin-right: 5px;
+  align-self: center;
+}
+
+.advertising-product-footer_wrap {
+  display: flex;
+  flex-direction: row;
+}
+
+.advertising-product-footer {
+  display: flex;
+  flex-direction: row;
+}
+
+.advertising-product-footer .product-size-block-wrap {
+  height: 14px;
+}
+.advertising-product-footer .product-size-block_img {
+  width: 8px;
+  height: 8px;
+  margin: 0 2px;
+}
+.advertising-product-footer .product-size-block_content {
+  font-size: 8px;
+  margin-right: 2px;
+}
+
+.advertising-product-footer-button-wrap .round-size-btn{
+  border: none;
+  width: 30px;
+  height: 30px;
+  background-color: #4986CC;
+}
+
+.advertising-product-footer-button-wrap img {
+  width: 12px;
+}
+
+.advertising-product_size-block {
+  display: flex;
+  max-width: 61px;
+  width: 100%;
+  height: 14px;
+  box-sizing: border-box;
+  border: 1px solid rgba(174, 191, 207, 0.4);
+  border-radius: 7px;
+}
+
+.advertising-product_size-block-icon_wrap {
+  width: 14px;
+  height: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.advertising-product_size-block-size_wrap {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+
+  width: 100%;
+}
+
+.advertising-product_size-only {
+  font-size: 8px;
+  font-weight: 500;
+  color: #AEBFCF;
+}
+
+.advertising-product_count-shop {
+  align-self: center;
+
+  margin-left: 5px;
+
+  font-size: 8px;
+  font-weight: 500;
+  color: #AEBFCF;
+}
+
+.advertising-product-footer-button-wrap {
+  display: flex;
+  width: 50%;
+
+  justify-content: flex-end;
+  align-items: flex-end;
+
+  margin-right: 16px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
