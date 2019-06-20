@@ -10,6 +10,7 @@ import ProductPriceView from "../product/productPriceView/ProductPriceView";
 import IconTrend from "../icon/IconTrend";
 import ProductBrandView from "../product/productBrandView/ProductBrandView";
 import ProductCountShopView from "../product/prodoctCountShopView/ProductCountShopView";
+import Sticker from "../Sticker/Sticker";
 
 const osname = platform();
 
@@ -24,7 +25,7 @@ const ProductCardSmall = ({func, goTo}) => {
              src={pic}
              alt='pic'/>
         <div className='product-card-small-sticker_wrap'>
-          <IconTrend/>
+          <Sticker form='round' icon='star'/>
         </div>
       </div>
       <div className='product-card-small-brand_wrap'>
