@@ -1,20 +1,30 @@
 import React from 'react';
 import './RoundSizeButton.css'
 
-const RoundSizeButton = ({func, goTo, content, icon, backgroundColor}) => {
+const RoundSizeButton = ({func, goTo, content, icon, backgroundColor, iconSvg}) => {
 
   let divStyle = {
     backgroundColor: backgroundColor
   };
+
+  let pic;
+
+  if (icon) {
+    pic = <img alt='logo' className='round-size-btn_image' src={icon}/>
+  }
+  else if (iconSvg) {
+    pic = <React.Fragment>{iconSvg}</React.Fragment>
+  }
+  else {
+    pic = content
+  }
 
   return (
     <div className='round-size-btn'
          style={divStyle}
          onClick={func}
          data-to={goTo}>
-      {icon ? <img alt='logo'
-                   className='round-size-btn_image'
-                   src={icon}/> : content }
+      {pic}
     </div>
   )
 };

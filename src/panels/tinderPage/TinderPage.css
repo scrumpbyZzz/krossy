@@ -1,0 +1,54 @@
+.tinder-page-button-wrap {
+  display: flex;
+  justify-content: space-between;
+
+  margin-top: 24px;
+
+
+}
+
+.tinder-page-button-wrap .rectangle-button {
+  box-shadow: 0 3px 16px #AEBFCF;
+  border: none;
+  color: #AEBFCF;
+  font-size: 14px;
+}
+
+/*.tinder-page-button-wrap .Button__in {
+  display: flex;
+}*/
+
+.Panel--ios .rectangle-button {
+  width: 156px;
+}
+
+.Panel--android .rectangle-button {
+  width: 147px;
+}
+/*.tinder-page-button-wrap .Button__content {*/
+/*  display: flex;*/
+/*  justify-content: space-evenly;*/
+/*}*/
+
+.tinder-page .rectangle-button_text {
+  font-size: 14px;
+}
+
+.tinder-page .rectangle-button_icon {
+  align-self: flex-end;
+}
+
+.tinder-page .rectangle-button_wrap {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  height: 21px;
+}
+
+.tinder-page-button_second .rectangle-button_icon {
+  align-self: start;
+}
+
+.tinder-page-button_second .rectangle-button_text {
+  align-self: center;
+}

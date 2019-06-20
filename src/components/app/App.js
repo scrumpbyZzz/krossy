@@ -29,7 +29,7 @@ class App extends React.Component {
     super(props);
 
     this.state = {
-      activeStory: 'welcome',
+      activeStory: 'tinderView',
       fetchedUser: null,
     };
   }
@@ -95,7 +95,6 @@ class App extends React.Component {
           <SettingsView id='settingsView'/>
           <StartView id='welcome' goView={this.goView}/>
         </Epic>
-
       </ConfigProvider>
     );
   }

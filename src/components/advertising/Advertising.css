@@ -36,7 +36,11 @@
   margin-left: 16px;
 }
 
-.advertising-product-name {
+.advertising-info .product-brand-view-logo {
+  align-self: flex-start;
+}
+
+.advertising-info .product-brand-view-name {
   font-size: 10px;
   font-weight: 500;
   color: #AEBFCF;
@@ -125,14 +129,9 @@
   color: #AEBFCF;
 }
 
-.advertising-product_count-shop {
+.advertising-product-footer .product-count-shop-view{
   align-self: center;
-
   margin-left: 5px;
-
-  font-size: 8px;
-  font-weight: 500;
-  color: #AEBFCF;
 }
 
 .advertising-product-footer-button-wrap {

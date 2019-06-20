@@ -1,8 +1,5 @@
 import React from 'react';
 
-import {HeaderButton} from '@vkontakte/vkui';
-import arrowBack from '../../assets/icon/arrowBackBlack.svg';
-
 const IconArrowAndroidBack = () => {
   return (
     <svg className='svg-icon-arrow-android-back' xmlns="http://www.w3.org/2000/svg" width="17.474" height="16.29" viewBox="0 0 17.474 16.29">

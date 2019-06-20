@@ -3,6 +3,8 @@ import React from 'react';
 import {View, Panel, PanelHeader, HeaderButton, osname, IOS} from "@vkontakte/vkui";
 import Icon24Back from '@vkontakte/icons/dist/24/cancel';
 import Icon28ChevronBack from '@vkontakte/icons/dist/24/cancel';
+import Header from "../../components/header/Header";
+import TinderPage from "../../panels/tinderPage/TinderPage";
 
 class TinderView extends React.Component {
   constructor(props) {
@@ -21,15 +23,7 @@ class TinderView extends React.Component {
     return(
       <View id={this.props.id}
             activePanel={this.state.activePanel}>
-        <Panel id='tinder'>
-          <PanelHeader
-            left={<HeaderButton onClick={() => this.setState({ activePanel: 'brand' })}>
-              {osname === IOS ? <Icon28ChevronBack /> : <Icon24Back />}</HeaderButton>}
-            addon={<HeaderButton onClick={() => this.setState({ activePanel: 'brand' })}>Назад</HeaderButton>}
-          >
-            Котики
-          </PanelHeader>
-        </Panel>
+        <TinderPage id='tinder' />
       </View>
     )
   }

@@ -10,7 +10,6 @@ import SearchColorPick from "../../components/search/searchColorPick/searchColor
 
 import './SearchPage.css';
 
-
 const osname = platform();
 
 const fontStyleAndroid = {
