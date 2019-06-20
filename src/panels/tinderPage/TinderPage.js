@@ -8,6 +8,7 @@ import ProductCardTinder from "../../components/productCardTinder/ProductCardTin
 import RectangleButton from "../../components/buttons/rectangleButton/RectangleButton";
 import IconDislike from "../../components/icon/IconDislike";
 import IconLike from "../../components/icon/IconLike";
+import ProductCardTinderWelcome from "../../components/productCardTinderWelcome/ProductCardTinderWelcome";
 
 const osname = platform();
 
@@ -23,28 +24,38 @@ const fontStyleIOS = {
 class TinderPage extends React.Component {
   constructor(props) {
     super(props)
-    this.state = {}
+    this.state = {
+      isWelcome: true
+    }
   }
 
+  handleCloseModal = () => {
+    this.setState({isWelcome: false})
+  };
 
   render() {
+
+    let divStyleBlur = {
+      filter: 'blur(9px)'
+    };
+
     return (
       <Panel style={osname === IOS ? fontStyleIOS : fontStyleAndroid}
              id={this.props.id}
              theme='white'>
         <Header/>
-        <Div className='tinder-page'>
-          <ProductCardTinder/>
-          <div className='tinder-page-button-wrap'>
+        <Div  className='tinder-page'>
+          <ProductCardTinder isWelcome={this.state.isWelcome}/>
+          <div style={this.state.isWelcome ? divStyleBlur : null}
+               className='tinder-page-button-wrap'>
             <div className='tinder-page-button_first'>
               <RectangleButton title='Не нравится' iconSvg={<IconDislike/>}/>
             </div>
             <div className='tinder-page-button_second'>
               <RectangleButton title='Нравится' iconSvg={<IconLike/>}/>
             </div>
-
-
           </div>
+          {this.state.isWelcome ? <ProductCardTinderWelcome closeModal={this.handleCloseModal}/> : null}
         </Div>
       </Panel>
     )

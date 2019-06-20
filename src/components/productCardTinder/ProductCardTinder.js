@@ -9,9 +9,14 @@ import IconArrowRight from "../icon/IconArrowRight";
 import './ProductCardTinder.css';
 import image from '../../assets/image/Rectangle 1533@2x.png';
 
-const ProductCardTinder = () => {
+const ProductCardTinder = ({isWelcome}) => {
+
+  let divStyleBlur = {
+    filter: 'blur(9px)'
+  };
   return (
-    <div className='tinder-page-product'>
+    <div style={isWelcome ? divStyleBlur : null}
+         className='tinder-page-product'>
       <div className='tinder-page-product-header'>
         <div className='tinder-page-product-header_left'>
           <ProductBrandView logo={logo}/>
