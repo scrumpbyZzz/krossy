@@ -9,11 +9,11 @@
 }
 
 .Panel--ios .product-card-small_wrap {
-  width: 164px;
+  width: 47.8%;
 }
 
 .Panel--android .product-card-small_wrap {
-  width: 156px;
+  width: 41.15%;
 }
 
 
@@ -23,7 +23,7 @@
 }
 
 .product-card-small-pic {
-  width: 164px;
+  width: 100%
 }
 
 .product-card-small-sticker_wrap {

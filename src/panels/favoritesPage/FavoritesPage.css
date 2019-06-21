@@ -1,0 +1,16 @@
+.favorites-page {
+  background-color: #F7F8F9;
+}
+
+.favorites-page_wrap {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.Panel--ios .favorites-page_wrap {
+  justify-content: space-between;
+}
+
+.Panel--android .favorites-page_wrap {
+  justify-content: space-evenly;
+}

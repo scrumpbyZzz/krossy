@@ -1,6 +1,7 @@
 import React from 'react';
 
 import {View, Panel} from "@vkontakte/vkui";
+import FavoritesPage from "../../panels/favoritesPage/FavoritesPage";
 
 class FavoritesView extends React.Component {
   constructor(props) {
@@ -19,7 +20,7 @@ class FavoritesView extends React.Component {
     return(
       <View id={this.props.id}
             activePanel={this.state.activePanel}>
-        <Panel id='favorites'>Тут будет страница "Favorites"</Panel>
+        <FavoritesPage id='favorites'/>
       </View>
     )
   }

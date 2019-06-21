@@ -5,3 +5,7 @@
 .main-tabbar-show {
   display: flex;
 }
+
+#start .Panel__in {
+  height: 100vh;
+}

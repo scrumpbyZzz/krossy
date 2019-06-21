@@ -20,7 +20,7 @@ const Advertising = ({func, goTo}) => {
   };
 
   return (
-    <div style={styleDiv} className='advertising_wrap'>
+    <div className='advertising_wrap'>
       <div className='advertising-image_wrap'>
         <img className='advertising-image'
              src={pic}
