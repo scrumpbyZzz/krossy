@@ -1,10 +1,6 @@
 import React from 'react';
 
-import {HeaderButton} from '@vkontakte/vkui';
-import chevronBack from '../../assets/icon/icon28chevronBack-black.svg';
-
 const IconChevronIOSBack = () => {
-
   return (
     <svg className='svg-icon-chevron-ios-back' xmlns="http://www.w3.org/2000/svg"
          width="11.313" height="19.813" viewBox="0 0 11.313 19.813">

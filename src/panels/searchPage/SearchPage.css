@@ -17,7 +17,6 @@
 
 .Panel--ios .search-page-brand-select {
   height: 47px;
-
 }
 
 .Panel--android .search-page-brand-select {
@@ -168,22 +167,22 @@
   padding: 10px 0;
 }
 
-.search-page-checkbox-group .Radio--ios .Radio__icon {
+.Radio--ios .Radio__icon {
   width: 24px;
   height: 24px;
 }
 
-.search-page-checkbox-group .Radio--ios .Radio__icon::after {
+.Radio--ios .Radio__icon::after {
   left: 3px;
   top: 3px;
 }
 
-.search-page-checkbox-group .Radio--android .Radio__icon {
+.Radio--android .Radio__icon {
   width: 18px;
   height: 18px;
 }
 
-.search-page-checkbox-group .Radio--android .Radio__icon::after {
+.Radio--android .Radio__icon::after {
   width: 8px;
   height: 8px;
   left: 3px;

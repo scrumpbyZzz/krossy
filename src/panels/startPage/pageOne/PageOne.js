@@ -1,7 +1,6 @@
 import React from 'react';
-import '../../assets/fonts/fonts.css';
 import './PageOne.css';
-import RectangleButton from "../buttons/rectangleButton/RectangleButton";
+import RectangleButton from "../../../components/buttons/rectangleButton/RectangleButton";
 
 const PageOne = ({handleNextSlide}) => {
     return (

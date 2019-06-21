@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 
 import Gallery from '@vkontakte/vkui/dist/components/Gallery/Gallery';
 import './StartPage.css'
-import PageOne from "../../components/pageOne/PageOne";
-import PageTwo from "../../components/pageTwo/PageTwo";
-import PageThree from "../../components/pageThree/PageThree";
+import PageOne from "./pageOne/PageOne";
+import PageTwo from "./pageTwo/PageTwo";
+import PageThree from "./pageThree/PageThree";
 import {Panel} from "@vkontakte/vkui";
 
 

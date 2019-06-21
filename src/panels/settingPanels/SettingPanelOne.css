@@ -1,0 +1,147 @@
+.setting-page_wrap {
+  display: flex;
+  flex-direction: column;
+}
+
+.Panel--android .setting-border-bottom {
+  border: 1px solid #F0F3F5;
+}
+
+.Panel--ios .setting-border-bottom {
+  border: 1px solid #F0F3F5;
+}
+
+.Panel--ios .setting-page-size {
+  height: 42px;
+}
+
+.Panel--android .setting-page-size {
+  height: 56px;
+}
+
+.setting-page-size {
+  display: flex;
+  justify-content: space-between;
+}
+
+.setting-page-size_left {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 37.8%;
+}
+
+.setting-page-size_right {
+  display: flex;
+  align-items: center;
+}
+
+.setting-page-size_left_color {
+  color: #8EC8FF;
+}
+
+.setting-page_wrap .Div--ios {
+  padding: 0 15px;
+}
+
+.setting-page_wrap .Div--android {
+  padding: 0 24px;
+}
+
+.setting-page-checkbox-group .Radio__container {
+  flex-direction: row-reverse;
+}
+
+.setting-page-checkbox-group .Radio--ios {
+  padding: 10px 0;
+}
+
+.setting-page-checkbox-group .Radio--android {
+  padding: 17px 0;
+}
+
+.setting-page-checkbox-group .Radio__icon {
+  margin: 0;
+}
+
+.setting-page-checkbox-group .Tappable--android .Tappable--active {
+  background: none !important;
+}
+
+.setting-page-checkbox-group .Tappable--ios .Tappable--active {
+  background: none !important;
+}
+
+.setting-page-notifications {
+  display: flex;
+  justify-content: space-between;
+
+}
+
+.Panel--ios .setting-page-notifications {
+  height: 42px;
+}
+
+.Panel--android .setting-page-notifications {
+  height: 56px;
+}
+
+.setting-page-notifications .Div--ios {
+  padding: 0 45px;
+}
+
+.setting-page-notifications .Div--android {
+  padding: 0 24px;
+}
+
+.setting-page-notifications_left {
+  display: flex;
+  justify-content: space-between;
+  align-self: center;
+  width: 35%;
+}
+
+.setting-page-notifications_left_color {
+  color: #8EC8FF;
+}
+
+.setting-page-notifications_right {
+  display: flex;
+  align-items: center;
+}
+
+.setting-page-buttons {
+  display: flex;
+  flex-direction: column;
+}
+
+.Panel--ios .setting-page-buttons {
+  padding: 24px 24px;
+}
+
+.Panel--android .setting-page-buttons  {
+  padding: 36px 24px;
+}
+
+.setting-page-buttons .rectangle-button{
+  width: 100%;
+  border: 1px solid #F0F3F5;
+  color: #AEBFCF;
+}
+
+.setting-page-buttons .rectangle-button:nth-child(1) {
+  background-color: #4986CC;
+  border: none;
+  color: #ffffff;
+}
+
+.Panel--ios .setting-page-buttons .rectangle-button {
+  margin-bottom: 25px;
+  font-family: SF Pro Text, sans-serif;
+  font-size: 16px;
+}
+
+.Panel--android .setting-page-buttons .rectangle-button {
+  margin-bottom: 25px;
+  font-size: 12px;
+}

@@ -5,7 +5,7 @@ import {Panel, Gallery, FormLayoutGroup, Checkbox, Radio, platform, IOS, Div} fr
 import RectangleButton from "../../components/buttons/rectangleButton/RectangleButton";
 import chevronRightAndroidGrey from '../../assets/icon/chevron-right-grey-anroid.svg'
 import chevronRightIosGrey from '../../assets/icon/chevron-right-grey-ios.svg'
-import RoundSizeButton from "../../components/buttons/roundSizeButton/RoundSizeButton";
+
 import SearchColorPick from "../../components/search/searchColorPick/searchColorPick";
 
 import './SearchPage.css';

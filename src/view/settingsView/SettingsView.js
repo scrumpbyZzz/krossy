@@ -1,6 +1,7 @@
 import React from 'react';
 
 import {View, Panel} from "@vkontakte/vkui";
+import SettingPage from "../../panels/settingPanels/SettingPanelOne";
 
 class SettingsView extends React.Component {
   constructor(props) {
@@ -19,7 +20,7 @@ class SettingsView extends React.Component {
     return(
       <View id={this.props.id}
             activePanel={this.state.activePanel}>
-        <Panel id='settings'>Тут будет страница "Settings"</Panel>
+        <SettingPage id='settings'/>
       </View>
     )
   }

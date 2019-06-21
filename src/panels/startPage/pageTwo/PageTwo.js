@@ -1,8 +1,8 @@
 import React from 'react';
-import RectangleButton from "../buttons/rectangleButton/RectangleButton";
 import './PageTwo.css'
-import '../../assets/fonts/fonts.css';
-import RoundSizeButton from "../buttons/roundSizeButton/RoundSizeButton";
+import RectangleButton from "../../../components/buttons/rectangleButton/RectangleButton";
+import RoundSizeButton from "../../../components/buttons/roundSizeButton/RoundSizeButton";
+
 
 const sizeChart = [38, 38.5, 39, 39.5, 40, 40.5, 41, 41.5, 42, 42.5, 43, 43.5, 44, 44.5, 45];
 const markUp = sizeChart.map(item => {

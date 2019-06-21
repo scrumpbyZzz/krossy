@@ -1,15 +1,15 @@
 import React from 'react';
-import RectangleButton from "../buttons/rectangleButton/RectangleButton";
-import RoundSizeButton from "../buttons/roundSizeButton/RoundSizeButton";
+import RoundSizeButton from "../../../components/buttons/roundSizeButton/RoundSizeButton";
+import RectangleButton from "../../../components/buttons/rectangleButton/RectangleButton";
 import './PageThree.css';
-import iconArrowBack from '../../assets/icon/arrowBack.svg';
-import iconArrowDown from '../../assets/icon/arrowDown.svg';
-import iconKross from '../../assets/icon/kross-white.svg';
-import iconSq from '../../assets/icon/sq-white.svg';
-import iconSearch from '../../assets/icon/search-white.svg';
-import iconHeart from '../../assets/icon/heart-white.svg';
-import iconSetting from '../../assets/icon/sett-white.svg';
-import '../../assets/fonts/fonts.css';
+import iconArrowBack from '../../../assets/icon/arrowBack.svg';
+import iconArrowDown from '../../../assets/icon/arrowDown.svg';
+import iconKross from '../../../assets/icon/kross-white.svg';
+import iconSq from '../../../assets/icon/sq-white.svg';
+import iconSearch from '../../../assets/icon/search-white.svg';
+import iconHeart from '../../../assets/icon/heart-white.svg';
+import iconSetting from '../../../assets/icon/sett-white.svg';
+
 
 const PageThree = ({handleSecondSlide, goView}) => {
 

@@ -9,3 +9,7 @@
 #start .Panel__in {
   height: 100vh;
 }
+
+.Tappable--ios .Tappable--active {
+  background: none !important;
+}
