@@ -16,6 +16,9 @@ import TinderTabbarButtonIcon from "../buttons/tabbarButtons/TinderTabbarButtonI
 import FavoritesTabbarButtonIcon from "../buttons/tabbarButtons/FavotitesTabbarButtonIcon";
 import SettingsTabbarButtonIcon from "../buttons/tabbarButtons/SettingsTabbarButtonIcon";
 import StartView from "../../view/startView/StartView";
+import IconHome from "../icon/IconHome";
+import IconStar from "../icon/IconStar";
+import IconSearch from "../icon/IconSearch";
 
 
 const osname = platform();
@@ -29,7 +32,7 @@ class App extends React.Component {
     super(props);
 
     this.state = {
-      activeStory: 'settingsView',
+      activeStory: 'homeView',
       fetchedUser: null,
     };
   }
@@ -66,7 +69,7 @@ class App extends React.Component {
                   <TabbarItem onClick={this.onStoryChange}
                               selected={this.state.activeStory === 'homeView'}
                               data-story='homeView'>
-                    <HomeTabbarButtonIcon active={this.state.activeStory === 'homeView'}/>
+                    <IconHome active={this.state.activeStory === 'homeView'}/>
                   </TabbarItem>
                   <TabbarItem onClick={this.onStoryChange}
                               selected={this.state.activeStory === 'searchView'}
