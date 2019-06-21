@@ -1,10 +1,11 @@
 import React from 'react';
 import './SettingPanelOne.css';
 import {Div, FormLayoutGroup, IOS, Panel, platform, Radio} from "@vkontakte/vkui";
-import Header from "../../components/header/Header";
-import IconChevronRight from "../../components/icon/IconChevronAndroidRight";
-import RectangleButton from "../../components/buttons/rectangleButton/RectangleButton";
-import IconChevronIOSRight from "../../components/icon/IconChevronIOSRight";
+import Header from "../../../components/header/Header";
+import IconChevronIOSRight from "../../../components/icon/IconChevronIOSRight";
+import IconChevronAndroidRight from "../../../components/icon/IconChevronAndroidRight";
+import RectangleButton from "../../../components/buttons/rectangleButton/RectangleButton";
+
 
 class SettingPanelOne extends React.Component {
   constructor(props) {
@@ -32,7 +33,7 @@ class SettingPanelOne extends React.Component {
             <div className='setting-page-size_left_color'>42</div>
           </div>
           <div className='setting-page-size_right'>
-            {osname === IOS ? <IconChevronIOSRight/> : <IconChevronRight/>}
+            {osname === IOS ? <IconChevronIOSRight/> : <IconChevronAndroidRight/>}
           </div>
         </Div>
         <Div className='setting-page-checkbox-group setting-border-bottom'>
@@ -47,7 +48,7 @@ class SettingPanelOne extends React.Component {
             <div className='setting-page-notifications_left_color'>3</div>
           </div>
           <div className='setting-page-notifications_right'>
-            {osname === IOS ? <IconChevronIOSRight/> : <IconChevronRight/>}
+            {osname === IOS ? <IconChevronIOSRight/> : <IconChevronAndroidRight/>}
           </div>
         </Div>
         <Div className='setting-page-buttons'>

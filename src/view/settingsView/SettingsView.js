@@ -1,14 +1,15 @@
 import React from 'react';
 
 import {View, Panel} from "@vkontakte/vkui";
-import SettingPage from "../../panels/settingPanels/SettingPanelOne";
+import SettingPanelOne from "../../panels/settingPanels/settingPanelOne/SettingPanelOne";
+import SettingPanelTwo from "../../panels/settingPanels/settingPanelTwo/SettingPanelTwo";
 
 class SettingsView extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      activePanel: 'settings'
+      activePanel: 'settings-2'
     }
   }
 
@@ -20,7 +21,8 @@ class SettingsView extends React.Component {
     return(
       <View id={this.props.id}
             activePanel={this.state.activePanel}>
-        <SettingPage id='settings'/>
+        <SettingPanelOne id='settings-1'/>
+        <SettingPanelTwo id='settings-2' />
       </View>
     )
   }
