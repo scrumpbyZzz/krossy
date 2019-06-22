@@ -2,14 +2,13 @@ import React from 'react';
 import RoundSizeButton from "../../../components/buttons/roundSizeButton/RoundSizeButton";
 import RectangleButton from "../../../components/buttons/rectangleButton/RectangleButton";
 import './PageThree.css';
-import iconArrowBack from '../../../assets/icon/arrowBack.svg';
-import iconArrowDown from '../../../assets/icon/arrowDown.svg';
-import iconKross from '../../../assets/icon/kross-white.svg';
-import iconSq from '../../../assets/icon/sq-white.svg';
-import iconSearch from '../../../assets/icon/search-white.svg';
-import iconHeart from '../../../assets/icon/heart-white.svg';
-import iconSetting from '../../../assets/icon/sett-white.svg';
-
+import IconArrowAndroidBack from '../../../components/icon/IconArrowAndroisBack';
+import IconHome from '../../../components/icon/IconHome';
+import IconSearch from '../../../components/icon/IconSearch';
+import IconKross from '../../../components/icon/IconKross';
+import IconHeart from '../../../components/icon/IconHeart';
+import IconSetting from '../../../components/icon/IconSetting';
+import IconArrowRight from '../../../components/icon/IconArrowRight';
 
 const PageThree = ({handleSecondSlide, goView}) => {
 
@@ -18,7 +17,7 @@ const PageThree = ({handleSecondSlide, goView}) => {
       <div onClick={handleSecondSlide}
            className='three-page-button-back'>
         <div className='three-page-button-back_wrap'>
-          <RoundSizeButton icon={iconArrowBack}/>
+          <RoundSizeButton iconSvg={<IconArrowAndroidBack currentColor='#ffffff'/>}/>
         </div>
       </div>
       <div className='content-three-page'>
@@ -31,35 +30,23 @@ const PageThree = ({handleSecondSlide, goView}) => {
         Особенно рекомендуем наш Tinder для кроссовок - очень кашерно!
       </span>
         <div className='three-page-icon_arrow'>
-          <img className='three-page-icon_arrow-image'
-               src={iconArrowDown}
-               alt='logo'/>
+          <IconArrowRight />
         </div>
         <div className='three-page-setting  '>
-          <div className='three-page-setting-icon_wrap'>
-            <img className='three-page-setting-icon_img'
-                 src={iconSq}
-                 alt='logo'/>
+          <div className='three-page-setting-icon_wrap '>
+            <IconHome currentColor='#ffffff' />
           </div>
           <div className='three-page-setting-icon-wrap'>
-            <img className='three-page-setting-icon_img'
-                 src={iconSearch}
-                 alt='logo'/>
+            <IconSearch currentColor='#ffffff'/>
           </div>
           <div className='three-page-setting-icon-wrap'>
-            <img className='three-page-setting-icon_img'
-                 src={iconKross}
-                 alt='logo'/>
+            <IconKross currentColor='#ffffff' />
           </div>
           <div className='three-page-setting-icon-wrap'>
-            <img className='three-page-setting-icon_img'
-                 src={iconHeart}
-                 alt='logo'/>
+            <IconHeart currentColor='#ffffff'/>
           </div>
           <div className='three-page-setting-icon-wrap'>
-            <img className='three-page-setting-icon_img'
-                 src={iconSetting}
-                 alt='logo'/>
+            <IconSetting currentColor='#ffffff' />
           </div>
         </div>
         <RectangleButton title='Приступить'

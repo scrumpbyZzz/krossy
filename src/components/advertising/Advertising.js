@@ -4,21 +4,17 @@ import {platform, IOS} from "@vkontakte/vkui";
 import pic from '../../assets/image/Rectangle 1384@2x.png';
 import brandLogo from '../../assets/image/asics-seeklogo.com.svg';
 
-import arrowWhite from '../../assets/icon/arrow-right-white.svg';
+
 import RoundSizeButton from '../buttons/roundSizeButton/RoundSizeButton';
 import ProductSizeChartView from "../product/productSizeChartView/ProductSizeChartView";
 import ProductPriceView from "../product/productPriceView/ProductPriceView";
 import ProductBrandView from "../product/productBrandView/ProductBrandView";
 import ProductCountShopView from "../product/prodoctCountShopView/ProductCountShopView";
+import IconArrowRight from '../icon/IconArrowRight';
 
 const osname = platform();
 
 const Advertising = ({func, goTo}) => {
-
-  let styleDiv = {
-    width: `${osname === IOS ? '343' : '328'}px`
-  };
-
   return (
     <div className='advertising_wrap'>
       <div className='advertising-image_wrap'>
@@ -39,7 +35,7 @@ const Advertising = ({func, goTo}) => {
           </div>
         </div>
         <div className='advertising-product-footer-button-wrap'>
-          <RoundSizeButton icon={arrowWhite}
+          <RoundSizeButton iconSvg={<IconArrowRight/>}
                            backgroundColor='#4986CC'
                            func={func}
                            goTo={goTo}/>

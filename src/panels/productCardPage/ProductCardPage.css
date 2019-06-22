@@ -124,6 +124,23 @@
   justify-content: space-between;
 }
 
+.product-card-share_wrap-btn .rectangle-button_wrap {
+  display: flex;
+  width: 115px;
+  justify-content: space-between;
+}
+
+.Panel--ios .product-card-share_wrap-btn .rectangle-button {
+  width: 66%;
+}
+
+.Panel--ios .rectangle-button_text {
+  font-family: SF Pro Text, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  text-transform: none;
+}
+
 .product-card-share_wrap .round-size-btn {
   box-shadow:  0 0 10px 4px  rgba(174, 191, 207, 0.4);
   border: none;

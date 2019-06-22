@@ -1,11 +1,12 @@
 import React from 'react';
-import done from "../../../assets/icon/done.svg";
+
 import './ProductSizeChartView.css';
+import IconDone from '../../icon/IconDone';
 
 const ProductSizeChartView = (props) => {
   return (
     <div  className='product-size-block-wrap'>
-      <img className='product-size-block_img' src={done} alt='done'/>
+      <IconDone />
       <span  className='product-size-block_content'>40</span>
       <span  className='product-size-block_content'>41</span>
       <span  className='product-size-block_content'>42</span>

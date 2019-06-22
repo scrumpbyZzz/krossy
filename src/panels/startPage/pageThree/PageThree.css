@@ -58,11 +58,34 @@
 
 .three-page-icon_arrow {
   margin-bottom: 12px;
+  transform: rotate(90deg);
 }
 
 .three-page-icon_arrow-image {
   width: 15px;
   height: 15px;
+}
+
+
+.three-page-setting .svg-icon-setting {
+  opacity: 0.15;
+}
+
+.three-page-setting .svg-icon-sq {
+  opacity: 0.15;
+}
+
+.three-page-setting .svg-icon-search {
+  opacity: 0.4;
+}
+
+.three-page-setting .svg-icon-heart {
+  opacity: 0.4;
+}
+
+.three-page-button-back_wrap .svg-icon-arrow-android-back {
+  width: 15.47px;
+  height: 14.29px;
 }
 
 .three-page-setting {

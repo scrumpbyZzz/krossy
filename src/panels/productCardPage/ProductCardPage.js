@@ -3,22 +3,17 @@ import {Panel, Gallery, platform, IOS, HeaderButton, PanelHeader} from '@vkontak
 import Header from '../../components/header/Header';
 import './ProductCardPage.css';
 import pic from '../../assets/image/Rectangle 1297@2x.png';
-import done from '../../assets/icon/done.svg';
+
 import RoundSizeButton from '../../components/buttons/roundSizeButton/RoundSizeButton';
 import RectangleButton from '../../components/buttons/rectangleButton/RectangleButton';
-import chevronDown from '../../assets/icon/chevron-down-white.svg';
-
 import ProductColorView from '../../components/product/productColorView/ProductColorView';
-import heartPink from '../../assets/icon/heart-pink.svg';
-import ringGrey from '../../assets/icon/ring-grey.svg';
-import messageWhite from '../../assets/icon/message-white.svg';
 import ProductSizeChartView from "../../components/product/productSizeChartView/ProductSizeChartView";
 import ProductPriceView from "../../components/product/productPriceView/ProductPriceView";
-import HeaderButtonBackIOS from "../../components/icon/IconChevronIOSBack";
-import HeaderButtonBackAndroid from "../../components/icon/IconArrowAndroisBack";
-import HeaderButtonMore from "../../components/buttons/headerButtonMore/HeaderButtonMore";
-import HeaderButtonCancel from "../../components/buttons/headerButtonCancel/HeaderButtonCancel";
-import PanelHeaderBack from "@vkontakte/vkui/dist/components/PanelHeaderBack/PanelHeaderBack";
+import IconNotification from '../../components/icon/IconNotification';
+import IconHeartPink from '../../components/icon/IconHeartPink';
+import IconQuestion from '../../components/icon/IconQuestion';
+import IconChevronDown from '../../components/icon/IconChevronDown';
+
 
 const osname = platform();
 
@@ -86,10 +81,10 @@ class ProductCardPage extends React.PureComponent {
                className='product-card-share_wrap'>
             <div className='product-card-share_wrap-btn'
                  style={productCardShare}>
-              <RoundSizeButton icon={heartPink} border='none'/>
-              <RoundSizeButton icon={ringGrey} border='none'/>
-              <RectangleButton icon={messageWhite}
-                               title='поделиться'/>
+              <RoundSizeButton iconSvg={<IconHeartPink />} border='none'/>
+              <RoundSizeButton iconSvg={<IconNotification/>} border='none'/>
+              <RectangleButton iconSvg={<IconQuestion/>}
+                               title='Поделиться'/>
             </div>
           </div>
           <div className='product-card-select_wrap'>
@@ -99,8 +94,7 @@ class ProductCardPage extends React.PureComponent {
                 купить в <span className='product-card-select_count_color'>3</span> магазинах
               </span>
               <div className='product-card-select-icon_wrap'>
-                <img src={chevronDown}
-                     alt='chevron'/>
+                <IconChevronDown currentColor='#fff'/>
               </div>
             </div>
           </div>

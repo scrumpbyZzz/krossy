@@ -1,14 +1,11 @@
 import React from 'react';
 import {PanelHeader, platform, IOS, PanelHeaderContent, HeaderButton} from "@vkontakte/vkui";
-import PanelHeaderBack from '@vkontakte/vkui/dist/components/PanelHeaderBack/PanelHeaderBack';
 
 import './Header.css';
-
-import HeaderButtonMore from '../buttons/headerButtonMore/HeaderButtonMore';
-import HeaderButtonCancel from '../buttons/headerButtonCancel/HeaderButtonCancel';
-
 import IconArrowAndroidBack from "../icon/IconArrowAndroisBack";
 import IconChevronIOSBack from "../icon/IconChevronIOSBack";
+import IconMoreHorizontal from '../icon/IconMoreHorizontal';
+import IconClose from '../icon/IconClose';
 
 
 
@@ -27,8 +24,8 @@ const Header = ({func, goTo}) => {
                  </HeaderButton>}
                  right={[
                    <div className='header-right-button-block'>
-                     <HeaderButtonMore/>
-                     <HeaderButtonCancel/>
+                     <IconMoreHorizontal/>
+                     <IconClose />
                    </div>
                  ]}
     >

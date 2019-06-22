@@ -4,21 +4,18 @@ import {View, ConfigProvider, Root, TabbarItem, Tabbar, Epic, platform, IOS} fro
 import '@vkontakte/vkui/dist/vkui.css';
 import './App.css';
 
-import StartPage from "../../panels/startPage/StartPage";
+
 import HomeView from "../../view/homeView/HomeView";
 import SearchView from "../../view/searhView/SearchView";
 import TinderView from "../../view/tinderView/TinderView";
 import FavoritesView from "../../view/favoritesView/FavoritesView";
 import SettingsView from "../../view/settingsView/SettingsView";
-import HomeTabbarButtonIcon from "../buttons/tabbarButtons/HomeTabbarButtonIcon";
-import SearchTabbarButtonIcon from "../buttons/tabbarButtons/SearchTabbarButtonIcon";
-import TinderTabbarButtonIcon from "../buttons/tabbarButtons/TinderTabbarButtonIcon";
-import FavoritesTabbarButtonIcon from "../buttons/tabbarButtons/FavotitesTabbarButtonIcon";
-import SettingsTabbarButtonIcon from "../buttons/tabbarButtons/SettingsTabbarButtonIcon";
 import StartView from "../../view/startView/StartView";
 import IconHome from "../icon/IconHome";
-import IconStar from "../icon/IconStar";
 import IconSearch from "../icon/IconSearch";
+import IconKross from '../icon/IconKross';
+import IconHeart from '../icon/IconHeart';
+import IconSetting from '../icon/IconSetting';
 
 
 const osname = platform();
@@ -74,22 +71,22 @@ class App extends React.Component {
                   <TabbarItem onClick={this.onStoryChange}
                               selected={this.state.activeStory === 'searchView'}
                               data-story='searchView'>
-                    <SearchTabbarButtonIcon active={this.state.activeStory === 'searchView'}/>
+                    <IconSearch active={this.state.activeStory === 'searchView'}/>
                   </TabbarItem>
                   <TabbarItem onClick={this.onStoryChange}
                               selected={this.state.activeStory === 'tinderView'}
                               data-story='tinderView'>
-                    <TinderTabbarButtonIcon active={this.state.activeStory === 'tinderView'}/>
+                    <IconKross active={this.state.activeStory === 'tinderView'}/>
                   </TabbarItem>
                   <TabbarItem onClick={this.onStoryChange}
                               selected={this.state.activeStory === 'favoritesView'}
                               data-story='favoritesView'>
-                    <FavoritesTabbarButtonIcon active={this.state.activeStory === 'favoritesView'}/>
+                    <IconHeart active={this.state.activeStory === 'favoritesView'}/>
                   </TabbarItem>
                   <TabbarItem onClick={this.onStoryChange}
                               selected={this.state.activeStory === 'settingsView'}
                               data-story='settingsView'>
-                    <SettingsTabbarButtonIcon active={this.state.activeStory === 'settingsView'}/>
+                    <IconSetting active={this.state.activeStory === 'settingsView'}/>
                   </TabbarItem>
                 </Tabbar>}>
           <StartView id='welcome' goView={this.goView}/>

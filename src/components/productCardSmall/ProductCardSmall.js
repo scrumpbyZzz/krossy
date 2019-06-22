@@ -7,7 +7,6 @@ import brandLogo from '../../assets/image/adidas.png';
 import './ProductCardSmall.css';
 import ProductSizeChartView from "../product/productSizeChartView/ProductSizeChartView";
 import ProductPriceView from "../product/productPriceView/ProductPriceView";
-import IconTrend from "../icon/IconTrend";
 import ProductBrandView from "../product/productBrandView/ProductBrandView";
 import ProductCountShopView from "../product/prodoctCountShopView/ProductCountShopView";
 import Sticker from "../Sticker/Sticker";

@@ -1,7 +1,6 @@
 import React from 'react';
-import './icon.css'
 
-const IconHome = ({active}) => {
+const IconHome = ({currentColor, active}) => {
   let divStyle = {
     display: 'flex',
     width: '20px',
@@ -9,7 +8,7 @@ const IconHome = ({active}) => {
     justifyContent: 'space-evenly'
   };
 
-  let colorSvg = active ? '#000' : '#aebfcf';
+  let colorSvg = currentColor ? currentColor : active ? '#000' : '#aebfcf';
   return (
     <React.Fragment>
       <div style={divStyle}>

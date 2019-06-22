@@ -3,12 +3,12 @@ import React from 'react';
 import SearchRangeSlider from "../../components/search/searchRangeSlider/SearchRangeSlider";
 import {Panel, Gallery, FormLayoutGroup, Checkbox, Radio, platform, IOS, Div} from "@vkontakte/vkui";
 import RectangleButton from "../../components/buttons/rectangleButton/RectangleButton";
-import chevronRightAndroidGrey from '../../assets/icon/chevron-right-grey-anroid.svg'
-import chevronRightIosGrey from '../../assets/icon/chevron-right-grey-ios.svg'
 
 import SearchColorPick from "../../components/search/searchColorPick/searchColorPick";
 
 import './SearchPage.css';
+import IconChevronIOSRight from '../../components/icon/IconChevronIOSRight';
+import IconChevronAndroidRight from '../../components/icon/IconChevronAndroidRight';
 
 const osname = platform();
 
@@ -36,7 +36,7 @@ class SearchPage extends React.Component {
         <Div className='search-page-brand-select search-border-bottom'>
           <div className='search-page-brand_text'>Бренд</div>
           <div className='search-page-brand_icon'>
-            <img src={osname === IOS ? chevronRightIosGrey : chevronRightAndroidGrey} alt='icon'/>
+            {osname === IOS ? <IconChevronIOSRight /> : <IconChevronAndroidRight />}
           </div>
         </Div>
         <Div className='search-page-price-range search-border-bottom'>

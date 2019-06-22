@@ -1,9 +1,6 @@
 .main-header {
 
 }
-
-
-
 .header-right-button-block {
   display: flex;
   flex-direction: row;
@@ -44,4 +41,8 @@
 
 .HeaderButton--android {
   line-height: 0;
+}
+
+.svg-icon-more, .svg-icon-close {
+  align-self: center;
 }
