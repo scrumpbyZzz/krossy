@@ -7,7 +7,7 @@ import IconRemoveCircle from '../../../components/icon/IconRemoveCircle';
 import RoundSizeButton from '../../../components/buttons/roundSizeButton/RoundSizeButton';
 import IconClose from '../../../components/icon/IconClose';
 
-const SettingPanelThree = ({id}) => {
+const SettingPanelThree = ({id, goPanel}) => {
   const osname = platform();
   let fontStyleGlobal = {
     fontFamily: `${osname === IOS ? 'SF UI Text' : 'Roboto'}, sans-serif`,
@@ -19,7 +19,7 @@ return (
          theme='white'
          style={fontStyleGlobal}
          className='setting-page-three'>
-    <Header/>
+    <Header func={goPanel} goTo='settings-1'/>
     <Div className='setting-page-three-row setting-border-bottom' >
       <div className='setting-page-three-image_wrap'>
         <img className='setting-page-three-image'

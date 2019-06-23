@@ -4,7 +4,7 @@ import {Panel, Div, IOS, platform} from '@vkontakte/vkui';
 import Header from '../../../components/header/Header';
 
 
-const SettingPanelFour = ({id}) => {
+const SettingPanelFour = ({id, goPanel}) => {
     const osname = platform();
     let fontStyleGlobal = {
       fontFamily: `${osname === IOS ? 'SF UI Text' : 'Roboto'}, sans-serif`,
@@ -16,7 +16,7 @@ const SettingPanelFour = ({id}) => {
              theme='white'
              style={fontStyleGlobal}
              className='setting-page-four'>
-        <Header/>
+        <Header func={goPanel} goTo='settings-2'/>
         <Div className='setting-page-four_context'>
           <div className='setting-page-four_context_title'>Как определить свой размер?</div>
           <div className='setting-page-four_context_text'>

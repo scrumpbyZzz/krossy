@@ -11,11 +11,11 @@ class SettingsView extends React.Component {
     super(props);
 
     this.state = {
-      activePanel: 'settings-4'
+      activePanel: 'settings-1'
     }
   }
 
-  go = (e) => {
+  goPanel = (e) => {
     this.setState({activePanel: e.currentTarget.dataset.to})
   };
 
@@ -23,10 +23,10 @@ class SettingsView extends React.Component {
     return(
       <View id={this.props.id}
             activePanel={this.state.activePanel}>
-        <SettingPanelOne id='settings-1'/>
-        <SettingPanelTwo id='settings-2' />
-        <SettingPageThree id='settings-3'/>
-        <SettingPanelFour id='settings-4' />
+        <SettingPanelOne id='settings-1' goPanel={this.goPanel}/>
+        <SettingPanelTwo id='settings-2' goPanel={this.goPanel}/>
+        <SettingPageThree id='settings-3' goPanel={this.goPanel}/>
+        <SettingPanelFour id='settings-4' goPanel={this.goPanel}/>
       </View>
     )
   }

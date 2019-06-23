@@ -145,3 +145,10 @@
   margin-bottom: 25px;
   font-size: 12px;
 }
+
+.setting-page-size_right .round-size-btn, .setting-page-notifications_right .round-size-btn{
+  border: none;
+  width: 24px;
+  height: 24px;
+  justify-content: flex-end;
+}

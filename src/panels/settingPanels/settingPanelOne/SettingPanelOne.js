@@ -5,6 +5,7 @@ import Header from "../../../components/header/Header";
 import IconChevronIOSRight from "../../../components/icon/IconChevronIOSRight";
 import IconChevronAndroidRight from "../../../components/icon/IconChevronAndroidRight";
 import RectangleButton from "../../../components/buttons/rectangleButton/RectangleButton";
+import RoundSizeButton from '../../../components/buttons/roundSizeButton/RoundSizeButton';
 
 
 class SettingPanelOne extends React.Component {
@@ -33,7 +34,9 @@ class SettingPanelOne extends React.Component {
             <div className='setting-page-size_left_color'>42</div>
           </div>
           <div className='setting-page-size_right'>
-            {osname === IOS ? <IconChevronIOSRight/> : <IconChevronAndroidRight/>}
+            <RoundSizeButton func={this.props.goPanel}
+                             goTo='settings-2'
+                             iconSvg={osname === IOS ? <IconChevronIOSRight/> : <IconChevronAndroidRight/>}/>
           </div>
         </Div>
         <Div className='setting-page-checkbox-group setting-border-bottom'>
@@ -48,7 +51,9 @@ class SettingPanelOne extends React.Component {
             <div className='setting-page-notifications_left_color'>3</div>
           </div>
           <div className='setting-page-notifications_right'>
-            {osname === IOS ? <IconChevronIOSRight/> : <IconChevronAndroidRight/>}
+            <RoundSizeButton func={this.props.goPanel}
+                             goTo='settings-3'
+                             iconSvg={osname === IOS ? <IconChevronIOSRight/> : <IconChevronAndroidRight/>}/>
           </div>
         </Div>
         <Div className='setting-page-buttons'>
