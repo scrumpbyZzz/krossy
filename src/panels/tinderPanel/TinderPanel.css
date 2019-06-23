@@ -28,6 +28,12 @@
   font-size: 14px;
 }
 
+.Panel--android .tinder-page .rectangle-button_text {
+  font-family: Roboto, sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+}
+
 .tinder-page .rectangle-button_icon {
   align-self: flex-end;
 }
@@ -50,9 +56,7 @@
 .tinder-page-welcome {
   position: absolute;
   background-color: #4986CC;
-  background-image: url("../../assets/background/Group 1365.svg");
-  background-repeat: no-repeat;
-  background-size: cover;
+
   border-radius: 32px;
   top: 78px;
   width: 75%;
@@ -70,13 +74,13 @@
 
 .tinder-page-welcome_text {
   font-family: Roboto, sans-serif;
-  width: 71%;
+  width: 70%;
   color: #ffffff;
   font-size: 12px;
   font-weight: 300;
   margin-left: 40px;
   line-height: 18px;
-  margin-bottom: 118px;
+  margin-bottom: 30px;
 }
 
 .tinder-page-welcome_button {
@@ -91,4 +95,16 @@
   box-shadow: none;
   border: 2px solid #8EC8FF;
   color: #fff;
+}
+
+.tinder-page-welcome-image_wrap {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.Panel--android .tinder-page-welcome_button .rectangle-button_text {
+  font-family: Roboto, sans-serif;
+  font-size: 12px;
+  font-weight: 500;
 }

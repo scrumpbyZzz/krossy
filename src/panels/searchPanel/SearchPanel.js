@@ -1,12 +1,12 @@
 import React from 'react';
 
 import SearchRangeSlider from "../../components/search/searchRangeSlider/SearchRangeSlider";
-import {Panel, Gallery, FormLayoutGroup, Checkbox, Radio, platform, IOS, Div} from "@vkontakte/vkui";
+import {Panel, FormLayoutGroup, Checkbox, Radio, platform, IOS, Div} from "@vkontakte/vkui";
 import RectangleButton from "../../components/buttons/rectangleButton/RectangleButton";
 
 import SearchColorPick from "../../components/search/searchColorPick/searchColorPick";
 
-import './SearchPage.css';
+import './SearchPanel.css';
 import IconChevronIOSRight from '../../components/icon/IconChevronIOSRight';
 import IconChevronAndroidRight from '../../components/icon/IconChevronAndroidRight';
 
@@ -22,7 +22,7 @@ const fontStyleIOS = {
   fontSize: '17px'
 };
 
-class SearchPage extends React.Component {
+class SearchPanel extends React.Component {
   constructor(props) {
     super(props)
   }
@@ -66,4 +66,4 @@ class SearchPage extends React.Component {
   }
 }
 
-export default SearchPage;
+export default SearchPanel;

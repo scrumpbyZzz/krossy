@@ -1,5 +1,5 @@
 import React from 'react';
-import './TinderPage.css';
+import './TinderPanel.css';
 
 import {Panel, Div, platform, IOS} from "@vkontakte/vkui";
 import Header from "../../components/header/Header";
@@ -21,7 +21,7 @@ const fontStyleIOS = {
 };
 
 
-class TinderPage extends React.Component {
+class TinderPanel extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -62,4 +62,4 @@ class TinderPage extends React.Component {
   }
 }
 
-export default TinderPage;
+export default TinderPanel;

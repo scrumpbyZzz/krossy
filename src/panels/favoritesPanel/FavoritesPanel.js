@@ -1,10 +1,10 @@
 import React  from 'react';
-import './FavoritesPage.css';
+import './FavoritesPanel.css';
 import {Panel, Div} from "@vkontakte/vkui";
 import Header from "../../components/header/Header";
 import ProductCardSmall from "../../components/productCardSmall/ProductCardSmall";
 
-const FavoritesPage = ({id}) => {
+const FavoritesPanel = ({id}) => {
   return (
     <Panel id={id} className='favorites-page'>
       <Header />
@@ -20,4 +20,4 @@ const FavoritesPage = ({id}) => {
   )
 };
 
-export default FavoritesPage;
+export default FavoritesPanel;

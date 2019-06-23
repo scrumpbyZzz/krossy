@@ -4,7 +4,7 @@ import {View, Panel, PanelHeader, HeaderButton, osname, IOS} from "@vkontakte/vk
 import Icon24Back from '@vkontakte/icons/dist/24/cancel';
 import Icon28ChevronBack from '@vkontakte/icons/dist/24/cancel';
 import Header from "../../components/header/Header";
-import TinderPage from "../../panels/tinderPage/TinderPage";
+import TinderPanel from "../../panels/tinderPanel/TinderPanel";
 
 class TinderView extends React.Component {
   constructor(props) {
@@ -23,7 +23,7 @@ class TinderView extends React.Component {
     return(
       <View id={this.props.id}
             activePanel={this.state.activePanel}>
-        <TinderPage id='tinder' />
+        <TinderPanel id='tinder' />
       </View>
     )
   }
