@@ -1,14 +1,13 @@
 import React from 'react';
 
-import SearchRangeSlider from "../../components/search/searchRangeSlider/SearchRangeSlider";
 import {Panel, FormLayoutGroup, Checkbox, Radio, platform, IOS, Div} from "@vkontakte/vkui";
-import RectangleButton from "../../components/buttons/rectangleButton/RectangleButton";
 
-import SearchColorPick from "../../components/search/searchColorPick/searchColorPick";
-
-import './SearchPanel.css';
-import IconChevronIOSRight from '../../components/icon/IconChevronIOSRight';
-import IconChevronAndroidRight from '../../components/icon/IconChevronAndroidRight';
+import './SearchPanelOne.css';
+import IconChevronIOSRight from '../../../components/icon/IconChevronIOSRight';
+import IconChevronAndroidRight from '../../../components/icon/IconChevronAndroidRight';
+import SearchRangeSlider from '../../../components/search/searchRangeSlider/SearchRangeSlider';
+import SearchColorPick from '../../../components/search/searchColorPick/searchColorPick';
+import RectangleButton from '../../../components/buttons/rectangleButton/RectangleButton';
 
 const osname = platform();
 
@@ -22,7 +21,7 @@ const fontStyleIOS = {
   fontSize: '17px'
 };
 
-class SearchPanel extends React.Component {
+class SearchPanelOne extends React.Component {
   constructor(props) {
     super(props)
   }
@@ -58,7 +57,9 @@ class SearchPanel extends React.Component {
         <Div className='search-page-color-pick'>
           <SearchColorPick/>
           <div className='search-page-button_wrap'>
-            <RectangleButton title='Найти'/>
+            <RectangleButton title='Найти'
+                             func={this.props.goPanel}
+                             goTo='search-2'/>
           </div>
         </Div>
       </Panel>
@@ -66,4 +67,4 @@ class SearchPanel extends React.Component {
   }
 }
 
-export default SearchPanel;
+export default SearchPanelOne;

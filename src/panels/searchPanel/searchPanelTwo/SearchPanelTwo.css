@@ -1,0 +1,16 @@
+.search-panel-two {
+  background-color: #F7F8F9;
+}
+
+.search-panel-two_wrap {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.Panel--ios .search-panel-two_wrap {
+  justify-content: space-between;
+}
+
+.Panel--android .search-panel-two_wrap {
+  justify-content: space-evenly;
+}
