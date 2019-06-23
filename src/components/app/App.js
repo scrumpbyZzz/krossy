@@ -29,7 +29,7 @@ class App extends React.Component {
     super(props);
 
     this.state = {
-      activeStory: 'homeView',
+      activeStory: 'settingsView',
       fetchedUser: null,
     };
   }
@@ -59,7 +59,6 @@ class App extends React.Component {
 
     return (
       <ConfigProvider isWebView={true}>
-
         <Epic activeStory={this.state.activeStory}
               tabbar={
                 <Tabbar className={this.state.activeStory === 'welcome' ? 'main-tabbar-hidden' : 'main-tabbar-show'}>
