@@ -4,8 +4,8 @@ self.__precacheManifest = [
     "url": "/krossy/static/media/SFUIText-Light.dcf70311.woff"
   },
   {
-    "revision": "7fafaeadbd2335c3f29b",
-    "url": "/krossy/static/css/main.48800d9b.chunk.css"
+    "revision": "eae3cd50f52d62ceadac",
+    "url": "/krossy/static/css/main.2ae0053a.chunk.css"
   },
   {
     "revision": "5ebd78a4d372e3aee23c",
@@ -16,8 +16,8 @@ self.__precacheManifest = [
     "url": "/krossy/static/media/3page.50431844.svg"
   },
   {
-    "revision": "03eca6819dda9295af0e",
-    "url": "/krossy/static/js/2.03eca681.chunk.js"
+    "revision": "d9cb09b2cbb946d8d07b",
+    "url": "/krossy/static/js/2.d9cb09b2.chunk.js"
   },
   {
     "revision": "b663df13c7e344cb16e890dc1c66b6e2",
@@ -40,8 +40,8 @@ self.__precacheManifest = [
     "url": "/krossy/static/media/Rectangle 1533@2x.7d248541.png"
   },
   {
-    "revision": "7fafaeadbd2335c3f29b",
-    "url": "/krossy/static/js/main.7fafaead.chunk.js"
+    "revision": "eae3cd50f52d62ceadac",
+    "url": "/krossy/static/js/main.eae3cd50.chunk.js"
   },
   {
     "revision": "1e1d803a7a614c854ce213acf143edc2",
@@ -52,16 +52,12 @@ self.__precacheManifest = [
     "url": "/krossy/static/media/SFUIText-Medium.e4286ca7.ttf"
   },
   {
-    "revision": "34dfe822161ceb31dc5889d742ab591c",
-    "url": "/krossy/static/media/SFUIText-Semibold.34dfe822.ttf"
-  },
-  {
     "revision": "49d167fd00ec879e285af5661cc763aa",
     "url": "/krossy/static/media/SFUIText-Bold.49d167fd.ttf"
   },
   {
-    "revision": "c0443040caff9cab04670576397562bf",
-    "url": "/krossy/static/media/SF-Pro-Text-Medium.c0443040.otf"
+    "revision": "34dfe822161ceb31dc5889d742ab591c",
+    "url": "/krossy/static/media/SFUIText-Semibold.34dfe822.ttf"
   },
   {
     "revision": "f8705a9284f12bfd7063a0dc69e86110",
@@ -76,11 +72,11 @@ self.__precacheManifest = [
     "url": "/krossy/static/media/2page.e1839fb8.svg"
   },
   {
-    "revision": "03eca6819dda9295af0e",
+    "revision": "d9cb09b2cbb946d8d07b",
     "url": "/krossy/static/css/2.ec8068f3.chunk.css"
   },
   {
-    "revision": "820b71e1f45dfc300d2593e760b5b629",
+    "revision": "46b88e7d3a5dfc214e2c9ab252e6db62",
     "url": "/krossy/index.html"
   }
 ];
