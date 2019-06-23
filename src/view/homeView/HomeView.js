@@ -1,6 +1,6 @@
 import React from 'react';
-import HomePage from "../../panels/homePage/HomePage";
-import ProductCardPage from "../../panels/productCardPage/ProductCardPage";
+import HomePanel from "../../panels/homePanel/HomePanel";
+import ProductCardPanel from "../../panels/productCardPanel/ProductCardPanel";
 import {View} from "@vkontakte/vkui";
 
 class HomeView extends React.Component {
@@ -8,7 +8,7 @@ class HomeView extends React.Component {
     super(props);
 
     this.state = {
-      activePanel: 'homePage'
+      activePanel: 'productCardPanel'
     }
   }
 
@@ -23,10 +23,10 @@ class HomeView extends React.Component {
     return(
       <View id={this.props.id}
             activePanel={this.state.activePanel}>
-        <HomePage id='homePage'
-                  go={this.go}/>
-        <ProductCardPage id='productCard'
-                         go={this.go}/>
+        <HomePanel id='homePanel'
+                   go={this.go}/>
+        <ProductCardPanel id='productCardPanel'
+                          go={this.go}/>
       </View>
     )
   }

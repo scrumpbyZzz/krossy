@@ -2,14 +2,14 @@ import React from 'react';
 import {Panel, Div} from "@vkontakte/vkui";
 import Header from "../../components/header/Header";
 import ProductCardSmall from '../../components/productCardSmall/ProductCardSmall';
-import './HomePage.css';
+import './HomePanel.css';
 
 import Advertising from '../../components/advertising/Advertising';
 import {platform, IOS} from "@vkontakte/vkui";
 
 const osname = platform();
 
-class HomePage extends React.Component {
+class HomePanel extends React.Component {
   render() {
 
     return (
@@ -30,4 +30,4 @@ class HomePage extends React.Component {
   }
 }
 
-export default HomePage;
+export default HomePanel;
