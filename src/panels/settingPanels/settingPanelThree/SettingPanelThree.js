@@ -1,5 +1,5 @@
 import React from 'react';
-import './SettingPageThree.css';
+import './SettingPanelThree.css';
 import {Panel, Div, IOS, platform} from '@vkontakte/vkui';
 import Header from '../../../components/header/Header';
 import pic from '../../../assets/image/Rectangle 1681.png';
@@ -7,7 +7,7 @@ import IconRemoveCircle from '../../../components/icon/IconRemoveCircle';
 import RoundSizeButton from '../../../components/buttons/roundSizeButton/RoundSizeButton';
 import IconClose from '../../../components/icon/IconClose';
 
-const SettingPageThree = ({id}) => {
+const SettingPanelThree = ({id}) => {
   const osname = platform();
   let fontStyleGlobal = {
     fontFamily: `${osname === IOS ? 'SF UI Text' : 'Roboto'}, sans-serif`,
@@ -70,4 +70,4 @@ return (
 }
 ;
 
-export default SettingPageThree;
+export default SettingPanelThree;
