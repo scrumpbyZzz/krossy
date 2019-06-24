@@ -17,11 +17,11 @@ class HomePanel extends React.Component {
         <Header />
         <Div className='all-product-page_wrap'>
           <div className='all-product-page_content'>
-            <ProductCardSmall func={this.props.go} goTo='productCard'/>
-            <ProductCardSmall func={this.props.go} goTo='productCard'/>
-            <Advertising func={this.props.go} goTo='productCard'/>
-            <ProductCardSmall func={this.props.go} goTo='productCard'/>
-            <ProductCardSmall func={this.props.go} goTo='productCard'/>
+            <ProductCardSmall func={this.props.go} goTo='productCardPanel'/>
+            <ProductCardSmall func={this.props.go} goTo='productCardPanel'/>
+            <Advertising func={this.props.go} goTo='productCardPanel'/>
+            <ProductCardSmall func={this.props.go} goTo='productCardPanel'/>
+            <ProductCardSmall func={this.props.go} goTo='productCardPanel'/>
           </div>
 
         </Div>
