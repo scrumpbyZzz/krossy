@@ -12,18 +12,22 @@ import ProductPriceView from "../../components/product/productPriceView/ProductP
 import IconNotification from '../../components/icon/IconNotification';
 import IconHeartPink from '../../components/icon/IconHeartPink';
 import IconQuestion from '../../components/icon/IconQuestion';
-import IconChevronDown from '../../components/icon/IconChevronDown';
-import IconChevronAndroidRight from '../../components/icon/IconChevronAndroidRight';
-import ProductCardSmall from '../../components/productCardSmall/ProductCardSmall';
 import ProductCardLikeBrand from '../../components/productCardLikeBrand/ProductCardLikeBrand';
+import ShopList from "../../components/shopList/ShopList";
+import ProductSelectShop from "../../components/product/productSelectShop/ProductSelectShop";
 
 class ProductCardPanel extends React.PureComponent {
   constructor(props) {
     super(props);
     this.state = {
-      slideIndex: 0
+      slideIndex: 0,
+      isOpenShopList: false
     }
   }
+
+  handleOpenSelect = () => {
+    this.setState({isOpenShopList: !this.state.isOpenShopList})
+  };
 
   render() {
     const osname = platform();
@@ -84,20 +88,9 @@ class ProductCardPanel extends React.PureComponent {
               </div>
             </div>
           </Div>
-          <div className='product-card-select_wrap'>
-            <div className='product-card-select_count'>
-              Купить в
-              <div className='product-card-select_count_color'>
-                3
-              </div>
-              магазинах
-            </div>
-            <div className='product-card-select-icon_wrap'>
-              {osname ===IOS ? <IconChevronDown currentColor='#fff'/> :
-                <IconChevronAndroidRight currentColor='#fff'/>
-              }
-            </div>
-          </div>
+          <ProductSelectShop func={this.handleOpenSelect}
+                             isOpen={this.state.isOpenShopList}/>
+          {this.state.isOpenShopList ? <ShopList/> : null}
           <ProductCardLikeBrand/>
         </div>
       </Panel>

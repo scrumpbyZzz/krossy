@@ -1,5 +1,6 @@
 .product-card-like-brand {
   background-color: #F7F8F9;
+  border-top: 1px solid #EDEFF2;
 }
 
 .product-card-like-brand-title {
@@ -48,5 +49,4 @@
 }
 
 .product-card-like-brand_wrap .Gallery__layer {
-  transform: translateX(-80px);
 }

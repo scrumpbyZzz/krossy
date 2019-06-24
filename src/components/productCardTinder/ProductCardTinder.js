@@ -3,7 +3,7 @@ import ProductBrandView from "../product/productBrandView/ProductBrandView";
 import logo from "../../assets/image/adidas.png";
 import ProductPriceView from "../product/productPriceView/ProductPriceView";
 import ProductSizeChartView from "../product/productSizeChartView/ProductSizeChartView";
-import ProductCountShopView from "../product/prodoctCountShopView/ProductCountShopView";
+import ProductCountShopView from "../product/productCountShopView/ProductCountShopView";
 import RoundSizeButton from "../buttons/roundSizeButton/RoundSizeButton";
 import IconArrowRight from "../icon/IconArrowRight";
 import './ProductCardTinder.css';

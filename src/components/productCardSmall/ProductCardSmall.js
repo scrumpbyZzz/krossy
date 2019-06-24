@@ -8,7 +8,7 @@ import './ProductCardSmall.css';
 import ProductSizeChartView from "../product/productSizeChartView/ProductSizeChartView";
 import ProductPriceView from "../product/productPriceView/ProductPriceView";
 import ProductBrandView from "../product/productBrandView/ProductBrandView";
-import ProductCountShopView from "../product/prodoctCountShopView/ProductCountShopView";
+import ProductCountShopView from "../product/productCountShopView/ProductCountShopView";
 import Sticker from "../Sticker/Sticker";
 
 const osname = platform();
