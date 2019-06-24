@@ -1,7 +1,7 @@
 .product-card_wrap {
   width: 100%;
   height: 100%;
-
+  position: relative;
   background-color: #ffffff;
 }
 
@@ -157,11 +157,11 @@
 }
 
 .product-card-share_wrap .round-size-btn {
-  box-shadow:  0 0 10px 4px  rgba(174, 191, 207, 0.4);
+  box-shadow: 0 0 10px 4px rgba(174, 191, 207, 0.4);
   border: none;
 }
 
-.rectangle-button .Button__content  {
+.rectangle-button .Button__content {
   display: flex;
   justify-content: space-evenly;
   width: 100%;

@@ -15,13 +15,15 @@ import IconQuestion from '../../components/icon/IconQuestion';
 import ProductCardLikeBrand from '../../components/productCardLikeBrand/ProductCardLikeBrand';
 import ShopList from "../../components/shopList/ShopList";
 import ProductSelectShop from "../../components/product/productSelectShop/ProductSelectShop";
+import ProductCardNotification from "../../components/productCardNotification/ProductCardNotification";
 
 class ProductCardPanel extends React.PureComponent {
   constructor(props) {
     super(props);
     this.state = {
       slideIndex: 0,
-      isOpenShopList: false
+      isOpenShopList: false,
+      isOpenNotification: false
     }
   }
 
@@ -29,14 +31,23 @@ class ProductCardPanel extends React.PureComponent {
     this.setState({isOpenShopList: !this.state.isOpenShopList})
   };
 
+  handleOpenNotificationModal = () => {
+    this.setState({isOpenNotification: !this.state.isOpenNotification})
+  };
+
   render() {
     const osname = platform();
     const fontStyleAndroid = {
       fontFamily: 'Roboto, sans-serif',
+      position: 'relative'
     };
 
     const fontStyleIOS = {
       fontFamily: 'SF UI Text, sans-serif',
+    };
+
+    const blurStyle = {
+      filter: 'blur(9px)'
     };
 
     let heightStyle = osname === IOS ? 236 : 220;
@@ -44,7 +55,12 @@ class ProductCardPanel extends React.PureComponent {
       <Panel id={this.props.id}
              style={osname === IOS ? fontStyleIOS : fontStyleAndroid}>
         <Header func={this.props.go} goTo='homePage'/>
-        <div className='product-card_wrap'>
+
+        {this.state.isOpenNotification ?
+          <ProductCardNotification isOpen={this.handleOpenNotificationModal}/> : null}
+
+        <div style={this.state.isOpenNotification ? blurStyle : null}
+             className='product-card_wrap'>
           <div className='product-card-image_wrap'>
             <Gallery slideIndex={this.state.slideIndex}
                      bullets='dark'
@@ -82,9 +98,11 @@ class ProductCardPanel extends React.PureComponent {
             </div>
             <div className='product-card-share_wrap'>
               <div className='product-card-share_wrap-btn'>
-                <RoundSizeButton iconSvg={<IconHeartPink/>} border='none'/>
-                <RoundSizeButton iconSvg={<IconNotification/>} border='none'/>
-                <RectangleButton iconSvg={<IconQuestion/>} title='Поделиться'/>
+                <RoundSizeButton iconSvg={<IconHeartPink/>} />
+                <RoundSizeButton func={this.handleOpenNotificationModal}
+                                 iconSvg={<IconNotification/>}/>
+                <RectangleButton iconSvg={<IconQuestion/>}
+                                 title='Поделиться'/>
               </div>
             </div>
           </Div>
@@ -96,6 +114,6 @@ class ProductCardPanel extends React.PureComponent {
       </Panel>
     )
   }
-};
+}
 
 export default ProductCardPanel;
