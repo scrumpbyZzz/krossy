@@ -1,6 +1,7 @@
 import React from 'react';
-import {Checkbox, Div, Gallery} from "@vkontakte/vkui";
+import {Gallery} from "@vkontakte/vkui";
 import RoundSizeButton from "../../buttons/roundSizeButton/RoundSizeButton";
+import Checkbox from "../../checkbox/Checkbox";
 
 class SearchColorPick extends React.Component {
   constructor(props) {
@@ -17,10 +18,10 @@ class SearchColorPick extends React.Component {
           <div className='color-handle-text'>
             По цвету <div className='color-handle-text_color'>2</div>
           </div>
-          <Checkbox></Checkbox>
+          <Checkbox name='colorPick'/>
         </div>
         <div className='search-page-color-pick'>
-          <Gallery slideWidth='15%' >
+          <Gallery slideWidth='15%'>
             <RoundSizeButton backgroundColor='#CAEC6B'/>
             <RoundSizeButton backgroundColor='#FFEA60'/>
             <RoundSizeButton backgroundColor='#FEA838'/>

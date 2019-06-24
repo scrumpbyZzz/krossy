@@ -8,7 +8,7 @@ class HomeView extends React.Component {
     super(props);
 
     this.state = {
-      activePanel: 'productCardPanel'
+      activePanel: 'homePanel'
     }
   }
 

@@ -1,5 +1,6 @@
 import React from 'react';
-import {RangeSlider, FormLayoutGroup, Checkbox} from "@vkontakte/vkui";
+import {RangeSlider, FormLayoutGroup} from "@vkontakte/vkui";
+import Checkbox from "../../checkbox/Checkbox";
 
 class SearchRangeSlider extends React.Component {
   constructor(props) {
@@ -27,7 +28,7 @@ class SearchRangeSlider extends React.Component {
               <div className='price-counter-end_color'>{Math.round(this.state.endValue)}</div>
             </div>
           </div>
-          <Checkbox></Checkbox>
+          <Checkbox name='slider'/>
         </div>
         <div className='search-page-price-range-slider'>
           <RangeSlider min={1000}
