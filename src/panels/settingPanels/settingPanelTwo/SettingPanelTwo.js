@@ -4,13 +4,14 @@ import './SettingPanelTwo.css';
 import {Panel, IOS, platform, Div, Radio} from "@vkontakte/vkui";
 import Header from "../../../components/header/Header";
 import RectangleButton from "../../../components/buttons/rectangleButton/RectangleButton";
+import RadioButton from "../../../components/radioButton/RadioButton";
 
 const SettingPanelTwo = ({id, goPanel}) => {
   const sizeChart = [36, 37, 38, 39, 40, 41, 42];
   const markUp = sizeChart.map(item => {
     return (
       <div className='setting-page-two_radio setting-border-bottom' key={item}>
-        <Radio>{item}</Radio>
+        <RadioButton title={item} />
       </div>
     )
   });

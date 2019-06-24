@@ -9,6 +9,7 @@ import SearchRangeSlider from '../../../components/search/searchRangeSlider/Sear
 import SearchColorPick from '../../../components/search/searchColorPick/searchColorPick';
 import RectangleButton from '../../../components/buttons/rectangleButton/RectangleButton';
 import Checkbox from "../../../components/checkbox/Checkbox";
+import RadioButton from "../../../components/radioButton/RadioButton";
 
 const osname = platform();
 
@@ -49,11 +50,9 @@ class SearchPanelOne extends React.Component {
           </div>
         </Div>
         <Div className='search-page-checkbox-group search-border-bottom'>
-          <FormLayoutGroup>
-            <Radio name='type'>Не сортировать</Radio>
-            <Radio name='type'>По возрастанию цены</Radio>
-            <Radio name='type'>По убыванию цены</Radio>
-          </FormLayoutGroup>
+          <RadioButton name='sort' title='Не сортировать'/>
+          <RadioButton name='sort' title='По возрастанию цены'/>
+          <RadioButton name='sort' title='По убыванию цены'/>
         </Div>
         <Div className='search-page-color-pick'>
           <SearchColorPick/>

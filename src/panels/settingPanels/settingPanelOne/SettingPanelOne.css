@@ -48,30 +48,6 @@
   padding: 0 24px;
 }
 
-.setting-page-checkbox-group .Radio__container {
-  flex-direction: row-reverse;
-}
-
-.setting-page-checkbox-group .Radio--ios {
-  padding: 10px 0;
-}
-
-.setting-page-checkbox-group .Radio--android {
-  padding: 17px 0;
-}
-
-.setting-page-checkbox-group .Radio__icon {
-  margin: 0;
-}
-
-.setting-page-checkbox-group .Tappable--android .Tappable--active {
-  background: none !important;
-}
-
-.setting-page-checkbox-group .Tappable--ios .Tappable--active {
-  background: none !important;
-}
-
 .setting-page-notifications {
   display: flex;
   justify-content: space-between;

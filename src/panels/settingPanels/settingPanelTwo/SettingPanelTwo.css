@@ -41,16 +41,12 @@
   font-size: 17px;
 }
 
-.setting-page-two_radio .Radio--ios {
+.Panel--ios .setting-page-two_radio .radio-button_wrap {
   padding: 10px 15px;
 }
 
-.setting-page-two_radio .Radio--android {
+.Panel--android .setting-page-two_radio .radio-button_wrap {
   padding: 19px 20px 19px 24px
 }
 
-.setting-page-two .Radio__container {
-  display: flex;
-  flex-direction: row-reverse;
-  justify-content: space-between;
-}
+

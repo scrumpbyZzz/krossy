@@ -6,6 +6,7 @@ import IconChevronIOSRight from "../../../components/icon/IconChevronIOSRight";
 import IconChevronAndroidRight from "../../../components/icon/IconChevronAndroidRight";
 import RectangleButton from "../../../components/buttons/rectangleButton/RectangleButton";
 import RoundSizeButton from '../../../components/buttons/roundSizeButton/RoundSizeButton';
+import RadioButton from "../../../components/radioButton/RadioButton";
 
 
 class SettingPanelOne extends React.Component {
@@ -28,7 +29,7 @@ class SettingPanelOne extends React.Component {
         <Header/>
         <Div className='setting-page-size setting-border-bottom'>
           <div className='setting-page-size_left'>
-            <div>Размер </div>
+            <div>Размер</div>
             <div className='setting-page-size_left_color'>40</div>
             <div className='setting-page-size_left_color'>41</div>
             <div className='setting-page-size_left_color'>42</div>
@@ -40,10 +41,8 @@ class SettingPanelOne extends React.Component {
           </div>
         </Div>
         <Div className='setting-page-checkbox-group setting-border-bottom'>
-          <FormLayoutGroup>
-            <Radio name='type'>Мужские</Radio>
-            <Radio name='type'>Женские</Radio>
-          </FormLayoutGroup>
+          <RadioButton title='Мужские' name='sex'/>
+          <RadioButton title='Женские' name='sex'/>
         </Div>
         <Div className='setting-page-notifications setting-border-bottom'>
           <div className='setting-page-notifications_left'>
