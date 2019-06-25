@@ -56,9 +56,9 @@ class SettingPanelOne extends React.Component {
           </div>
         </Div>
         <Div className='setting-page-buttons'>
-          <RectangleButton title='поделиться приложением'/>
-          <RectangleButton title='сообщить о проблеме'/>
-          <RectangleButton title='сообщество приложения '/>
+          <RectangleButton title='Поделиться приложением'/>
+          <RectangleButton title='Сообщить о проблеме'/>
+          <RectangleButton title='Сообщество приложения '/>
         </Div>
       </Panel>
     )

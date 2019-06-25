@@ -1,6 +1,9 @@
 import React from 'react';
-import StartPage from "../../panels/startPage/StartPage";
+
 import {IOS, platform, View} from "@vkontakte/vkui";
+import StartPanelOne from "../../panels/startPage/startPanelOne/StartPanelOne";
+import StartPanelTwo from "../../panels/startPage/StartPanelTwo/StartPanelTwo";
+import StartPanelThree from "../../panels/startPage/startPanelThree/StartPanelThree";
 
 
 const osname = platform();
@@ -13,19 +16,24 @@ class StartView extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      activePanel: 'start'
+      activePanel: 'start-1'
     }
   }
 
+  goPanel = (e) => {
+    this.setState({activePanel: e.currentTarget.dataset.to})
+  };
+
   render() {
-    const showHeader = this.state.activePanel === 'start' ? false : true;
     return (
       <View id={this.props.id}
-            header={showHeader}
+            header={false}
             activePanel={this.state.activePanel}
             style={fontStyleGlobal}>
-        <StartPage id='start'
-                   goView={this.props.goView}/>
+        <StartPanelOne id='start-1' goPanel={this.goPanel}/>
+        <StartPanelTwo id='start-2' goPanel={this.goPanel}/>
+        <StartPanelThree id='start-3' goPanel={this.goPanel}
+                         goView={this.props.goView}/>
       </View>
     )
   }

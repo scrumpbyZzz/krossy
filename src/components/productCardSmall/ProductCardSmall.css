@@ -16,7 +16,6 @@
   width: 41.15%;
 }
 
-
 .product-card-small-pic_wrap {
   position: relative;
   margin-bottom: 8px;
@@ -75,6 +74,7 @@
 .product-card-small_footer {
   display: flex;
   flex-direction: row;
+  align-items: center;
   margin-left: 16px;
   margin-bottom: 16px;
 }

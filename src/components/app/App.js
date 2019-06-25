@@ -17,13 +17,6 @@ import IconKross from '../icon/IconKross';
 import IconHeart from '../icon/IconHeart';
 import IconSetting from '../icon/IconSetting';
 
-
-const osname = platform();
-
-let fontStyleGlobal = {
-  fontFamily: `${osname === IOS ? 'SF UI Text' : 'Roboto'}, sans-serif`
-};
-
 class App extends React.Component {
   constructor(props) {
     super(props);

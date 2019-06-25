@@ -6,7 +6,15 @@
   display: flex;
 }
 
-#start .Panel__in {
+#start-1 .Panel__in {
+  height: 100vh;
+}
+
+#start-2 .Panel__in {
+  height: 100vh;
+}
+
+#start-3 .Panel__in {
   height: 100vh;
 }
 

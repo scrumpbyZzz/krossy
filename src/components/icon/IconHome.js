@@ -10,7 +10,7 @@ const IconHome = ({currentColor, active}) => {
 
   let colorSvg = currentColor ? currentColor : active ? '#000' : '#aebfcf';
   return (
-    <React.Fragment>
+    <div style={{width: '19.6px'}}>
       <div style={divStyle}>
         <svg className='svg-icon-sq' xmlns="http://www.w3.org/2000/svg" width="7.646" height="7.646" viewBox="0 0 7.646 7.646">
           <g id="Rectangle_1215" data-name="Rectangle 1215" transform="translate(0)" fill="none" stroke={colorSvg}
@@ -43,7 +43,7 @@ const IconHome = ({currentColor, active}) => {
           </g>
         </svg>
       </div>
-    </React.Fragment>
+    </div>
 
   )
 };

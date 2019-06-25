@@ -13,3 +13,8 @@
   font-weight: 500;
   color: #AEBFCF;
 }
+
+.product-size-block_icon {
+  display: flex;
+  margin-right: 2px;
+}

@@ -14,7 +14,6 @@ import Sticker from "../Sticker/Sticker";
 const osname = platform();
 
 const ProductCardSmall = ({func, goTo, formSticker, nameSticker}) => {
-
   return (
     <div onClick={func}
          data-to={goTo}
@@ -24,7 +23,7 @@ const ProductCardSmall = ({func, goTo, formSticker, nameSticker}) => {
              src={pic}
              alt='pic'/>
         <div className='product-card-small-sticker_wrap'>
-          <Sticker form={formSticker} icon={nameSticker} />
+          <Sticker form='round' icon='star' />
         </div>
       </div>
       <div className='product-card-small-brand_wrap'>

@@ -16,7 +16,8 @@ class SearchColorPick extends React.Component {
       <React.Fragment>
         <div className='search-page-color-handle'>
           <div className='color-handle-text'>
-            По цвету <div className='color-handle-text_color'>2</div>
+            <div>По цвету</div>
+            <div className='color-handle-text_color'>2</div>
           </div>
           <Checkbox name='colorPick'/>
         </div>

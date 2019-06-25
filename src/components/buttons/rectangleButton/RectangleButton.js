@@ -1,5 +1,4 @@
 import React from 'react';
-import {Button} from "@vkontakte/vkui";
 import './RectangleButton.css';
 import '../../../assets/fonts/fonts.css'
 
@@ -16,7 +15,7 @@ const RectangleButton = ({title, func, icon, goTo, iconSvg}) => {
 
 
   return (
-    <Button className='rectangle-button'
+    <div className='rectangle-button'
             level="outline"
             onClick={func}
             data-to={goTo}
@@ -25,7 +24,7 @@ const RectangleButton = ({title, func, icon, goTo, iconSvg}) => {
         <div className='rectangle-button_icon'>{pic}</div>
         <div className='rectangle-button_text'>{title}</div>
       </div>
-    </Button>
+    </div>
   )
 };
 

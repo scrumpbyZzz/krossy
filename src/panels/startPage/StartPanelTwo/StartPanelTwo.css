@@ -1,0 +1,94 @@
+.start-panel-two_wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  background-image: url("../../../assets/background/iOS 2.svg");
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100vh;
+  background-size: contain;
+  background-color: #4986CC;
+}
+
+.start-panel-two_wrap .page-bullets_wrap {
+  margin: 30px 0;
+  width: 46px;
+}
+
+.start-panel-two_wrap .page-bullets_dot:nth-child(2) {
+  opacity: 1;
+}
+
+.start-panel-two-button_bottom {
+  margin-top: 40px;
+  width: 26.13%;
+}
+
+.start-panel-two-button_bottom .rectangle-button {
+  width: 100%;
+}
+
+.Panel--android .start-panel-two_wrap .rectangle-button_text {
+  font-family: Roboto, sans-serif;
+  font-weight: 500;
+}
+
+.Panel--ios .start-panel-two_wrap .rectangle-button_text {
+  font-weight: 500;
+}
+
+.start-panel-two-carusel_wrap {
+  margin-top: 35px;
+}
+
+.start-panel-two_text {
+  text-align: center;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 22px;
+}
+
+.start-panel-two_text-2 {
+  margin-top: 50px;
+}
+
+.start-panel-two_text-1 {
+  margin-top: 110px;
+}
+
+.Panel--ios .start-panel-two_text-2 {
+  width: 66.5%;
+}
+
+.Panel--android .start-panel-two_text-2 {
+  width: 56.9%;
+}
+
+.start-panel-two-buttons_wrap {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 25px;
+}
+
+.Panel--ios .start-panel-two-buttons_wrap {
+  width: 74.14%;
+}
+
+.Panel--android .start-panel-two-buttons_wrap {
+  width: 77.22%;
+}
+
+.start-panel-two-buttons_wrap .rectangle-button {
+  width: 47.12%;
+}
+
+.start-panel-two_title {
+  font-size: 24px;
+  color: #ffffff;
+  font-weight: 500;
+}
+
+
+

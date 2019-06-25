@@ -177,19 +177,19 @@
 
 .color-handle-text {
   display: flex;
-  justify-content: space-between;
 }
 
 .Panel--android .color-handle-text {
-  width: 69px;
+  width: 30%;
 }
 
 .Panel--ios .color-handle-text {
-  width: 84px;
+  width: 30%;
 }
 
 .color-handle-text_color {
   color: #8EC8FF;
+  margin-left: 5px;
 }
 
 .search-page-button_wrap {

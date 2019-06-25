@@ -1,7 +1,7 @@
 import React from 'react';
 import RoundSizeButton from "../../../components/buttons/roundSizeButton/RoundSizeButton";
 import RectangleButton from "../../../components/buttons/rectangleButton/RectangleButton";
-import './PageThree.css';
+
 import IconArrowAndroidBack from '../../../components/icon/IconArrowAndroisBack';
 import IconHome from '../../../components/icon/IconHome';
 import IconSearch from '../../../components/icon/IconSearch';

@@ -1,0 +1,12 @@
+.page-bullets_wrap {
+  display: flex;
+  justify-content: space-between;
+}
+
+.page-bullets_dot {
+  width: 6px;
+  height: 6px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  opacity: 0.56;
+}
