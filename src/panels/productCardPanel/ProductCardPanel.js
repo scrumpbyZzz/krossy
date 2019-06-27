@@ -16,6 +16,7 @@ import ProductCardLikeBrand from '../../components/productCardLikeBrand/ProductC
 import ShopList from "../../components/shopList/ShopList";
 import ProductSelectShop from "../../components/product/productSelectShop/ProductSelectShop";
 import ProductCardNotification from "../../components/productCardNotification/ProductCardNotification";
+import Sticker from "../../components/Sticker/Sticker";
 
 class ProductCardPanel extends React.PureComponent {
   constructor(props) {
@@ -54,7 +55,11 @@ class ProductCardPanel extends React.PureComponent {
     return (
       <Panel id={this.props.id}
              style={osname === IOS ? fontStyleIOS : fontStyleAndroid}>
-        <Header func={this.props.go} goTo='homePanel'/>
+        <Header func={this.props.go}
+                goTo='homePanel'
+                iconIOS={true}
+                iconAndroid={true}
+                title={<Sticker form='rectangle' icon='trend'/>}/>
 
         {this.state.isOpenNotification ?
           <ProductCardNotification isOpen={this.handleOpenNotificationModal}/> : null}

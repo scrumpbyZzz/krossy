@@ -16,7 +16,11 @@ const SettingPanelFour = ({id, goPanel}) => {
              theme='white'
              style={fontStyleGlobal}
              className='setting-page-four'>
-        <Header func={goPanel} goTo='settings-2'/>
+        <Header func={goPanel}
+                goTo='settings-2'
+                title='Таблица размеров'
+                iconAndroid={true}
+                iconIOS={true}/>
         <Div className='setting-page-four_context'>
           <div className='setting-page-four_context_title'>Как определить свой размер?</div>
           <div className='setting-page-four_context_text'>

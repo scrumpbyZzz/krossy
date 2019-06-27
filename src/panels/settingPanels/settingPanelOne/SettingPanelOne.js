@@ -26,7 +26,7 @@ class SettingPanelOne extends React.Component {
              theme='white'
              className='setting-page_wrap'
              style={fontStyleGlobal}>
-        <Header/>
+        <Header title='Настройки'/>
         <Div className='setting-page-size setting-border-bottom'>
           <div className='setting-page-size_left'>
             <div>Размер</div>

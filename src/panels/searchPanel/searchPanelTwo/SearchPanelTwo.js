@@ -9,7 +9,10 @@ const SearchPnelTwo = ({id, goPanel}) => {
     <Panel id={id}
            className='search-panel-two'>
       <Header func={goPanel}
-              goTo='search-1'/>
+              goTo='search-1'
+              title='Найдено 32'
+              iconIOS={true}
+              iconAndroid={true}/>
       <Div className='search-panel-two_wrap'>
         <ProductCardSmall formSticker='round' nameSticker='star'/>
         <ProductCardSmall formSticker='round' nameSticker='tinder'/>

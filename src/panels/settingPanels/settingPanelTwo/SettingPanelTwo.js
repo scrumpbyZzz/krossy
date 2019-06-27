@@ -11,7 +11,7 @@ const SettingPanelTwo = ({id, goPanel}) => {
   const markUp = sizeChart.map(item => {
     return (
       <div className='setting-page-two_radio setting-border-bottom' key={item}>
-        <RadioButton title={item} />
+        <RadioButton title={item}/>
       </div>
     )
   });
@@ -26,7 +26,10 @@ const SettingPanelTwo = ({id, goPanel}) => {
            style={fontStyleGlobal}
            className='setting-page-two'>
       <Header func={goPanel}
-              goTo='settings-1'/>
+              goTo='settings-1'
+              title='Размеры'
+              iconAndroid={true}
+              iconIOS={true}/>
       <Div className='setting-page-two-button_wrap setting-border-bottom'>
         <div className='setting-page-two_button'>
           <RectangleButton title='Таблица соответствия размеров'

@@ -35,7 +35,7 @@ class SearchPanelOne extends React.Component {
              theme='white'
              style={osname === IOS ? fontStyleIOS : fontStyleAndroid}
              className='search-page_wrap'>
-        <Header />
+        <Header title='Поиск'/>
         <Div className='search-page-brand-select search-border-bottom'>
           <div className='search-page-brand_text'>Бренд</div>
           <div className='search-page-brand_icon'>

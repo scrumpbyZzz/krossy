@@ -1,5 +1,5 @@
-.main-header {
-
+.header-left {
+  flex-grow: 0;
 }
 .header-right-button-block {
   display: flex;
