@@ -1,7 +1,7 @@
 import React from 'react';
 import './ProductSelectShop.css';
 import {IOS, platform} from "@vkontakte/vkui";
-import IconChevronDown from "../../icon/IconChevronDown";
+import IconChevronDownIOS from "../../icon/IconChevronDownIOS";
 import IconChevronAndroidRight from "../../icon/IconChevronAndroidRight";
 
 const ProductSelectShop = ({func, isOpen}) => {
@@ -39,8 +39,8 @@ const ProductSelectShop = ({func, isOpen}) => {
       </div>
       <div className='product-card-select-icon_wrap'>
         {osname === IOS ?
-          <IconChevronDown currentColor={iconColorStyle}
-                           rotate={isOpen ? '-180' : '0'}/> :
+          <IconChevronDownIOS currentColor={iconColorStyle}
+                              rotate={isOpen ? '-180' : '0'}/> :
           <IconChevronAndroidRight rotate={isOpen ? '-90' : '90'}
                                    currentColor={iconColorStyle} />
         }

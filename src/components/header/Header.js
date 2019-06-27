@@ -6,12 +6,15 @@ import IconArrowAndroidBack from "../icon/IconArrowAndroisBack";
 import IconChevronIOSBack from "../icon/IconChevronIOSBack";
 import IconMoreHorizontal from '../icon/IconMoreHorizontal';
 import IconClose from '../icon/IconClose';
+import IconChevronDownIOS from "../icon/IconChevronDownIOS";
+import IconChevronAndroidRight from "../icon/IconChevronAndroidRight";
+import IconChevronDownAndroid from "../icon/IconChevronDownAndroid";
 
 
 
 const osname = platform();
 
-const Header = ({func, goTo}) => {
+const Header = ({func, goTo, title, asideShow, iconIOS, iconAndroid}) => {
   console.log(func, goTo)
   return (
     <PanelHeader noShadow='false'
@@ -20,15 +23,22 @@ const Header = ({func, goTo}) => {
                    className='main-header'
                    onClick={func}
                    data-to={goTo}>
-                   {osname === IOS ? <IconChevronIOSBack /> : <IconArrowAndroidBack />}
+                   {osname === IOS ?
+                     iconIOS ? <IconChevronIOSBack /> : null :
+                     iconAndroid ? <IconArrowAndroidBack /> : null}
                  </HeaderButton>}
                  right={[
                    <div className='header-right-button-block'>
                      <IconMoreHorizontal/>
                      <IconClose />
                    </div>
-                 ]}
-    >
+                 ]}>
+      <PanelHeaderContent className='header header-home-panel'
+                          aside={asideShow ? osname === IOS ?
+                            <IconChevronDownIOS currentColor='#AEBFCF'/> :
+                            <IconChevronDownAndroid currentColor='#404040'/> : null}>
+        {title}
+      </PanelHeaderContent>
     </PanelHeader>
   )
 };

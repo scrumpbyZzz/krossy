@@ -73,7 +73,7 @@
   width: 18px;
   height: 18px;
   border-radius: 50%;
-  background: #4986CC;
+  background: #fff;
 }
 
 .checkbox:checked + label:before {
@@ -90,5 +90,6 @@
 
 .Panel--android .checkbox:checked + label:after {
   left: 18px;
+  background-color: #4986CC;
 }
 

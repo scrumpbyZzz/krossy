@@ -54,7 +54,7 @@ class ProductCardPanel extends React.PureComponent {
     return (
       <Panel id={this.props.id}
              style={osname === IOS ? fontStyleIOS : fontStyleAndroid}>
-        <Header func={this.props.go} goTo='homePage'/>
+        <Header func={this.props.go} goTo='homePanel'/>
 
         {this.state.isOpenNotification ?
           <ProductCardNotification isOpen={this.handleOpenNotificationModal}/> : null}

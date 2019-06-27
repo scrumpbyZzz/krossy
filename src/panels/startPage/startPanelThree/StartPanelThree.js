@@ -16,7 +16,7 @@ const StartPanelThree = ({id, goView, goPanel}) => {
   return (
     <Panel id={id}>
       <div className='start-panel-three_wrap'>
-        <div className='start-panel-three_wrap-2'>
+
           <div className='start-panel-three-circle-button_wrap'>
             <RoundSizeButton func={goPanel} goTo='start-2'
                              iconSvg={<IconArrowAndroidBack currentColor='#ffffff'/>}/>
@@ -53,7 +53,7 @@ const StartPanelThree = ({id, goView, goPanel}) => {
           </div>
           <RectangleButton title='Приступить'
                            func={goView}/>
-        </div>
+
         <PageBullets/>
       </div>
     </Panel>

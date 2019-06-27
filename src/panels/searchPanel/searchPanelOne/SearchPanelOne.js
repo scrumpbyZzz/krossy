@@ -10,6 +10,7 @@ import SearchColorPick from '../../../components/search/searchColorPick/searchCo
 import RectangleButton from '../../../components/buttons/rectangleButton/RectangleButton';
 import Checkbox from "../../../components/checkbox/Checkbox";
 import RadioButton from "../../../components/radioButton/RadioButton";
+import Header from "../../../components/header/Header";
 
 const osname = platform();
 
@@ -34,6 +35,7 @@ class SearchPanelOne extends React.Component {
              theme='white'
              style={osname === IOS ? fontStyleIOS : fontStyleAndroid}
              className='search-page_wrap'>
+        <Header />
         <Div className='search-page-brand-select search-border-bottom'>
           <div className='search-page-brand_text'>Бренд</div>
           <div className='search-page-brand_icon'>

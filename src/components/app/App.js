@@ -22,7 +22,7 @@ class App extends React.Component {
     super(props);
 
     this.state = {
-      activeStory: 'welcome',
+      activeStory: 'homeView',
       fetchedUser: null,
     };
   }
@@ -49,7 +49,6 @@ class App extends React.Component {
   };
 
   render() {
-
     return (
       <ConfigProvider isWebView={true}>
         <Epic activeStory={this.state.activeStory}

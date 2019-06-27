@@ -1,6 +1,9 @@
 .page-bullets_wrap {
+  position: absolute;
   display: flex;
   justify-content: space-between;
+  width: 46px;
+  top: calc(100vh - 36px);
 }
 
 .page-bullets_dot {

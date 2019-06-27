@@ -1,6 +1,6 @@
 import React from 'react';
 
-const IconChevronDown = ({currentColor, rotate}) => {
+const IconChevronDownIOS = ({currentColor, rotate}) => {
   let svgStyle = {
     transform: `rotate(${rotate}deg)`
   };
@@ -12,4 +12,4 @@ const IconChevronDown = ({currentColor, rotate}) => {
   )
 };
 
-export default IconChevronDown;
+export default IconChevronDownIOS;

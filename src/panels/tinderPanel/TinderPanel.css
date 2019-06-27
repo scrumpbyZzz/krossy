@@ -16,13 +16,13 @@
   font-size: 14px;
 }
 
-/*.Panel--ios .rectangle-button {
-  width: 156px;
+.Panel--ios .rectangle-button {
+  width: 44.44%;
 }
 
-.Panel--android .rectangle-button {
-  width: 147px;
-}*/
+.Panel--android .tinder-page .rectangle-button {
+  width: 38.8%;
+}
 
 .tinder-page .rectangle-button_text {
   font-size: 14px;
@@ -34,23 +34,29 @@
   font-weight: 500;
 }
 
-.tinder-page .rectangle-button_icon {
-  align-self: flex-end;
-}
-
 .tinder-page .rectangle-button_wrap {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   width: 100%;
   height: 21px;
 }
 
-.tinder-page-button_second .rectangle-button_icon {
+.tinder-page-button-wrap .rectangle-button:nth-child(2) .rectangle-button_icon {
   align-self: start;
+  margin-right: 10px;
 }
 
-.tinder-page-button_second .rectangle-button_text {
-  align-self: center;
+.tinder-page-button-wrap .rectangle-button:nth-child(1) .rectangle-button_wrap {
+  height: 30px;
+}
+
+.Panel--android .tinder-page-button-wrap .rectangle-button:nth-child(1) .rectangle-button_wrap {
+  height: 25px;
+}
+
+.tinder-page-button-wrap .rectangle-button_icon {
+  align-self: flex-end;
+  margin-right: 10px;
 }
 
 .tinder-page-welcome {

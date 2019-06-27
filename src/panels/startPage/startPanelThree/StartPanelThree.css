@@ -1,4 +1,5 @@
 .start-panel-three_wrap {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -9,12 +10,6 @@
   height: 100vh;
   background-size: cover;
   background-color: #4986CC;
-}
-
-.start-panel-three_wrap-2 {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
 .start-panel-three-circle-button_wrap {
@@ -63,18 +58,12 @@
   width: 62.33%;
 }
 
-
-.start-panel-three_wrap .page-bullets_wrap {
-  margin-bottom: 30px;
-  width: 46px;
-}
-
 .start-panel-three_wrap .page-bullets_dot:nth-child(3) {
   opacity: 1;
 }
 
 .start-panel-three_wrap .rectangle-button {
-  margin-bottom: calc(100vh - 95.5vh);
+  margin-bottom: 66px;
 }
 
 .Panel--ios .start-panel-three_wrap .rectangle-button {
@@ -143,6 +132,17 @@
   margin: 10px 0;
 }
 
+@media screen and (max-height: 587px) {
+  .start-panel-three_title {
+    margin-bottom: calc(100vh - 93vh);
+  }
+  .start-panel-three_text-1 {
+    margin-bottom: calc(100vh - 92vh);
+  }
+  .three-page-icon_arrow {
+    margin-bottom: 25px;
+  }
+}
 
 
 

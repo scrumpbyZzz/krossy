@@ -46,3 +46,25 @@
 .svg-icon-more, .svg-icon-close {
   align-self: center;
 }
+
+.PanelHeaderContent--android .PanelHeaderContent__children{
+  font-size: 16px;
+}
+
+.PanelHeaderContent--android .PanelHeaderContent__children .PanelHeaderContent__aside .svg-icon-chevron-right {
+  width: 4.12px;
+  height: 8.23px;
+}
+
+.PanelHeaderContent--android .PanelHeaderContent__children .PanelHeaderContent__aside .svg-icon-chevron-right path {
+  stroke-width: 3;
+}
+
+.PanelHeaderContent--ios .PanelHeaderContent__aside {
+  margin-left: 15px;
+}
+.PanelHeaderContent--android .PanelHeaderContent__aside {
+  margin-left: 15px;
+  opacity: 1;
+}
+

@@ -1,5 +1,5 @@
 import React from 'react';
-import {Panel, Div} from "@vkontakte/vkui";
+import {Panel, Div, PanelHeaderContent} from "@vkontakte/vkui";
 import Header from "../../components/header/Header";
 import ProductCardSmall from '../../components/productCardSmall/ProductCardSmall';
 import './HomePanel.css';
@@ -13,7 +13,7 @@ class HomePanel extends React.Component {
   render() {
     return (
       <Panel  id={this.props.id}>
-        <Header />
+        <Header title='Все кроссовки' asideShow={true} iconIOS={true} iconAndroid={false}/>
         <Div className='all-product-page_wrap'>
           <div className='all-product-page_content'>
             <ProductCardSmall func={this.props.go} goTo='productCardPanel'/>

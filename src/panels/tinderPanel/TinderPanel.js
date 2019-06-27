@@ -48,12 +48,8 @@ class TinderPanel extends React.Component {
           <ProductCardTinder isWelcome={this.state.isWelcome}/>
           <div style={this.state.isWelcome ? divStyleBlur : null}
                className='tinder-page-button-wrap'>
-            <div className='tinder-page-button_first'>
               <RectangleButton title='Не нравится' iconSvg={<IconDislike/>}/>
-            </div>
-            <div className='tinder-page-button_second'>
               <RectangleButton title='Нравится' iconSvg={<IconLike/>}/>
-            </div>
           </div>
           {this.state.isWelcome ? <ProductCardTinderWelcome closeModal={this.handleCloseModal}/> : null}
         </Div>
