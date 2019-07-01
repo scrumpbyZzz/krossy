@@ -1,7 +1,7 @@
 import React from 'react';
 import './StartPanelTwo.css';
 import RectangleButton from "../../../components/buttons/rectangleButton/RectangleButton";
-import CaruselSizeChart from "../../../components/caruselSizeChart/CaruselSizeChart";
+import HorizontalSizeChart from "../../../components/caruselSizeChart/HorizontalSizeChart";
 
 const StartPanelTwo = ({handleNextSlide}) => {
     return (
@@ -18,7 +18,7 @@ const StartPanelTwo = ({handleNextSlide}) => {
             Выберете до 3-х интересующих Вас размеров кроссовок
           </div>
           <div className='start-panel-two-carusel_wrap'>
-            <CaruselSizeChart/>
+            <HorizontalSizeChart/>
           </div>
           <div className='start-panel-two-button_bottom'>
             <RectangleButton title='Далее' func={handleNextSlide}/>

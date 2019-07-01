@@ -20,15 +20,16 @@ const Sticker = ({form, icon}) => {
 
   let bgColor;
   if (icon === 'trend') {
-    bgColor = '#FFD064'
+    bgColor = '255, 208, 100'
   } else if (icon === 'star') {
-    bgColor = '#8DE6C9'
+    bgColor = '141, 230, 201'
   } else if (icon === 'like') {
-    bgColor = '#FF5C7B'
+    bgColor = '255, 92, 123'
   }
 
   let divStyle = {
-    backgroundColor: bgColor
+    backgroundColor: `rgb(${bgColor})`,
+    boxShadow: `0 0 6px 3px rgba(${bgColor}, 0.4)`
   };
   return (
     <div style={divStyle}

@@ -23,7 +23,7 @@ const ProductCardSmall = ({func, goTo, formSticker, nameSticker}) => {
              src={pic}
              alt='pic'/>
         <div className='product-card-small-sticker_wrap'>
-          <Sticker form='round' icon='star' />
+          <Sticker form={formSticker} icon={nameSticker} />
         </div>
       </div>
       <div className='product-card-small-brand_wrap'>

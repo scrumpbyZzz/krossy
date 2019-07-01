@@ -16,11 +16,23 @@ class HomePanel extends React.Component {
         <Header title='Все кроссовки' asideShow={true} iconIOS={true} iconAndroid={false}/>
         <Div className='all-product-page_wrap'>
           <div className='all-product-page_content'>
-            <ProductCardSmall func={this.props.go} goTo='productCardPanel'/>
-            <ProductCardSmall func={this.props.go} goTo='productCardPanel'/>
+            <ProductCardSmall func={this.props.go}
+                              goTo='productCardPanel'
+                              formSticker='round'
+                              nameSticker='star'/>
+            <ProductCardSmall func={this.props.go}
+                              goTo='productCardPanel'
+                              formSticker='round'
+                              nameSticker='trend'/>
             <Advertising func={this.props.go} goTo='productCardPanel'/>
-            <ProductCardSmall func={this.props.go} goTo='productCardPanel'/>
-            <ProductCardSmall func={this.props.go} goTo='productCardPanel'/>
+            <ProductCardSmall func={this.props.go}
+                              goTo='productCardPanel'
+                              formSticker='round'
+                              nameSticker='star'/>
+            <ProductCardSmall func={this.props.go}
+                              goTo='productCardPanel'
+                              formSticker='round'
+                              nameSticker='like'/>
           </div>
         </Div>
       </Panel>
