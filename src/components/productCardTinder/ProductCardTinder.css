@@ -4,7 +4,7 @@
 
   display: flex;
   flex-direction: column;
-  box-shadow: 0 3px 16px #AEBFCF;
+  box-shadow: 0 3px 16px rgba(174, 191, 207, 0.3);
   border-radius: 12px;
 }
 
@@ -20,6 +20,10 @@
 
 .tinder-page-product-header_right {
   width: 30%;
+}
+
+.tinder-page-product-header_right .round-size-btn {
+  box-shadow: 0 3px 6px rgba(73, 134, 204, 0.4);
 }
 
 .tinder-page-product-header_left .product-brand-view-name {

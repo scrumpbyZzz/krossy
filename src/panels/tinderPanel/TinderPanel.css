@@ -1,5 +1,6 @@
 .tinder-page {
   position: relative;
+  padding: 24px;
 }
 
 .tinder-page-button-wrap {
@@ -10,18 +11,18 @@
 }
 
 .tinder-page-button-wrap .rectangle-button {
-  box-shadow: 0 3px 16px #AEBFCF;
+  box-shadow: 0 3px 16px rgba(174, 191, 207, 0.3);
   border: none;
   color: #AEBFCF;
   font-size: 14px;
 }
 
 .Panel--ios .rectangle-button {
-  width: 44.44%;
+  width: 47.70%;
 }
 
 .Panel--android .tinder-page .rectangle-button {
-  width: 38.8%;
+  width: 40.77%;
 }
 
 .tinder-page .rectangle-button_text {
@@ -43,7 +44,7 @@
 
 .tinder-page-button-wrap .rectangle-button:nth-child(2) .rectangle-button_icon {
   align-self: start;
-  margin-right: 10px;
+  margin-right: 7px;
 }
 
 .tinder-page-button-wrap .rectangle-button:nth-child(1) .rectangle-button_wrap {
@@ -56,7 +57,8 @@
 
 .tinder-page-button-wrap .rectangle-button_icon {
   align-self: flex-end;
-  margin-right: 10px;
+  margin-right: 7px;
+  margin-bottom: 2px;
 }
 
 .tinder-page-welcome {
