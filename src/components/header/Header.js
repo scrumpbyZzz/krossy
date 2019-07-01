@@ -1,46 +1,102 @@
 import React from 'react';
-import {PanelHeader, platform, IOS, PanelHeaderContent, HeaderButton} from "@vkontakte/vkui";
+import {
+  PanelHeader, platform, IOS,
+  PanelHeaderContent, HeaderButton, HeaderContext, List, Cell
+} from "@vkontakte/vkui";
 
 import './Header.css';
 import IconArrowAndroidBack from "../icon/IconArrowAndroisBack";
 import IconChevronIOSBack from "../icon/IconChevronIOSBack";
 import IconMoreHorizontal from '../icon/IconMoreHorizontal';
 import IconClose from '../icon/IconClose';
-import IconChevronDownIOS from "../icon/IconChevronDownIOS";
-import IconChevronAndroidRight from "../icon/IconChevronAndroidRight";
-import IconChevronDownAndroid from "../icon/IconChevronDownAndroid";
-
-
+import IconDropDownAndroid from "../icon/IconDropDownAndroid";
+import IconDropDownIOS from "../icon/IconDropDownIOS";
+import Icon24Done from '@vkontakte/icons/dist/24/done';
 
 const osname = platform();
 
-const Header = ({func, goTo, title, asideShow, iconIOS, iconAndroid}) => {
-  console.log(func, goTo)
-  return (
-    <PanelHeader theme='alternate'
-                 className='main-header'
-                 left={<HeaderButton
-                   onClick={func}
-                   data-to={goTo}>
-                   {osname === IOS ?
-                     iconIOS ? <IconChevronIOSBack /> : null :
-                     iconAndroid ? <IconArrowAndroidBack /> : null}
-                 </HeaderButton>}
-                 right={[
-                   <div className='header-right-button-block'>
-                     <IconMoreHorizontal/>
-                     <IconClose />
-                   </div>
-                 ]}>
-      <PanelHeaderContent className='header header-home-panel'
-                          aside={asideShow ? osname === IOS ?
-                            <IconChevronDownIOS currentColor='#AEBFCF'/> :
-                            <IconChevronDownAndroid currentColor='#404040'/> : null}>
-        {title}
-      </PanelHeaderContent>
-    </PanelHeader>
-  )
-};
+class Header extends React.Component {
+
+  constructor(props) {
+    super(props)
+    this.state = {
+      contextOpened: false,
+      mode: '1'
+    };
+
+    this.toggleContext = this.toggleContext.bind(this);
+    this.select = this.select.bind(this);
+  }
+
+  toggleContext() {
+    this.setState({contextOpened: !this.state.contextOpened});
+  }
+
+  select(e) {
+    const currentMode = e.currentTarget.dataset.mode;
+    this.setState({mode: currentMode});
+    requestAnimationFrame(this.toggleContext);
+  }
+
+  render() {
+    const {func, goTo, title, asideShow, iconIOS, iconAndroid, dropDown} = this.props;
+    return (
+      <React.Fragment>
+        <PanelHeader theme='alternate'
+                     className='main-header'
+                     left={<HeaderButton
+                       onClick={func}
+                       data-to={goTo}>
+                       {osname === IOS ?
+                         iconIOS ? <IconChevronIOSBack/> : null :
+                         iconAndroid ? <IconArrowAndroidBack/> : null}
+                     </HeaderButton>}
+                     right={[
+                       <div className='header-right-button-block'>
+                         <IconMoreHorizontal/>
+                         <IconClose/>
+                       </div>
+                     ]}>
+          <PanelHeaderContent onClick={this.toggleContext}
+                              className='header header-home-panel'
+                              aside={asideShow ? osname === IOS ?
+                                <IconDropDownIOS currentColor='#AEBFCF'/> :
+                                <IconDropDownAndroid currentColor='#404040'/> : null}>
+            {title}
+          </PanelHeaderContent>
+        </PanelHeader>
+        {dropDown ?
+          <HeaderContext opened={this.state.contextOpened}
+                         onClose={this.toggleContext}>
+            <List>
+              <Cell
+                asideContent={this.state.mode === '1' ? <Icon24Done fill="var(--accent)"/> : null}
+                onClick={this.select}
+                data-mode="1"
+              >
+                {title === 'Все кроссовки' ? 'В тренде' : 'Избранное'}
+              </Cell>
+              <Cell
+                asideContent={this.state.mode === '2' ? <Icon24Done fill="var(--accent)"/> : null}
+                onClick={this.select}
+                data-mode="2"
+              >
+                {title === 'Все кроссовки' ? 'Скидки' : osname === IOS ? 'Нравиться' : 'Мне нравиться'}
+              </Cell>
+              {title === 'Все кроссовки' ? <Cell
+                asideContent={this.state.mode === '3' ? <Icon24Done fill="var(--accent)"/> : null}
+                onClick={this.select}
+                data-mode="3"
+              >
+                Limited edition
+              </Cell> : null}
+
+            </List>
+          </HeaderContext> : null}
+      </React.Fragment>
+    )
+  }
+}
 
 export default Header;
 

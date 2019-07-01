@@ -1,7 +1,7 @@
 import React from 'react';
 import './ProductSelectShop.css';
 import {IOS, platform} from "@vkontakte/vkui";
-import IconChevronDownIOS from "../../icon/IconChevronDownIOS";
+import IconChevronDownIOS from "../../icon/IconDropDownIOS";
 import IconChevronAndroidRight from "../../icon/IconChevronAndroidRight";
 
 const ProductSelectShop = ({func, isOpen}) => {

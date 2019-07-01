@@ -1,6 +1,6 @@
 import React from 'react';
 
-const IconChevronDownAndroid = ({currentColor, rotate}) => {
+const IconDropDownAndroid = ({currentColor, rotate}) => {
   let svgStyle = {
     transform: `rotate(${rotate}deg)`
   };
@@ -14,4 +14,4 @@ const IconChevronDownAndroid = ({currentColor, rotate}) => {
   )
 };
 
-export default IconChevronDownAndroid;
+export default IconDropDownAndroid;

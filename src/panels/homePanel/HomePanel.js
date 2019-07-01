@@ -13,7 +13,11 @@ class HomePanel extends React.Component {
   render() {
     return (
       <Panel  id={this.props.id}>
-        <Header title='Все кроссовки' asideShow={true} iconIOS={true} iconAndroid={false}/>
+        <Header title='Все кроссовки'
+                asideShow={true}
+                iconIOS={true}
+                iconAndroid={false}
+                dropDown={true}/>
         <Div className='all-product-page_wrap'>
           <div className='all-product-page_content'>
             <ProductCardSmall func={this.props.go}
