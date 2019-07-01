@@ -25,7 +25,8 @@ class StartPanel extends React.Component {
 
   render() {
     return(
-      <Panel id={this.props.id}>
+      <Panel className='start-panel'
+             id={this.props.id}>
         <Gallery slideIndex={this.state.slideIndex}
                  bullets='light'
                  style={{height: '100vh'}}>

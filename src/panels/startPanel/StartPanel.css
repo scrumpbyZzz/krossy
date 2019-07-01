@@ -5,3 +5,11 @@
 .Gallery__bullets {
   bottom: 30px;
 }
+
+.start-panel {
+  height: 100vh;
+}
+
+.start-panel .Panel__in {
+  padding-bottom: 0 !important;
+}
