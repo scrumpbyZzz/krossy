@@ -17,8 +17,7 @@ const osname = platform();
 const Header = ({func, goTo, title, asideShow, iconIOS, iconAndroid}) => {
   console.log(func, goTo)
   return (
-    <PanelHeader noShadow={false}
-                 theme='alternate'
+    <PanelHeader theme='alternate'
                  className='main-header'
                  left={<HeaderButton
                    onClick={func}

@@ -1,9 +1,7 @@
 import React from 'react';
 
 import {IOS, platform, View} from "@vkontakte/vkui";
-import StartPanelOne from "../../panels/startPage/startPanelOne/StartPanelOne";
-import StartPanelTwo from "../../panels/startPage/StartPanelTwo/StartPanelTwo";
-import StartPanelThree from "../../panels/startPage/startPanelThree/StartPanelThree";
+import StartPanel from "../../panels/startPanel/StartPanel";
 
 
 const osname = platform();
@@ -16,7 +14,7 @@ class StartView extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      activePanel: 'start-1'
+      activePanel: 'start'
     }
   }
 
@@ -30,10 +28,7 @@ class StartView extends React.Component {
             header={false}
             activePanel={this.state.activePanel}
             style={fontStyleGlobal}>
-        <StartPanelOne id='start-1' goPanel={this.goPanel}/>
-        <StartPanelTwo id='start-2' goPanel={this.goPanel}/>
-        <StartPanelThree id='start-3' goPanel={this.goPanel}
-                         goView={this.props.goView}/>
+        <StartPanel id='start' goView={this.props.goView}/>
       </View>
     )
   }

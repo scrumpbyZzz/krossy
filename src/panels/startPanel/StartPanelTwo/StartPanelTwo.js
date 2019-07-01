@@ -1,13 +1,10 @@
 import React from 'react';
 import './StartPanelTwo.css';
-import {Panel} from "@vkontakte/vkui";
 import RectangleButton from "../../../components/buttons/rectangleButton/RectangleButton";
 import CaruselSizeChart from "../../../components/caruselSizeChart/CaruselSizeChart";
-import PageBullets from "../../../components/pageBullets/PageBullets";
 
-const StartPanelTwo = ({id, goPanel}) => {
+const StartPanelTwo = ({handleNextSlide}) => {
     return (
-      <Panel id={id}>
         <div className='start-panel-two_wrap'>
           <div className='start-panel-two_title'>Персонализация</div>
           <div className='start-panel-two_text start-panel-two_text-1'>
@@ -24,13 +21,9 @@ const StartPanelTwo = ({id, goPanel}) => {
             <CaruselSizeChart/>
           </div>
           <div className='start-panel-two-button_bottom'>
-            <RectangleButton title='Далее'
-                             func={goPanel}
-                             goTo='start-3'/>
+            <RectangleButton title='Далее' func={handleNextSlide}/>
           </div>
-          <PageBullets/>
         </div>
-      </Panel>
     )
   }
 ;

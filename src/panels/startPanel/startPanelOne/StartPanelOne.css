@@ -11,10 +11,6 @@
   background-color: #4986CC;
 }
 
-.start-panel-one_wrap .page-bullets_dot:nth-child(1) {
-  opacity: 1;
-}
-
 .start-panel-one_wrap .rectangle-button {
   width: 26.13%;
   margin-bottom: 66px;
