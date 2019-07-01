@@ -130,7 +130,10 @@
 .product-card-share_wrap-btn .rectangle-button_wrap {
   display: flex;
   width: 115px;
-  justify-content: space-between;
+}
+
+.product-card-share_wrap-btn .rectangle-button_wrap .rectangle-button_icon {
+  margin-right: 5px;
 }
 
 .Panel--ios .product-card-share_wrap-btn .rectangle-button {
@@ -157,8 +160,12 @@
 }
 
 .product-card-share_wrap .round-size-btn {
-  box-shadow: 0 0 10px 4px rgba(174, 191, 207, 0.4);
+  box-shadow: 0 0 10px 4px rgba(174, 191, 207, 0.3);
   border: none;
+}
+
+.product-card-share_wrap .rectangle-button {
+  box-shadow: 0 0 16px 6px rgba(73, 134, 204, 0.5);
 }
 
 .rectangle-button .Button__content {
