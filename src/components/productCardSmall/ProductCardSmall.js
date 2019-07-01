@@ -18,13 +18,13 @@ const ProductCardSmall = ({func, goTo, formSticker, nameSticker}) => {
     <div onClick={func}
          data-to={goTo}
          className='product-card-small_wrap'>
+      <div className='product-card-small-sticker_wrap'>
+        <Sticker form={formSticker} icon={nameSticker} />
+      </div>
       <div className='product-card-small-pic_wrap'>
         <img className='product-card-small-pic'
              src={pic}
              alt='pic'/>
-        <div className='product-card-small-sticker_wrap'>
-          <Sticker form={formSticker} icon={nameSticker} />
-        </div>
       </div>
       <div className='product-card-small-brand_wrap'>
         <ProductBrandView logo={brandLogo}/>

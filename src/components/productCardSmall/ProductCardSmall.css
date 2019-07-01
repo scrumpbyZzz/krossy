@@ -1,10 +1,13 @@
 .product-card-small_wrap {
   display: flex;
   flex-direction: column;
-  height: 212px;
+  position: relative;
   border-radius: 16px;
+  padding: 16px;
+  box-sizing: border-box;
 
   background-color: #ffffff;
+  box-shadow: 0 3px 5px rgba(64, 64, 64, 0.05);
   margin: 0 0 15px 0;
 }
 
@@ -18,7 +21,7 @@
 
 .product-card-small-pic_wrap {
   position: relative;
-  margin-bottom: 8px;
+  margin-bottom: 12px;
 }
 
 .product-card-small-pic {
@@ -29,6 +32,7 @@
   position: absolute;
   top: 16px;
   left: 16px;
+  z-index: 101;
 }
 
 .product-card-small-sticker_wrap .icon-trend-wrap {
@@ -43,15 +47,14 @@
 }
 
 .product-card-small-brand_wrap {
-  margin-left: 16px;
   width: 117px;
   color: #AEBFCF;
   font-size: 10px;
   font-weight: 500;
+  margin-bottom: 5px;
 }
 
 .product-card-small-price_wrap {
-  margin-left: 16px;
   margin-bottom: 7px;
 }
 
@@ -75,8 +78,6 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin-left: 16px;
-  margin-bottom: 16px;
 }
 
 .product-card-small_footer .product-size-block-wrap {
