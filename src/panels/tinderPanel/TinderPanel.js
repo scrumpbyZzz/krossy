@@ -43,7 +43,7 @@ class TinderPanel extends React.Component {
       <Panel style={osname === IOS ? fontStyleIOS : fontStyleAndroid}
              id={this.props.id}
              theme='white'>
-        <Header title='Кроссы '/>
+        <Header title='Кроссы ' page='tinder'/>
         <Div  className='tinder-page'>
           <ProductCardTinder isWelcome={this.state.isWelcome}/>
           <div style={this.state.isWelcome ? divStyleBlur : null}

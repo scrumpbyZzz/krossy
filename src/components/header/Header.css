@@ -68,3 +68,43 @@
   opacity: 1;
 }
 
+.PanelHeader--ios #panel-header-tinder .PanelHeader-left-in .HeaderButton > *:not(.Icon) {
+ padding-left: 0;
+  margin-left: 16px;
+}
+
+#panel-header-tinder .PanelHeaderContent--android {
+  width: 100%;
+}
+
+#panel-header-tinder .PanelHeaderContent--android .PanelHeaderContent__in {
+  width: 100%;
+}
+
+#panel-header-tinder .PanelHeaderContent--android .PanelHeaderContent__in .PanelHeaderContent__children{
+  width: 100%;
+}
+
+#panel-header-tinder .PanelHeaderContent--android .PanelHeaderContent__in .PanelHeaderContent__children span{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#panel-header-tinder .PanelHeaderContent--android .PanelHeaderContent__in .PanelHeaderContent__children span .like-counter_wrap {
+  margin-left: -25%;
+}
+
+.header-question-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 8px;
+  background-color: rgba(174, 191, 207, 0.1);
+  width: 34px;
+  height: 34px;
+
+
+}

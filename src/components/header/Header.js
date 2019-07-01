@@ -12,6 +12,8 @@ import IconClose from '../icon/IconClose';
 import IconDropDownAndroid from "../icon/IconDropDownAndroid";
 import IconDropDownIOS from "../icon/IconDropDownIOS";
 import Icon24Done from '@vkontakte/icons/dist/24/done';
+import LikeCounterWithIcon from "../likeCounterWithIcon/LikeCounterWithIcon";
+import IconQuestionMark from "../icon/IconQuestionMark";
 
 const osname = platform();
 
@@ -39,7 +41,7 @@ class Header extends React.Component {
   }
 
   render() {
-    const {func, goTo, title, asideShow, iconIOS, iconAndroid, dropDown} = this.props;
+    const {func, goTo, title, asideShow, iconIOS, iconAndroid, dropDown, page} = this.props;
     return (
       <React.Fragment>
         <PanelHeader theme='alternate'
@@ -47,9 +49,10 @@ class Header extends React.Component {
                      left={<HeaderButton
                        onClick={func}
                        data-to={goTo}>
-                       {osname === IOS ?
+                       {page === 'tinder' && osname === IOS ? <LikeCounterWithIcon/> : osname === IOS ?
                          iconIOS ? <IconChevronIOSBack/> : null :
                          iconAndroid ? <IconArrowAndroidBack/> : null}
+
                      </HeaderButton>}
                      right={[
                        <div className='header-right-button-block'>
@@ -62,7 +65,10 @@ class Header extends React.Component {
                               aside={asideShow ? osname === IOS ?
                                 <IconDropDownIOS currentColor='#AEBFCF'/> :
                                 <IconDropDownAndroid currentColor='#404040'/> : null}>
-            {title}
+            <div>{title}</div>
+            {page === 'tinder' && osname !== IOS ? <LikeCounterWithIcon/> : null}
+            {page === 'tinder' && osname !== IOS ?
+              <div className='header-question-icon'><IconQuestionMark/></div> : null}
           </PanelHeaderContent>
         </PanelHeader>
         {dropDown ?
