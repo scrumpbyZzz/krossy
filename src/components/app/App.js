@@ -22,7 +22,7 @@ class App extends React.Component {
     super(props);
 
     this.state = {
-      activeStory: 'tinderView',
+      activeStory: 'favoritesView',
       fetchedUser: null,
     };
   }
