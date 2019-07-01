@@ -4,8 +4,8 @@ self.__precacheManifest = [
     "url": "/krossy/static/media/Rectangle 1533@2x.7d248541.png"
   },
   {
-    "revision": "593b2b4fdff6be78e2d1",
-    "url": "/krossy/static/css/main.3b08555f.chunk.css"
+    "revision": "4900a0b3ccba9faf8d69",
+    "url": "/krossy/static/css/main.ed5339ee.chunk.css"
   },
   {
     "revision": "5ebd78a4d372e3aee23c",
@@ -16,8 +16,8 @@ self.__precacheManifest = [
     "url": "/krossy/static/media/iOS 3.b4df673e.svg"
   },
   {
-    "revision": "0aab6dd6ab484db49c11",
-    "url": "/krossy/static/js/2.0aab6dd6.chunk.js"
+    "revision": "0887775fc9c25ee37a9d",
+    "url": "/krossy/static/js/2.0887775f.chunk.js"
   },
   {
     "revision": "b663df13c7e344cb16e890dc1c66b6e2",
@@ -44,8 +44,8 @@ self.__precacheManifest = [
     "url": "/krossy/static/media/tag.dc757a4e.svg"
   },
   {
-    "revision": "593b2b4fdff6be78e2d1",
-    "url": "/krossy/static/js/main.593b2b4f.chunk.js"
+    "revision": "4900a0b3ccba9faf8d69",
+    "url": "/krossy/static/js/main.4900a0b3.chunk.js"
   },
   {
     "revision": "7378d2e08cb7cb79fa6f338d7247cc0b",
@@ -60,12 +60,12 @@ self.__precacheManifest = [
     "url": "/krossy/static/media/SFUIText-Regular.1e1d803a.ttf"
   },
   {
-    "revision": "e4286ca7dd7b3af5fad228ebcb84842b",
-    "url": "/krossy/static/media/SFUIText-Medium.e4286ca7.ttf"
-  },
-  {
     "revision": "34dfe822161ceb31dc5889d742ab591c",
     "url": "/krossy/static/media/SFUIText-Semibold.34dfe822.ttf"
+  },
+  {
+    "revision": "e4286ca7dd7b3af5fad228ebcb84842b",
+    "url": "/krossy/static/media/SFUIText-Medium.e4286ca7.ttf"
   },
   {
     "revision": "49d167fd00ec879e285af5661cc763aa",
@@ -80,11 +80,11 @@ self.__precacheManifest = [
     "url": "/krossy/static/media/iOS 2.2db023b3.svg"
   },
   {
-    "revision": "0aab6dd6ab484db49c11",
+    "revision": "0887775fc9c25ee37a9d",
     "url": "/krossy/static/css/2.cadf4f42.chunk.css"
   },
   {
-    "revision": "3a373e0f7ec99c0d51aaf5f66dda1a79",
+    "revision": "5242c3f1b56e680001e37ae895d6feaf",
     "url": "/krossy/index.html"
   }
 ];
