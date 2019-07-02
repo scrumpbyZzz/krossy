@@ -4,8 +4,8 @@ self.__precacheManifest = [
     "url": "/krossy/static/media/Rectangle 1533@2x.7d248541.png"
   },
   {
-    "revision": "bd290a00440d67e71ab1",
-    "url": "/krossy/static/css/main.62a974b1.chunk.css"
+    "revision": "6059369fdbf4f50a0523",
+    "url": "/krossy/static/css/main.ffbfc5ab.chunk.css"
   },
   {
     "revision": "5ebd78a4d372e3aee23c",
@@ -16,8 +16,8 @@ self.__precacheManifest = [
     "url": "/krossy/static/media/iOS 3.b4df673e.svg"
   },
   {
-    "revision": "722db5b50e2802b9d7e1",
-    "url": "/krossy/static/js/2.722db5b5.chunk.js"
+    "revision": "e4740195ccdb6fff78e5",
+    "url": "/krossy/static/js/2.e4740195.chunk.js"
   },
   {
     "revision": "b663df13c7e344cb16e890dc1c66b6e2",
@@ -36,16 +36,16 @@ self.__precacheManifest = [
     "url": "/krossy/static/media/Rectangle 1384@2x.6f1ccce8.png"
   },
   {
-    "revision": "5bb86171c37cb58495085e2d756cccbd",
-    "url": "/krossy/static/media/asics-seeklogo.com.5bb86171.svg"
+    "revision": "f01d01718c5b5d606b1d11429db32508",
+    "url": "/krossy/static/media/asics-seeklogo.com.f01d0171.svg"
   },
   {
     "revision": "dc757a4e62f3140b58fd32a0430e06da",
     "url": "/krossy/static/media/tag.dc757a4e.svg"
   },
   {
-    "revision": "bd290a00440d67e71ab1",
-    "url": "/krossy/static/js/main.bd290a00.chunk.js"
+    "revision": "6059369fdbf4f50a0523",
+    "url": "/krossy/static/js/main.6059369f.chunk.js"
   },
   {
     "revision": "7378d2e08cb7cb79fa6f338d7247cc0b",
@@ -60,12 +60,12 @@ self.__precacheManifest = [
     "url": "/krossy/static/media/SFUIText-Regular.1e1d803a.ttf"
   },
   {
-    "revision": "e4286ca7dd7b3af5fad228ebcb84842b",
-    "url": "/krossy/static/media/SFUIText-Medium.e4286ca7.ttf"
-  },
-  {
     "revision": "34dfe822161ceb31dc5889d742ab591c",
     "url": "/krossy/static/media/SFUIText-Semibold.34dfe822.ttf"
+  },
+  {
+    "revision": "e4286ca7dd7b3af5fad228ebcb84842b",
+    "url": "/krossy/static/media/SFUIText-Medium.e4286ca7.ttf"
   },
   {
     "revision": "49d167fd00ec879e285af5661cc763aa",
@@ -80,11 +80,11 @@ self.__precacheManifest = [
     "url": "/krossy/static/media/iOS 2.2db023b3.svg"
   },
   {
-    "revision": "722db5b50e2802b9d7e1",
-    "url": "/krossy/static/css/2.cadf4f42.chunk.css"
+    "revision": "e4740195ccdb6fff78e5",
+    "url": "/krossy/static/css/2.ec8068f3.chunk.css"
   },
   {
-    "revision": "7acb913a4f1362578e18738a6f641c32",
+    "revision": "d61897b4ff9573179776049db11314d6",
     "url": "/krossy/index.html"
   }
 ];
