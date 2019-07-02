@@ -207,3 +207,7 @@
 .search-page-button_wrap .rectangle-button:active {
   box-shadow:  0 0 1px 1px  #4986CC;
 }
+
+.Slider__dragger::before {
+  background: linear-gradient(-90deg, #74BBFF, #B0FCE3);
+}
