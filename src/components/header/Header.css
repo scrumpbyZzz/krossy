@@ -105,6 +105,8 @@
   background-color: rgba(174, 191, 207, 0.1);
   width: 34px;
   height: 34px;
+}
 
-
+.PanelHeader--android .PanelHeader-bg {
+  box-shadow:0 0 16px rgba(64,64,64,0.05);
 }
