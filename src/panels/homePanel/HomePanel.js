@@ -6,18 +6,38 @@ import './HomePanel.css';
 
 import Advertising from '../../components/advertising/Advertising';
 import {platform, IOS} from "@vkontakte/vkui";
+import HeaderHome from "../../components/headerHome/HeaderHome";
 
 const osname = platform();
 
 class HomePanel extends React.Component {
+
+  constructor(props) {
+    super(props)
+    this.state = {
+      contextOpened: false,
+      mode: 'all'
+    };
+  }
+
+  toggleContext = () => {
+    this.setState({contextOpened: !this.state.contextOpened});
+  };
+
+  select = (e) => {
+    const currentMode = e.currentTarget.dataset.mode;
+    this.setState({mode: currentMode});
+    requestAnimationFrame(this.toggleContext);
+  };
+
   render() {
+    const {contextOpened, mode} = this.state;
     return (
       <Panel  id={this.props.id}>
-        <Header title='Все кроссовки'
-                asideShow={true}
-                iconIOS={true}
-                iconAndroid={false}
-                dropDown={true}/>
+        <HeaderHome toggleContext={this.toggleContext}
+                    select={this.select}
+                    contextOpened={contextOpened}
+                    mode={mode} />
         <Div className='all-product-page_wrap'>
           <div className='all-product-page_content'>
             <ProductCardSmall func={this.props.go}
