@@ -145,16 +145,16 @@
 
 .Panel--ios .search-page-color-handle {
   height: 43px;
-  margin: 0 12px;
+  margin: 0 12px 25px 12px;
 }
 
 .Panel--android .search-page-color-handle {
   height: 47px;
-  margin: 0 16px;
+  margin: 0 16px 25px 16px;
 }
 
 .search-page-color-pick {
-  margin-bottom: 59px;
+  margin-bottom: 25px;
 }
 
 .search-page-color-pick .Gallery__slide {
@@ -210,4 +210,16 @@
 
 .Slider__dragger::before {
   background: linear-gradient(-90deg, #74BBFF, #B0FCE3);
+}
+
+.search-page-button_wrap .rectangle-button {
+  box-shadow: 0 6px 16px rgba(73, 134, 204, 0.5);
+}
+
+.Panel--ios .search-page-button_wrap .rectangle-button {
+  width: 87.2%;
+}
+
+.Panel--android .search-page-button_wrap .rectangle-button {
+  width: 86.66%;
 }

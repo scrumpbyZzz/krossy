@@ -1,6 +1,6 @@
 import React from 'react';
 
-import {Panel, FormLayoutGroup, Radio, platform, IOS, Div} from "@vkontakte/vkui";
+import {Panel, FormLayoutGroup, Radio, platform, IOS, Div, Switch} from "@vkontakte/vkui";
 
 import './SearchPanelOne.css';
 import IconChevronIOSRight from '../../../components/icon/IconChevronIOSRight';
@@ -8,7 +8,6 @@ import IconChevronAndroidRight from '../../../components/icon/IconChevronAndroid
 import SearchRangeSlider from '../../../components/search/searchRangeSlider/SearchRangeSlider';
 import SearchColorPick from '../../../components/search/searchColorPick/searchColorPick';
 import RectangleButton from '../../../components/buttons/rectangleButton/RectangleButton';
-import Checkbox from "../../../components/checkbox/Checkbox";
 import RadioButton from "../../../components/radioButton/RadioButton";
 import Header from "../../../components/header/Header";
 
@@ -48,7 +47,7 @@ class SearchPanelOne extends React.Component {
         <Div className='search-page-discount-only search-border-bottom'>
           <div className='search-page-discount-only_row'>
             Только со скидкой
-            <Checkbox name='discount'/>
+            <Switch />
           </div>
         </Div>
         <Div className='search-page-checkbox-group search-border-bottom'>

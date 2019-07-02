@@ -1,5 +1,5 @@
 import React from 'react';
-import {Gallery} from "@vkontakte/vkui";
+import {Gallery, Switch} from "@vkontakte/vkui";
 import RoundSizeButton from "../../buttons/roundSizeButton/RoundSizeButton";
 import Checkbox from "../../checkbox/Checkbox";
 
@@ -19,7 +19,7 @@ class SearchColorPick extends React.Component {
             <div>По цвету</div>
             <div className='color-handle-text_color'>2</div>
           </div>
-          <Checkbox name='colorPick'/>
+          <Switch />
         </div>
         <div className='search-page-color-pick'>
           <Gallery slideWidth='15%'>

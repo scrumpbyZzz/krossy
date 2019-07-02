@@ -28,7 +28,6 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 37.8%;
 }
 
 .setting-page-size_right {
@@ -36,8 +35,13 @@
   align-items: center;
 }
 
+.setting-page-size_left div {
+  margin-right: 5px;
+}
+
 .setting-page-size_left_color {
   color: #8EC8FF;
+  margin-right: 5px;
 }
 
 .setting-page_wrap .Div--ios {
@@ -74,11 +78,11 @@
   display: flex;
   justify-content: space-between;
   align-self: center;
-  width: 35%;
 }
 
 .setting-page-notifications_left_color {
   color: #8EC8FF;
+  margin-left: 5px;
 }
 
 .setting-page-notifications_right {
