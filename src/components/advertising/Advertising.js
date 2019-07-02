@@ -17,11 +17,11 @@ const osname = platform();
 const Advertising = ({func, goTo}) => {
   return (
     <div className='advertising_wrap'>
+      <div className='advertising-sticker'>Реклама</div>
       <div className='advertising-image_wrap'>
         <img className='advertising-image'
              src={pic}
              alt='reklama'/>
-        <span className='advertising-sticker'>Реклама</span>
       </div>
       <div className='advertising-product-footer_wrap'>
         <div className='advertising-info'>
@@ -40,7 +40,6 @@ const Advertising = ({func, goTo}) => {
                            func={func}
                            goTo={goTo}/>
         </div>
-
       </div>
     </div>
   )

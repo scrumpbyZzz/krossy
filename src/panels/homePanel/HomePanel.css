@@ -1,7 +1,6 @@
 .all-product-page_wrap {
   display: flex;
   flex-direction: column;
-
   height: 100%;
   background-color: #F7F8F9;
   padding: 16px 16px 0 16px;
@@ -11,8 +10,6 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-
-  margin: 0 auto;
 }
 
 .Panel--ios .all-product-page_content {
