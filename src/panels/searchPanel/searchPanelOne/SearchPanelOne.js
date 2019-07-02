@@ -37,7 +37,7 @@ class SearchPanelOne extends React.Component {
         <Header title='Поиск'/>
         <Div className='search-page-brand-select search-border-bottom'>
           <div className='search-page-brand_text'>Бренд</div>
-          <div className='search-page-brand_icon'>
+          <div onClick={this.props.goPanel} data-to='search-2'  className='search-page-brand_icon'>
             {osname === IOS ? <IconChevronIOSRight/> : <IconChevronAndroidRight/>}
           </div>
         </Div>
@@ -60,7 +60,7 @@ class SearchPanelOne extends React.Component {
           <div className='search-page-button_wrap'>
             <RectangleButton title='Найти'
                              func={this.props.goPanel}
-                             goTo='search-2'/>
+                             goTo='search-3'/>
           </div>
         </Div>
       </Panel>

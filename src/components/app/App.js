@@ -1,6 +1,6 @@
 import React from 'react';
 import connect from '@vkontakte/vkui-connect';
-import {View, ConfigProvider, Root, TabbarItem, Tabbar, Epic, platform, IOS} from '@vkontakte/vkui';
+import {ConfigProvider, TabbarItem, Tabbar, Epic} from '@vkontakte/vkui';
 import '@vkontakte/vkui/dist/vkui.css';
 import './App.css';
 
@@ -22,7 +22,7 @@ class App extends React.Component {
     super(props);
 
     this.state = {
-      activeStory: 'homeView',
+      activeStory: 'searchView',
       fetchedUser: null,
     };
   }
