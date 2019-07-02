@@ -2,7 +2,7 @@ import React from 'react';
 import './SearchPanelTwo.css';
 import {Panel, Cell, Group, List} from "@vkontakte/vkui";
 import Header from "../../../components/header/Header";
-import Icon24Done from '@vkontakte/icons/dist/24/done';
+import Icon16Done from '@vkontakte/icons/dist/16/done';
 
 class SearchPanelTwo extends React.PureComponent {
   constructor(props) {
@@ -59,22 +59,23 @@ class SearchPanelTwo extends React.PureComponent {
   }
 
   handleToggleStatus = (e) => {
-    let target = e.currentTarget.dataset.rowid;
-    this.setState({
-      brands: this.state.brands.map(item =>
-        (item.id === target) ? (...item, status: !item.status) : null)
-    })
-    debugger
+    let target = e.target.textContent;
+    let temp = this.state.brands;
+    temp = temp.map( item => (item.brand === target) ?
+        {...item,
+        id: item.id,
+        brand: item.brand,
+        status: !item.status} : item
+    );
+    this.setState({brands: temp})
   };
 
   render() {
     const {brands} = this.state;
     const markUp = brands.map(item => {
-      return <Cell key={item.id}
-                   data-rowID={item.id}
-                   onClick={this.handleToggleStatus}>
+      return <Cell key={item.id}>
         {item.brand}
-        {item.status ? <Icon24Done fill="var(--accent)"/> : null}
+        {item.status ? <Icon16Done fill="var(--accent)"/> : null}
       </Cell>})
 
     return (
@@ -86,7 +87,7 @@ class SearchPanelTwo extends React.PureComponent {
                 goTo='search-1'/>
         <div className='search-panel-two_wrap'>
           <Group>
-            <List >
+            <List onClick={this.handleToggleStatus}>
               {markUp}
             </List>
           </Group>
