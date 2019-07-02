@@ -1,6 +1,5 @@
 import React from 'react';
-import {Panel, Div, PanelHeaderContent} from "@vkontakte/vkui";
-import Header from "../../components/header/Header";
+import {Panel, Div, PullToRefresh} from "@vkontakte/vkui";
 import ProductCardSmall from '../../components/productCardSmall/ProductCardSmall';
 import './HomePanel.css';
 
@@ -16,8 +15,18 @@ class HomePanel extends React.Component {
     super(props)
     this.state = {
       contextOpened: false,
+      fetching: false,
       mode: 'all'
     };
+
+    this.onRefresh = () => {
+      this.setState({ fetching: true });
+
+      setTimeout(
+        () => {
+          this.setState({fetching: false})
+        } ,2000);
+    }
   }
 
   toggleContext = () => {
@@ -39,25 +48,27 @@ class HomePanel extends React.Component {
                     contextOpened={contextOpened}
                     mode={mode} />
         <Div className='all-product-page_wrap'>
-          <div className='all-product-page_content'>
-            <ProductCardSmall func={this.props.go}
-                              goTo='productCardPanel'
-                              formSticker='round'
-                              nameSticker='star'/>
-            <ProductCardSmall func={this.props.go}
-                              goTo='productCardPanel'
-                              formSticker='round'
-                              nameSticker='trend'/>
-            <Advertising func={this.props.go} goTo='productCardPanel'/>
-            <ProductCardSmall func={this.props.go}
-                              goTo='productCardPanel'
-                              formSticker='round'
-                              nameSticker='star'/>
-            <ProductCardSmall func={this.props.go}
-                              goTo='productCardPanel'
-                              formSticker='round'
-                              nameSticker='like'/>
-          </div>
+          <PullToRefresh onRefresh={this.onRefresh} isFetching={this.state.fetching}>
+            <div className='all-product-page_content'>
+              <ProductCardSmall func={this.props.go}
+                                goTo='productCardPanel'
+                                formSticker='round'
+                                nameSticker='star'/>
+              <ProductCardSmall func={this.props.go}
+                                goTo='productCardPanel'
+                                formSticker='round'
+                                nameSticker='trend'/>
+              <Advertising func={this.props.go} goTo='productCardPanel'/>
+              <ProductCardSmall func={this.props.go}
+                                goTo='productCardPanel'
+                                formSticker='round'
+                                nameSticker='star'/>
+              <ProductCardSmall func={this.props.go}
+                                goTo='productCardPanel'
+                                formSticker='round'
+                                nameSticker='like'/>
+            </div>
+          </PullToRefresh>
         </Div>
       </Panel>
     )
