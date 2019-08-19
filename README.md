@@ -1,6 +1,6 @@
 ## How to install
 
-`npx @vkontakte/create-vk-app <folder name>`
+`npm install`
 
 ## How to start
 
