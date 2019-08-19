@@ -1,6 +1,6 @@
 import React from 'react';
 
-import {Panel, FormLayoutGroup, Radio, platform, IOS, Div, Switch} from "@vkontakte/vkui";
+import {Panel, platform, IOS, Div, Switch} from "@vkontakte/vkui";
 
 import './SearchPanelOne.css';
 import IconChevronIOSRight from '../../../components/icon/IconChevronIOSRight';

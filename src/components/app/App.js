@@ -22,7 +22,7 @@ class App extends React.Component {
     super(props);
 
     this.state = {
-      activeStory: 'searchView',
+      activeStory: 'welcome',
       fetchedUser: null,
     };
   }
@@ -79,7 +79,8 @@ class App extends React.Component {
                               data-story='settingsView'>
                     <IconSetting active={this.state.activeStory === 'settingsView'}/>
                   </TabbarItem>
-                </Tabbar>}>
+                </Tabbar>
+              }>
           <StartView id='welcome' goView={this.goView}/>
           <HomeView id='homeView'/>
           <SearchView id='searchView'/>

@@ -1,7 +1,9 @@
 import React from 'react';
-
 import {IOS, platform, View} from "@vkontakte/vkui";
-import StartPanel from "../../panels/startPanel/StartPanel";
+
+import StartPanelOne from "../../panels/startPanel/startPanelOne/StartPanelOne";
+import StartPanelTwo from "../../panels/startPanel/StartPanelTwo/StartPanelTwo";
+import StartPanelThree from "../../panels/startPanel/startPanelThree/StartPanelThree";
 
 
 const osname = platform();
@@ -12,9 +14,9 @@ const fontStyleGlobal = {
 
 class StartView extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
-      activePanel: 'start'
+      activePanel: 'start-1'
     }
   }
 
@@ -23,12 +25,19 @@ class StartView extends React.Component {
   };
 
   render() {
+    const {goView} = this.props;
     return (
       <View id={this.props.id}
             header={false}
             activePanel={this.state.activePanel}
             style={fontStyleGlobal}>
-        <StartPanel id='start' goView={this.props.goView}/>
+        <StartPanelOne id='start-1'
+                       goPanel={this.goPanel}/>
+        <StartPanelTwo id='start-2'
+                       goPanel={this.goPanel}/>
+        <StartPanelThree goView={goView}
+                         id='start-3'
+                         goPanel={this.goPanel}/>
       </View>
     )
   }

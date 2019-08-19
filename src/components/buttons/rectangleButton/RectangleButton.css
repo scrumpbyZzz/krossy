@@ -21,3 +21,8 @@
   align-items: center;
 }
 
+.rectangle-button__selected {
+  border-color: #ffffff;
+  box-shadow: 0 0 8px 0 #ffffff;
+}
+
