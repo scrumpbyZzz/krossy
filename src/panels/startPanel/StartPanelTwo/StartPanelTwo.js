@@ -4,19 +4,18 @@ import {connect} from "react-redux";
 import './StartPanelTwo.css';
 import RectangleButton from "../../../components/buttons/rectangleButton/RectangleButton";
 import HorizontalSizeChart from "../../../components/caruselSizeChart/HorizontalSizeChart";
+import {onChangeGender} from "../../../reducers/user";
 
 
 class StartPanelTwo extends React.PureComponent {
-  constructor(props) {
-    super(props);
-    this.state = {
-      sex: '',
-      size: []
-    }
-  }
+
+  onChangeGender = (event) => {
+    const value = event.target.value;
+    this.props.onChangeGender(value)
+  };
+
   render() {
-    console.log(this.props)
-    const { id, goPanel } = this.props;
+    const { id, goPanel, data } = this.props;
     return (
       <Panel id={id}>
         <div className='start-panel-two_wrap'>
@@ -25,8 +24,31 @@ class StartPanelTwo extends React.PureComponent {
             Какие кроссовки Вам интересны?
           </div>
           <div className='start-panel-two-buttons_wrap'>
-            <RectangleButton title='Мужские'/>
-            <RectangleButton title='Женские'/>
+            <input className='start-panel-two_radio'
+                   type='radio'
+                   onChange={this.onChangeGender}
+                   name='gender'
+                   value='male'
+                   id='genderMale'
+                   checked={data.gender === "male"}
+            />
+            <label htmlFor='genderMale'
+                   className='start-panel-two_radio_label'>
+              Мужские
+            </label>
+            <input className='start-panel-two_radio'
+                   type='radio'
+                   onChange={this.onChangeGender}
+                   name='gender'
+                   value='female'
+                   id='genderFemale'
+                   checked={data.gender === "female"}
+            />
+            <label htmlFor='genderFemale' className='start-panel-two_radio_label'>
+              Женские
+            </label>
+
+
           </div>
           <div className='start-panel-two_text start-panel-two_text-2'>
             Выберете до 3-х интересующих Вас размеров кроссовок
@@ -47,8 +69,10 @@ class StartPanelTwo extends React.PureComponent {
 
 export default connect(
   state => ({
-    user: state.user
+    data: state.user
   }),
-  dispatch => ({})
+  dispatch => ({
+    onChangeGender: value => dispatch(onChangeGender(value))
+  })
 )
 (StartPanelTwo);

@@ -4,6 +4,7 @@
 
 .horizontal-size-chart_circle {
   display: flex;
+  flex-shrink: 0;
   justify-content: center;
   align-items: center;
   width: 48px;

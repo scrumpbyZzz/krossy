@@ -41,8 +41,8 @@ class SettingPanelOne extends React.Component {
           </div>
         </Div>
         <Div className='setting-page-checkbox-group setting-border-bottom'>
-          <RadioButton title='Мужские' name='sex'/>
-          <RadioButton title='Женские' name='sex'/>
+          <RadioButton title='Мужские' name='gender'/>
+          <RadioButton title='Женские' name='gender'/>
         </Div>
         <Div className='setting-page-notifications setting-border-bottom'>
           <div className='setting-page-notifications_left'>

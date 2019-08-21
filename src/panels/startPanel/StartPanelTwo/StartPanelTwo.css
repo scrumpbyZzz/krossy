@@ -26,7 +26,29 @@
   font-weight: 500;
 }
 
-.Panel--ios .start-panel-two_wrap .rectangle-button_text {
+.start-panel-two_radio {
+  display: none;
+}
+
+.start-panel-two_radio_label {
+  box-sizing: border-box;
+  font-family: SF Pro Text, sans-serif;
+  color: #fff;
+  border: 2px solid #8EC8FF;
+  height: 48px;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 131px;
+}
+
+.start-panel-two_radio:checked + .start-panel-two_radio_label {
+  border-color: #ffffff;
+  box-shadow: 0 0 8px 0 #ffffff;
+}
+
+.Panel--ios .start-panel-two_wrap label {
   font-weight: 500;
 }
 
@@ -72,7 +94,7 @@
   width: 77.22%;
 }
 
-.start-panel-two-buttons_wrap .rectangle-button {
+.start-panel-two-buttons_wrap .start-panel-two_radio_label {
   width: 47.12%;
 }
 
