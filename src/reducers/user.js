@@ -1,10 +1,63 @@
 import {CHANGE_GENDER} from "./constants";
 
 
+
 const initialState = {
   userId: '',
-  gender: 'male',
-  size: []
+  sizeChart: [
+    {
+      id: 1,
+      size: "38",
+      isSelected: false
+    },
+    {
+      id: 2,
+      size: "38.5",
+      isSelected: false
+    },
+    {
+      id: 3,
+      size: "39",
+      isSelected: false
+    },
+    {
+      id: 4,
+      size: "39.5",
+      isSelected: false
+    },
+    {
+      id: 5,
+      size: "40",
+      isSelected: false
+    },
+    {
+      id: 6,
+      size: "40.5",
+      isSelected: false
+    },
+    {
+      id: 7,
+      size: "41",
+      isSelected: false
+    },
+    {
+      id: 8,
+      size: "41.5",
+      isSelected: false
+    },
+    {
+      id: 9,
+      size: "42",
+      isSelected: false
+    },
+    {
+      id: 10,
+      size: "42.5",
+      isSelected: false
+    }
+  ],
+  gender: '',
+  selectedSize: []
 };
 
 export const onChangeGender = (value) => {

@@ -104,5 +104,16 @@
   font-weight: 500;
 }
 
+.start-panel-two_horizontal_wrap {
+  display: flex;
+}
+.start-panel-two_size {
+  width: 48px;
+  height: 48px;
+  border: 1px solid black;
+  flex-shrink: 0;
+  margin-right: 10px;
+}
+
 
 

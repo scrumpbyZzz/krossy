@@ -1,10 +1,11 @@
 import React from 'react';
-import {Panel} from '@vkontakte/vkui';
+import {Panel, HorizontalScroll} from '@vkontakte/vkui';
 import {connect} from "react-redux";
 import './StartPanelTwo.css';
 import RectangleButton from "../../../components/buttons/rectangleButton/RectangleButton";
-import HorizontalSizeChart from "../../../components/caruselSizeChart/HorizontalSizeChart";
+
 import {onChangeGender} from "../../../reducers/user";
+
 
 
 class StartPanelTwo extends React.PureComponent {
@@ -54,7 +55,26 @@ class StartPanelTwo extends React.PureComponent {
             Выберете до 3-х интересующих Вас размеров кроссовок
           </div>
           <div className='start-panel-two-carusel_wrap'>
-            <HorizontalSizeChart/>
+            <HorizontalScroll>
+              <div className='start-panel-two_horizontal_wrap'>
+                <div className='start-panel-two_size'>1</div>
+                <div className='start-panel-two_size'>1</div>
+                <div className='start-panel-two_size'>1</div>
+                <div className='start-panel-two_size'>1</div>
+                <div className='start-panel-two_size'>1</div>
+                <div className='start-panel-two_size'>1</div>
+                <div className='start-panel-two_size'>1</div>
+                <div className='start-panel-two_size'>1</div>
+                <div className='start-panel-two_size'>1</div>
+                <div className='start-panel-two_size'>1</div>
+                <div className='start-panel-two_size'>1</div>
+                <div className='start-panel-two_size'>1</div>
+                <div className='start-panel-two_size'>1</div>
+                <div className='start-panel-two_size'>1</div>
+                <div className='start-panel-two_size'>1</div>
+
+              </div>
+            </HorizontalScroll>
           </div>
           <div className='start-panel-two-button_bottom'>
             <RectangleButton title='Далее'

@@ -1,5 +1,5 @@
 import React from 'react';
-import connect from '@vkontakte/vkui-connect';
+
 import {ConfigProvider, TabbarItem, Tabbar, Epic} from '@vkontakte/vkui';
 import '@vkontakte/vkui/dist/vkui.css';
 import './App.css';
@@ -16,6 +16,7 @@ import IconSearch from "../icon/IconSearch";
 import IconKross from '../icon/IconKross';
 import IconHeart from '../icon/IconHeart';
 import IconSetting from '../icon/IconSetting';
+import connect from '@vkontakte/vkui-connect-promise';
 
 class App extends React.Component {
   constructor(props) {
@@ -27,17 +28,19 @@ class App extends React.Component {
     };
   }
 
+
+
   componentDidMount() {
-    connect.subscribe((e) => {
-      switch (e.detail.type) {
-        case 'VKWebAppGetUserInfoResult':
-          this.setState({fetchedUser: e.detail.data});
-          break;
-        default:
-          console.log(e.detail.type);
-      }
-    });
-    connect.send('VKWebAppGetUserInfo', {});
+
+    connect.send("VKWebAppGetUserInfo", {})
+      .then(data => {
+        debugger
+        console.log(data)
+      })
+      .catch(error => console.log(error))
+      .then(e => this.setState({fetchedUser: e.data}))
+
+
   }
 
   goView = (e) => {
@@ -81,7 +84,7 @@ class App extends React.Component {
                   </TabbarItem>
                 </Tabbar>
               }>
-          <StartView id='welcome' goView={this.goView}/>
+          <StartView id='welcome' goView={this.goView} fetchedUser={this.state.fetchedUser}/>
           <HomeView id='homeView'/>
           <SearchView id='searchView'/>
           <TinderView id='tinderView'/>
