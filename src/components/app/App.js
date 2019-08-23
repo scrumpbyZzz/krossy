@@ -1,9 +1,9 @@
 import React from 'react';
-
+import connect from '@vkontakte/vkui-connect-promise';
 import {ConfigProvider, TabbarItem, Tabbar, Epic} from '@vkontakte/vkui';
 import '@vkontakte/vkui/dist/vkui.css';
 import './App.css';
-
+import {connect as reduxConnect} from "react-redux";
 
 import HomeView from "../../view/homeView/HomeView";
 import SearchView from "../../view/searhView/SearchView";
@@ -16,7 +16,8 @@ import IconSearch from "../icon/IconSearch";
 import IconKross from '../icon/IconKross';
 import IconHeart from '../icon/IconHeart';
 import IconSetting from '../icon/IconSetting';
-import connect from '@vkontakte/vkui-connect-promise';
+
+import {getUserInfo, onChangeGender} from "../../reducers/user";
 
 class App extends React.Component {
   constructor(props) {
@@ -26,22 +27,15 @@ class App extends React.Component {
       activeStory: 'welcome',
       fetchedUser: null,
     };
-  }
-
-
-
-  componentDidMount() {
-
-    connect.send("VKWebAppGetUserInfo", {})
-      .then(data => {
-        debugger
-        console.log(data)
-      })
-      .catch(error => console.log(error))
-      .then(e => this.setState({fetchedUser: e.data}))
-
 
   }
+
+  componentWillMount() {
+  connect.send('VKWebAppInit', {});
+  connect.send('VKWebAppGetUserInfo', {})
+    .then(e => getUserInfo(e.data))
+    .then(e => console.log(e.data))
+}
 
   goView = (e) => {
     this.setState({activeStory: 'homeView'})
@@ -96,6 +90,13 @@ class App extends React.Component {
   }
 }
 
-export default App;
+export default reduxConnect(
+  state => ({
+    data: state.user
+  }),
+  dispatch => ({
+    init: data => dispatch(getUserInfo(data))
+  })
+)(App);
 
 

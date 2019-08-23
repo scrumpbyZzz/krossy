@@ -1,7 +1,10 @@
 import React from 'react';
+
 import { Panel } from '@vkontakte/vkui';
 import './StartPanelOne.css';
 import RectangleButton from "../../../components/buttons/rectangleButton/RectangleButton";
+
+import {getUserInfo} from "../../../reducers/user";
 
 const StartPanelOne = ({id, goPanel}) => {
   return (
