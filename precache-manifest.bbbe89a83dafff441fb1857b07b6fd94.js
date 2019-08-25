@@ -4,7 +4,7 @@ self.__precacheManifest = [
     "url": "/krossy/static/media/Rectangle 1533@2x.7d248541.png"
   },
   {
-    "revision": "b6f084fea38e844a84b8",
+    "revision": "1f3971d0c5f1ae8d1f9a",
     "url": "/krossy/static/css/main.4d9929d9.chunk.css"
   },
   {
@@ -44,8 +44,8 @@ self.__precacheManifest = [
     "url": "/krossy/static/media/tag.dc757a4e.svg"
   },
   {
-    "revision": "b6f084fea38e844a84b8",
-    "url": "/krossy/static/js/main.b6f084fe.chunk.js"
+    "revision": "1f3971d0c5f1ae8d1f9a",
+    "url": "/krossy/static/js/main.1f3971d0.chunk.js"
   },
   {
     "revision": "7378d2e08cb7cb79fa6f338d7247cc0b",
@@ -84,7 +84,7 @@ self.__precacheManifest = [
     "url": "/krossy/static/css/2.ec8068f3.chunk.css"
   },
   {
-    "revision": "c7b6a40efa4fc1412c76aba8cdd2de42",
+    "revision": "8d0bbc72532f49954d33687aaa33231e",
     "url": "/krossy/index.html"
   }
 ];
