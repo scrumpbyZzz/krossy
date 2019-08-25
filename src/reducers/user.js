@@ -1,11 +1,14 @@
-import {CHANGE_GENDER, CHOOSE_SIZE, GET_USER_INFO} from "./constants";
+import {CHANGE_GENDER, CHOOSE_SIZE, CHOOSE_SIZE_BY_SIZE, GET_MODEL_BY_ID, GET_USER_INFO} from "./constants";
 
 
 
 
 
 const initialState = {
-  userInfo: {},
+  userInfo: {
+    // id: 18554184
+    id: 1234
+  },
   sizeChart: [
     {
       id: 1,
@@ -59,7 +62,14 @@ const initialState = {
     }
   ],
   gender: '',
-  selectedSize: []
+  models: []
+};
+
+export const getModelsById = (data) => {
+  return {
+    type: GET_MODEL_BY_ID,
+    data
+  }
 };
 
 export const getUserInfo = (data) => {
@@ -83,6 +93,13 @@ export const onChooseSize = (id) => {
   }
 };
 
+export const onChooseSizeBySize = (size) => {
+  return {
+    type: CHOOSE_SIZE_BY_SIZE,
+    size
+  }
+};
+
 export function user(state = initialState, action) {
   switch (action.type) {
     case CHANGE_GENDER:
@@ -98,11 +115,25 @@ export function user(state = initialState, action) {
       };
 
     case CHOOSE_SIZE:
-      const temp = state.sizeChart.map(item =>
+      const tempById = state.sizeChart.map(item =>
         (item.id === action.id) ? {...item, isSelected: !item.isSelected} : item);
       return {
         ...state,
-        sizeChart: temp
+        sizeChart: tempById
+      };
+
+    case CHOOSE_SIZE_BY_SIZE:
+      const tempBySize = state.sizeChart.map(item =>
+        (item.size === action.size) ? {...item, isSelected: !item.isSelected} : item);
+      return {
+        ...state,
+        sizeChart: tempBySize
+      };
+
+    case GET_MODEL_BY_ID:
+      return {
+        ...state,
+        models: action.data
       }
   }
   return state;

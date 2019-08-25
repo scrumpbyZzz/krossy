@@ -10,51 +10,79 @@ import IconSetting from "../../../components/icon/IconSetting";
 import IconArrowRight from "../../../components/icon/IconArrowRight";
 import RoundSizeButton from "../../../components/buttons/roundSizeButton/RoundSizeButton";
 import IconArrowAndroidBack from "../../../components/icon/IconArrowAndroisBack";
+import ApiService from "../../../api/krossy-api";
+import DotsSlide from "../../../components/dotsSlide/DotsSlide";
+import {connect} from "react-redux";
+import {getModelsById, onChangeGender, onChooseSize} from "../../../reducers/user";
 
-const StartPanelThree = ({goView, id, goPanel}) => {
-  return (
-    <Panel id={id} >
-      <div className='start-panel-three_wrap'>
-        <div className='start-panel-three-circle-button_wrap'>
-          <RoundSizeButton func={goPanel}
-                           goTo='start-2'
-                           iconSvg={<IconArrowAndroidBack currentColor='#ffffff'/>}/>
+class StartPanelThree extends React.PureComponent {
+
+  Service = new ApiService();
+
+  getModels= () => {
+    let goodId = 1216;
+    this.Service.getModels(goodId)
+      .then(res => this.props.models(res))
+  };
+
+  render() {
+    const {id, goPanel, goView} = this.props;
+    return (
+      <Panel id={id} >
+        <div className='start-panel-three_wrap'>
+          <div className='start-panel-three-circle-button_wrap'>
+            <RoundSizeButton func={goPanel}
+                             goTo='start-2'
+                             iconSvg={<IconArrowAndroidBack currentColor='#ffffff'/>}/>
+          </div>
+          <div className='start-panel-three_content'>
+            <div className='start-panel-three_title'>Готово!</div>
+            <div className='start-panel-three_text start-panel-three_text-1'>
+              Сервис «Кроссы» - это отличный помощник в нелегкой
+              задаче поиска своих самых любимых кросовок!
+            </div>
+            <div className='start-panel-three_text start-panel-three_text-2'>
+              Особенно рекомендуем наш Tinder для кроссовок - очень кашерно!
+            </div>
+          </div>
+          <div className='start-panel-three-icon_arrow'>
+            <IconArrowRight/>
+          </div>
+          <div className='start-panel-three-setting'>
+            <div className='start-panel-three-setting-icon_wrap '>
+              <IconHome currentColor='#ffffff'/>
+            </div>
+            <div className='start-panel-three-setting-icon-wrap'>
+              <IconSearch currentColor='#ffffff'/>
+            </div>
+            <div className='start-panel-three-setting-icon-wrap'>
+              <IconKross currentColor='#ffffff'/>
+            </div>
+            <div className='start-panel-three-setting-icon-wrap'>
+              <IconHeart currentColor='#ffffff'/>
+            </div>
+            <div className='start-panel-three-setting-icon-wrap'>
+              <IconSetting currentColor='#ffffff'/>
+            </div>
+          </div>
+          <RectangleButton title='Приступить'
+                           func={goView}
+                           secondAction={this.getModels}
+                          />
+          <DotsSlide />
         </div>
-        <div className='start-panel-three_content'>
-          <div className='start-panel-three_title'>Готово!</div>
-          <div className='start-panel-three_text start-panel-three_text-1'>
-            Сервис «Кроссы» - это отличный помощник в нелегкой
-            задаче поиска своих самых любимых кросовок!
-          </div>
-          <div className='start-panel-three_text start-panel-three_text-2'>
-            Особенно рекомендуем наш Tinder для кроссовок - очень кашерно!
-          </div>
-        </div>
-        <div className='start-panel-three-icon_arrow'>
-          <IconArrowRight/>
-        </div>
-        <div className='start-panel-three-setting'>
-          <div className='start-panel-three-setting-icon_wrap '>
-            <IconHome currentColor='#ffffff'/>
-          </div>
-          <div className='start-panel-three-setting-icon-wrap'>
-            <IconSearch currentColor='#ffffff'/>
-          </div>
-          <div className='start-panel-three-setting-icon-wrap'>
-            <IconKross currentColor='#ffffff'/>
-          </div>
-          <div className='start-panel-three-setting-icon-wrap'>
-            <IconHeart currentColor='#ffffff'/>
-          </div>
-          <div className='start-panel-three-setting-icon-wrap'>
-            <IconSetting currentColor='#ffffff'/>
-          </div>
-        </div>
-        <RectangleButton title='Приступить'
-                         func={goView}/>
-      </div>
-    </Panel>
-  )
+      </Panel>
+    )
+  }
+
+
 };
 
-export default StartPanelThree;
+export default connect(
+  state => ({
+    data: state.user
+  }),
+  dispatch => ({
+    models: data => dispatch(getModelsById(data))
+  })
+)(StartPanelThree);

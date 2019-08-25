@@ -5,6 +5,7 @@ import './StartPanelOne.css';
 import RectangleButton from "../../../components/buttons/rectangleButton/RectangleButton";
 
 import {getUserInfo} from "../../../reducers/user";
+import DotsSlide from "../../../components/dotsSlide/DotsSlide";
 
 const StartPanelOne = ({id, goPanel}) => {
   return (
@@ -17,6 +18,7 @@ const StartPanelOne = ({id, goPanel}) => {
           </div>
         </div>
         <RectangleButton title='Далее' goTo='start-2' func={goPanel}/>
+        <DotsSlide />
       </div>
     </Panel>
   )

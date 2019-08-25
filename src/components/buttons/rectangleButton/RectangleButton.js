@@ -2,7 +2,7 @@ import React from 'react';
 import './RectangleButton.css';
 import '../../../assets/fonts/fonts.css'
 
-const RectangleButton = ({title, func, icon, goTo, iconSvg}) => {
+const RectangleButton = ({title, func, icon, goTo, iconSvg, secondAction}) => {
 
   let pic;
 
@@ -13,11 +13,16 @@ const RectangleButton = ({title, func, icon, goTo, iconSvg}) => {
     pic = <React.Fragment>{iconSvg}</React.Fragment>
   }
 
+  const onPress = (e) => {
+    const temp = e.currentTarget.dataset.to;
+    func(temp);
+   if(secondAction) {secondAction()}
+  };
 
   return (
     <div className='rectangle-button'
             level="outline"
-            onClick={func}
+            onClick={onPress}
             data-to={goTo}
             size='l'>
       <div className='rectangle-button_wrap'>

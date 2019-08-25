@@ -4,11 +4,14 @@ import {connect} from "react-redux";
 import './StartPanelTwo.css';
 import RectangleButton from "../../../components/buttons/rectangleButton/RectangleButton";
 
-import {getUserInfo, onChangeGender, onChooseSize} from "../../../reducers/user";
-
+import {onChangeGender, onChooseSize} from "../../../reducers/user";
+import DotsSlide from "../../../components/dotsSlide/DotsSlide";
+import ApiService from "../../../api/krossy-api";
 
 
 class StartPanelTwo extends React.PureComponent {
+
+  Service = new ApiService();
 
   onChangeGender = (event) => {
     const value = event.target.value;
@@ -16,13 +19,28 @@ class StartPanelTwo extends React.PureComponent {
   };
 
   onChangeSize = (event) => {
-    const id= parseInt(event.target.dataset.id, 10);
+    const id = parseInt(event.target.dataset.id, 10);
     this.props.onPickSize(id)
   };
 
+  saveUserSettings = () => {
+    const {gender, sizeChart, userInfo} = this.props.data;
+    const id = userInfo.id;
+    const sizes = [];
+    sizeChart.forEach(item => {
+      if(item.isSelected) {
+        sizes.push(item.size)
+      }
+    });
+    const form = new FormData();
+    form.append("gender", gender);
+    form.append("size", JSON.stringify(sizes));
+
+    this.Service.saveSetting(id, form)
+  };
+
   render() {
-    console.log("render");
-    const { id, goPanel, data } = this.props;
+    const {id, goPanel, data} = this.props;
     return (
       <Panel id={id}>
         <div className='start-panel-two_wrap'>
@@ -58,28 +76,26 @@ class StartPanelTwo extends React.PureComponent {
           <div className='start-panel-two_text start-panel-two_text-2'>
             Выберете до 3-х интересующих Вас размеров кроссовок
           </div>
-          <div className='start-panel-two-carusel_wrap'>
-            <HorizontalScroll>
-              <div onClick={this.onChangeSize} className='start-panel-two_horizontal_wrap'>
-                {
-                  data.sizeChart.map(item => {
-                    return <div key={item.id}
-                         data-id={item.id}
-                         className='start-panel-two_size'
-                    style={item.isSelected ? {borderColor: "#ffffff", boxShadow: "0 0 4px 0 #fff"} : {}}
-                    >
-                      {item.size}
-                    </div>
-                  })
-                }
-              </div>
-            </HorizontalScroll>
-          </div>
+            <div onClick={this.onChangeSize} className='start-panel-two_horizontal_wrap'>
+              {
+                data.sizeChart.map(item => {
+                  return <div key={item.id}
+                              data-id={item.id}
+                              className='start-panel-two_size'
+                              style={item.isSelected ? {borderColor: "#ffffff", boxShadow: "0 0 4px 0 #fff"} : {}}
+                  >
+                    {item.size}
+                  </div>
+                })
+              }
+            </div>
           <div className='start-panel-two-button_bottom'>
             <RectangleButton title='Далее'
                              func={goPanel}
+                             secondAction={this.saveUserSettings}
                              goTo='start-3'/>
           </div>
+          <DotsSlide/>
         </div>
       </Panel>
     )

@@ -4,7 +4,7 @@ const IconHome = ({currentColor, active}) => {
 
   let colorSvg = currentColor ? currentColor : active ? '#000' : '#aebfcf';
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+    <svg className='svg-icon-home' xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
       <g id="Group_1409" data-name="Group 1409" transform="translate(-37.445 -703.446)" opacity="0.7">
         <g id="Group_847" data-name="Group 847" transform="translate(37.446 703.446)">
           <g id="Rectangle_1215" data-name="Rectangle 1215" transform="translate(0 0)" fill="none"

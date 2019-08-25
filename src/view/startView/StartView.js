@@ -20,8 +20,8 @@ class StartView extends React.Component {
     }
   }
 
-  goPanel = (e) => {
-    this.setState({activePanel: e.currentTarget.dataset.to})
+  goPanel = (go) => {
+    this.setState({activePanel: go})
   };
 
   render() {

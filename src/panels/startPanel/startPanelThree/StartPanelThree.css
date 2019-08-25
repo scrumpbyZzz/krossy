@@ -14,7 +14,7 @@
 
 .start-panel-three-circle-button_wrap {
   align-self: flex-end;
-  margin: 32px 32px 32px 0;
+  margin: 52px 32px 32px 0;
 }
 
 .start-panel-three_content {
@@ -27,7 +27,7 @@
   color: #ffffff;
   font-size: 24px;
   font-weight: 500;
-  margin-bottom: calc(100vh - 83.5vh)
+  margin-bottom: calc(100vh - 87.5vh)
 }
 
 .start-panel-three_text {
@@ -106,7 +106,7 @@
   opacity: 0.15;
 }
 
-.start-panel-three-setting .svg-icon-sq {
+.start-panel-three-setting .svg-icon-home {
   opacity: 0.15;
 }
 
@@ -127,6 +127,11 @@
 .start-panel-three-icon_arrow {
   margin: 10px 0;
 }
+
+.start-panel-three_wrap .dots-slide_dot:nth-child(3) {
+  opacity: 1;
+}
+
 
 @media screen and (max-height: 640px) {
   .start-panel-three_title {

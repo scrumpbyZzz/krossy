@@ -19,10 +19,15 @@ const RoundSizeButton = ({func, goTo, content, icon, backgroundColor, iconSvg}) 
     pic = content
   }
 
+  const onPress = (e) => {
+    const temp = e.currentTarget.dataset.to;
+    func(temp);
+  };
+
   return (
     <div className='round-size-btn'
          style={divStyle}
-         onClick={func}
+         onClick={onPress}
          data-to={goTo}>
       {pic}
     </div>

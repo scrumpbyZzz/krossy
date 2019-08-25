@@ -1,4 +1,5 @@
 .start-panel-two_wrap {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -105,8 +106,17 @@
 }
 
 .start-panel-two_horizontal_wrap {
+  margin-top: 35px;
   display: flex;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  width: 100%;
 }
+
+.start-panel-two_horizontal_wrap::-webkit-scrollbar {
+  display: none;
+}
+
 .start-panel-two_size {
   display: flex;
   align-items: center;
@@ -117,9 +127,12 @@
   border: 2px solid #8EC8FF;
   border-radius: 50%;
   flex-shrink: 0;
-  margin-right: 10px;
+  margin: 0 5px;
 }
 
+.start-panel-two_wrap .dots-slide_dot:nth-child(2) {
+  opacity: 1;
+}
 
 
 

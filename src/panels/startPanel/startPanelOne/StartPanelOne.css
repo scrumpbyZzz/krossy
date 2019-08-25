@@ -1,4 +1,5 @@
 .start-panel-one_wrap {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -55,5 +56,9 @@
   font-size: 14px;
   font-weight: 300;
   line-height: 22px;
+}
+
+.start-panel-one_wrap .dots-slide_dot:nth-child(1) {
+  opacity: 1;
 }
 

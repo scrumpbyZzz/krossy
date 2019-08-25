@@ -1,3 +1,5 @@
 export const CHANGE_GENDER = "CHANGE_GENDER";
 export const GET_USER_INFO = "GET_USER_INFO";
 export const CHOOSE_SIZE = "CHOOSE_SIZE";
+export const CHOOSE_SIZE_BY_SIZE = "CHOOSE_SIZE_BY_SIZE";
+export const GET_MODEL_BY_ID = "GET_MODEL_BY_ID";

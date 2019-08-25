@@ -17,7 +17,8 @@ import IconKross from '../icon/IconKross';
 import IconHeart from '../icon/IconHeart';
 import IconSetting from '../icon/IconSetting';
 
-import {getUserInfo, onChangeGender} from "../../reducers/user";
+import {getUserInfo, loadSetting, onChangeGender, onChooseSizeBySize} from "../../reducers/user";
+import ApiService from "../../api/krossy-api";
 
 class App extends React.Component {
   constructor(props) {
@@ -27,15 +28,27 @@ class App extends React.Component {
       activeStory: 'welcome',
       fetchedUser: null,
     };
-
   }
+
+  Service = new ApiService();
 
   componentWillMount() {
   connect.send('VKWebAppInit', {});
   connect.send('VKWebAppGetUserInfo', {})
     .then(e => getUserInfo(e.data))
     .then(e => console.log(e.data))
-}
+  }
+
+  componentDidMount() {
+    const id = this.props.data.userInfo.id;
+    this.Service.loadSetting(id)
+      .then(res => {
+        if(res.ok) {
+          this.props.gender(res.gender);
+          res.size.forEach(s => this.props.size(s));
+        }
+      })
+  }
 
   goView = (e) => {
     this.setState({activeStory: 'homeView'})
@@ -95,7 +108,9 @@ export default reduxConnect(
     data: state.user
   }),
   dispatch => ({
-    init: data => dispatch(getUserInfo(data))
+    init: data => dispatch(getUserInfo(data)),
+    gender: value => dispatch(onChangeGender(value)),
+    size: size => dispatch(onChooseSizeBySize(size))
   })
 )(App);
 
