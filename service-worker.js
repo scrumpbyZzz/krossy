@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/krossy/precache-manifest.997218156146b83c007b9c9419b40ca6.js"
+  "/krossy/precache-manifest.90e9488d6614f21de76b77ef5bb1f216.js"
 );
 
 workbox.clientsClaim();
