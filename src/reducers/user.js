@@ -1,14 +1,7 @@
-import {CHANGE_GENDER, CHOOSE_SIZE, CHOOSE_SIZE_BY_SIZE, GET_MODEL_BY_ID, GET_USER_INFO} from "./constants";
-
-
-
-
+import {CHANGE_GENDER, CHOOSE_SIZE, CHOOSE_SIZE_BY_SIZE, GET_MODEL_BY_ID, GET_PRODUCTS, GET_USER_ID} from "./constants";
 
 const initialState = {
-  userInfo: {
-    // id: 18554184
-    id: 1234
-  },
+  userID: 0,
   sizeChart: [
     {
       id: 1,
@@ -59,23 +52,48 @@ const initialState = {
       id: 10,
       size: "42.5",
       isSelected: false
+    },
+    {
+      id: 11,
+      size: "43",
+      isSelected: false
+    },
+    {
+      id: 12,
+      size: "43.5",
+      isSelected: false
+    },
+    {
+      id: 13,
+      size: "44",
+      isSelected: false
+    },
+    {
+      id: 14,
+      size: "44.5",
+      isSelected: false
+    },
+    {
+      id: 15,
+      size: "45",
+      isSelected: false
     }
   ],
-  gender: '',
-  models: []
+  gender: 'male',
+  products: []
 };
 
-export const getModelsById = (data) => {
+export const getProducts= (data) => {
   return {
-    type: GET_MODEL_BY_ID,
+    type: GET_PRODUCTS,
     data
   }
 };
 
-export const getUserInfo = (data) => {
+export const getUserInfo = (id) => {
   return {
-    type: GET_USER_INFO,
-    data
+    type: GET_USER_ID,
+    id
   }
 };
 
@@ -108,10 +126,10 @@ export function user(state = initialState, action) {
         gender: action.value
       };
 
-    case GET_USER_INFO:
+    case GET_USER_ID:
       return {
         ...state,
-        userInfo: action.data
+        userID: action.id
       };
 
     case CHOOSE_SIZE:
@@ -130,10 +148,10 @@ export function user(state = initialState, action) {
         sizeChart: tempBySize
       };
 
-    case GET_MODEL_BY_ID:
+    case GET_PRODUCTS:
       return {
         ...state,
-        models: action.data
+        products: action.data
       }
   }
   return state;

@@ -1,9 +1,9 @@
 import React from 'react';
 import './ProductCountShopView.css';
 
-const ProductCountShopView = () => {
+const ProductCountShopView = ({shops}) => {
   return (
-    <span className='product-count-shop-view'>3 магазина</span>
+    <span className='product-count-shop-view'>{shops} магазина</span>
   )
 };
 

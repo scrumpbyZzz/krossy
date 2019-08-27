@@ -1,14 +1,14 @@
 import React from 'react';
 
 
-const ProductBrandView = ({logo}) => {
+const ProductBrandView = ({logo, name, model}) => {
   return (
     <React.Fragment>
       <img className='product-brand-view-logo'
            src={logo}
            alt='logo'/>
       <div className='product-brand-view-name'>
-        ADIDAS AIR HUARACHE
+        {name} {model}
       </div>
     </React.Fragment>
   )

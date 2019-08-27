@@ -13,30 +13,41 @@ import Sticker from "../Sticker/Sticker";
 
 const osname = platform();
 
-const ProductCardSmall = ({func, goTo, formSticker, nameSticker}) => {
+const ProductCardSmall = ({func, goTo, formSticker, nameSticker, data}) => {
+  let pictures = "https://via.placeholder.com/156x118"
+
   return (
-    <div onClick={func}
-         data-to={goTo}
-         className='product-card-small_wrap'>
+
+      <div onClick={func}
+                  data-to={goTo}
+                  className='product-card-small_wrap'>
       <div className='product-card-small-sticker_wrap'>
         <Sticker form={formSticker} icon={nameSticker} />
       </div>
       <div className='product-card-small-pic_wrap'>
-        <img className='product-card-small-pic'
-             src={pic}
-             alt='pic'/>
+        {pictures ? <img className='product-card-small-pic'
+                         src={pictures}
+                         alt='pic'/> : null}
       </div>
       <div className='product-card-small-brand_wrap'>
-        <ProductBrandView logo={brandLogo}/>
+        {data ?
+          <ProductBrandView
+            name={data.name}
+            model={data.model}
+            logo={brandLogo}/> : null}
       </div>
       <div className='product-card-small-price_wrap'>
-        <ProductPriceView/>
+        {data ? <ProductPriceView price={data.price}
+                                  oldPrice={data.oldPrice}
+                                  discount={data.discount}/> : null}
       </div>
       <div className='product-card-small_footer'>
-        <ProductSizeChartView/>
-        <ProductCountShopView/>
+        {data ? <ProductSizeChartView sizes={data.sizes}/> : null}
+        {data ? <ProductCountShopView shops={data.shops}/> : null}
       </div>
     </div>
+
+
   )
 };
 

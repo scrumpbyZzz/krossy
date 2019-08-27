@@ -24,8 +24,8 @@ class StartPanelTwo extends React.PureComponent {
   };
 
   saveUserSettings = () => {
-    const {gender, sizeChart, userInfo} = this.props.data;
-    const id = userInfo.id;
+    const {gender, sizeChart, userID} = this.props.data;
+
     const sizes = [];
     sizeChart.forEach(item => {
       if(item.isSelected) {
@@ -36,11 +36,12 @@ class StartPanelTwo extends React.PureComponent {
     form.append("gender", gender);
     form.append("size", JSON.stringify(sizes));
 
-    this.Service.saveSetting(id, form)
+    this.Service.saveSetting(userID, form)
   };
 
   render() {
     const {id, goPanel, data} = this.props;
+    console.log(data);
     return (
       <Panel id={id}>
         <div className='start-panel-two_wrap'>

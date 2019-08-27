@@ -6,6 +6,8 @@ import './HomePanel.css';
 import Advertising from '../../components/advertising/Advertising';
 import {platform, IOS} from "@vkontakte/vkui";
 import HeaderHome from "../../components/headerHome/HeaderHome";
+import {connect as reduxConnect} from "react-redux";
+import {getUserInfo, onChangeGender, onChooseSizeBySize} from "../../reducers/user";
 
 const osname = platform();
 
@@ -16,7 +18,8 @@ class HomePanel extends React.Component {
     this.state = {
       contextOpened: false,
       fetching: false,
-      mode: 'all'
+      mode: 'all',
+      products:[]
     };
 
     this.onRefresh = () => {
@@ -29,6 +32,16 @@ class HomePanel extends React.Component {
     }
   }
 
+  componentDidMount() {
+    console.log(this.props)
+    setTimeout(() => {
+      this.setState({
+        products: this.props.data.products
+      })
+    }, 1000)
+  }
+
+
   toggleContext = () => {
     this.setState({contextOpened: !this.state.contextOpened});
   };
@@ -39,8 +52,11 @@ class HomePanel extends React.Component {
     requestAnimationFrame(this.toggleContext);
   };
 
+
   render() {
     const {contextOpened, mode} = this.state;
+    const {data} = this.props;
+
     return (
       <Panel  id={this.props.id}>
         <HeaderHome toggleContext={this.toggleContext}
@@ -50,7 +66,21 @@ class HomePanel extends React.Component {
         <Div className='all-product-page_wrap'>
           <PullToRefresh onRefresh={this.onRefresh} isFetching={this.state.fetching}>
             <div className='all-product-page_content'>
-              <ProductCardSmall func={this.props.go}
+              {
+                this.state.products.map(item => {
+                  return <ProductCardSmall key={item.id}
+                                           data={item}
+                                           func={this.props.go}
+                                           goTo='productCardPanel'
+                                           formSticker='round'
+                                           nameSticker='star'/>
+                })
+              }
+
+
+
+
+              {/*<ProductCardSmall func={this.props.go}
                                 goTo='productCardPanel'
                                 formSticker='round'
                                 nameSticker='star'/>
@@ -66,7 +96,7 @@ class HomePanel extends React.Component {
               <ProductCardSmall func={this.props.go}
                                 goTo='productCardPanel'
                                 formSticker='round'
-                                nameSticker='like'/>
+                                nameSticker='like'/>*/}
             </div>
           </PullToRefresh>
         </Div>
@@ -75,4 +105,13 @@ class HomePanel extends React.Component {
   }
 }
 
-export default HomePanel;
+export default reduxConnect(
+  state => ({
+    data: state.user
+  }),
+  dispatch => ({
+    init: id => dispatch(getUserInfo(id)),
+    gender: value => dispatch(onChangeGender(value)),
+    size: size => dispatch(onChooseSizeBySize(size))
+  })
+)(HomePanel);

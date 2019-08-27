@@ -13,16 +13,16 @@ import IconArrowAndroidBack from "../../../components/icon/IconArrowAndroisBack"
 import ApiService from "../../../api/krossy-api";
 import DotsSlide from "../../../components/dotsSlide/DotsSlide";
 import {connect} from "react-redux";
-import {getModelsById, onChangeGender, onChooseSize} from "../../../reducers/user";
+import {getModelsById, getProducts, onChangeGender, onChooseSize} from "../../../reducers/user";
 
 class StartPanelThree extends React.PureComponent {
 
   Service = new ApiService();
 
-  getModels= () => {
-    let goodId = 1216;
-    this.Service.getModels(goodId)
-      .then(res => this.props.models(res))
+  getProducts= () => {
+    const {userID} = this.props.data
+    this.Service.getProducts(userID)
+      .then(res => this.props.products(res))
   };
 
   render() {
@@ -67,7 +67,7 @@ class StartPanelThree extends React.PureComponent {
           </div>
           <RectangleButton title='Приступить'
                            func={goView}
-                           secondAction={this.getModels}
+                           secondAction={this.getProducts}
                           />
           <DotsSlide />
         </div>
@@ -83,6 +83,6 @@ export default connect(
     data: state.user
   }),
   dispatch => ({
-    models: data => dispatch(getModelsById(data))
+    products: data => dispatch(getProducts(data))
   })
 )(StartPanelThree);

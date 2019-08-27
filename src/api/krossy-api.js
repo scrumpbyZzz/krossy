@@ -24,8 +24,8 @@ export default class ApiService {
     })
   };
 
-  getModels = async (goodId) => {
-    const res = await this.getResource(`/goods/${goodId}/models`);
+  getProducts = async (userId) => {
+    const res = await this.getResource(`/shoes?userId=${userId}`);
     return res;
   }
 

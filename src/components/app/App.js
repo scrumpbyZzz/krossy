@@ -21,33 +21,20 @@ import {getUserInfo, loadSetting, onChangeGender, onChooseSizeBySize} from "../.
 import ApiService from "../../api/krossy-api";
 
 class App extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      activeStory: 'welcome',
-      fetchedUser: null,
-    };
-  }
 
   Service = new ApiService();
 
-  componentWillMount() {
-  connect.send('VKWebAppInit', {});
-  connect.send('VKWebAppGetUserInfo', {})
-    .then(e => getUserInfo(e.data))
-    .then(e => console.log(e.data))
+  constructor(props) {
+    super(props);
+    this.state = {
+      activeStory: 'welcome',
+    };
   }
 
   componentDidMount() {
-    const id = this.props.data.userInfo.id;
-    this.Service.loadSetting(id)
-      .then(res => {
-        if(res.ok) {
-          this.props.gender(res.gender);
-          res.size.forEach(s => this.props.size(s));
-        }
-      })
+    connect.send("VKWebAppGetUserInfo", {})
+      .then(e => this.props.init(e.data.id))
+
   }
 
   goView = (e) => {
@@ -108,7 +95,7 @@ export default reduxConnect(
     data: state.user
   }),
   dispatch => ({
-    init: data => dispatch(getUserInfo(data)),
+    init: id => dispatch(getUserInfo(id)),
     gender: value => dispatch(onChangeGender(value)),
     size: size => dispatch(onChooseSizeBySize(size))
   })

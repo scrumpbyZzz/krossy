@@ -6,10 +6,10 @@ import connect from '@vkontakte/vkui-connect-promise';
 import App from './components/app/App';
 import { Provider } from 'react-redux';
 import store from './store/configureStore';
-import {getUserInfo} from "./reducers/user";
+
 // import registerServiceWorker from './sw';
 
-
+connect.send('VKWebAppInit', {})
 
 // Если вы хотите, чтобы ваше веб-приложение работало в оффлайне и загружалось быстрее,
 // расскомментируйте строку с registerServiceWorker();
