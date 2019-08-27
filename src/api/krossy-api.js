@@ -1,6 +1,6 @@
 export default class ApiService {
 
-  _apiBase = 'http://krosi.todozzle.com/api';
+  _apiBase = 'https://krosi.todozzle.com/api';
 
   getResource = async (url) => {
     const res = await fetch(`${this._apiBase}${url}`);

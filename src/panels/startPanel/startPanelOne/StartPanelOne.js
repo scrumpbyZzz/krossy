@@ -13,12 +13,13 @@ class StartPanelOne extends React.Component {
 
   loadSett = () => {
     const id = this.props.data.userID;
-    console.log(this.props.data)
+
     this.Service.loadSetting(id)
       .then(res => {
-        if(res) {
-          this.props.gender(res.gender);
-          res.size.forEach(s => this.props.size(s));
+        console.log(res)
+        if(res.status === "success" ) {
+          this.props.sex(res.result.gender);
+          res.result.size.forEach(s => this.props.size(s));
         }
       })
   }
@@ -49,7 +50,7 @@ export default reduxConnect(
     data: state.user
   }),
   dispatch => ({
-    gender: value => dispatch(onChangeGender(value)),
+    sex: value => dispatch(onChangeGender(value)),
     size: size => dispatch(onChooseSizeBySize(size))
   })
 )(StartPanelOne);

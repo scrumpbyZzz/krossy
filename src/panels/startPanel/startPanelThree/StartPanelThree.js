@@ -22,7 +22,7 @@ class StartPanelThree extends React.PureComponent {
   getProducts= () => {
     const {userID} = this.props.data
     this.Service.getProducts(userID)
-      .then(res => this.props.products(res))
+      .then(res => this.props.products(res.result))
   };
 
   render() {
