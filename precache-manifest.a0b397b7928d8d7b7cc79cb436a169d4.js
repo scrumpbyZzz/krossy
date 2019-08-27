@@ -1,23 +1,23 @@
 self.__precacheManifest = [
   {
-    "revision": "72eddfa5a0725ded30c27f3e37846671",
-    "url": "/krossy/static/media/backTinder.72eddfa5.svg"
+    "revision": "7378d2e08cb7cb79fa6f338d7247cc0b",
+    "url": "/krossy/static/media/backTinder.7378d2e0.svg"
   },
   {
-    "revision": "99d856fe89f56854c711",
-    "url": "/krossy/static/css/main.6a63d54d.chunk.css"
+    "revision": "ab497aaae3116f64ac98",
+    "url": "/krossy/static/css/main.f83405e4.chunk.css"
   },
   {
     "revision": "5ebd78a4d372e3aee23c",
     "url": "/krossy/static/js/runtime~main.5ebd78a4.js"
   },
   {
-    "revision": "741e03a3292a63469157655f2d12ecc5",
-    "url": "/krossy/static/media/iOS 3.741e03a3.svg"
+    "revision": "b4df673ec0e2fe9649e8c28e4b458b79",
+    "url": "/krossy/static/media/iOS 3.b4df673e.svg"
   },
   {
-    "revision": "38fb123f784f0d16ea4a",
-    "url": "/krossy/static/js/2.38fb123f.chunk.js"
+    "revision": "b5b2c9ddb0e9f1ae5e49",
+    "url": "/krossy/static/js/2.b5b2c9dd.chunk.js"
   },
   {
     "revision": "b663df13c7e344cb16e890dc1c66b6e2",
@@ -32,20 +32,20 @@ self.__precacheManifest = [
     "url": "/krossy/static/media/Rectangle 1384@2x.6f1ccce8.png"
   },
   {
-    "revision": "f01d01718c5b5d606b1d11429db32508",
-    "url": "/krossy/static/media/asics-seeklogo.com.f01d0171.svg"
+    "revision": "5bb86171c37cb58495085e2d756cccbd",
+    "url": "/krossy/static/media/asics-seeklogo.com.5bb86171.svg"
   },
   {
-    "revision": "d76a93e5cd8ca796d0d57185ce1d912a",
-    "url": "/krossy/static/media/tag.d76a93e5.svg"
+    "revision": "dc757a4e62f3140b58fd32a0430e06da",
+    "url": "/krossy/static/media/tag.dc757a4e.svg"
   },
   {
     "revision": "7d2485413e1afa5c9d986e1388b89ac3",
     "url": "/krossy/static/media/Rectangle 1533@2x.7d248541.png"
   },
   {
-    "revision": "99d856fe89f56854c711",
-    "url": "/krossy/static/js/main.99d856fe.chunk.js"
+    "revision": "ab497aaae3116f64ac98",
+    "url": "/krossy/static/js/main.ab497aaa.chunk.js"
   },
   {
     "revision": "ffd2a1a4fa8e4c07f9ce40daa7773d7b",
@@ -72,19 +72,19 @@ self.__precacheManifest = [
     "url": "/krossy/static/media/SFUIText-Bold.49d167fd.ttf"
   },
   {
-    "revision": "555d264c47c430ace66109c3f3e4648d",
-    "url": "/krossy/static/media/iOS 1.555d264c.svg"
+    "revision": "38b062c83b8e9658a37e55f75040594d",
+    "url": "/krossy/static/media/iOS 1.38b062c8.svg"
   },
   {
-    "revision": "7ae5acdc5f856104ef6d546fb305a43e",
-    "url": "/krossy/static/media/iOS 2.7ae5acdc.svg"
+    "revision": "2db023b356833791bb8ed84ee2faa26e",
+    "url": "/krossy/static/media/iOS 2.2db023b3.svg"
   },
   {
-    "revision": "38fb123f784f0d16ea4a",
-    "url": "/krossy/static/css/2.21e2d1da.chunk.css"
+    "revision": "b5b2c9ddb0e9f1ae5e49",
+    "url": "/krossy/static/css/2.ec8068f3.chunk.css"
   },
   {
-    "revision": "9af17847341c986e81f2ff79379bb002",
+    "revision": "53ee0d34da6f041e6074cb0d679ecd02",
     "url": "/krossy/index.html"
   }
 ];
