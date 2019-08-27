@@ -1,7 +1,17 @@
-import {CHANGE_GENDER, CHOOSE_SIZE, CHOOSE_SIZE_BY_SIZE, GET_MODEL_BY_ID, GET_PRODUCTS, GET_USER_ID} from "./constants";
+import {
+  CHANGE_GENDER,
+  CHOOSE_SIZE,
+  CHOOSE_SIZE_BY_SIZE, CONNECT_LOAD_USER_INFO, FETCH_LOAD_SETTING,
+  GET_MODEL_BY_ID,
+  GET_PRODUCTS,
+  GET_USER_ID,
+  GET_USER_INFO
+} from "./constants";
 
 const initialState = {
-  userID: 0,
+  userInfo: {},
+  isLoadSetting: false,
+  isLoadUserInfo: false,
   sizeChart: [
     {
       id: 1,
@@ -83,17 +93,33 @@ const initialState = {
   products: []
 };
 
-export const getProducts= (data) => {
+export const isLoadUserInfo = (bool) => {
+  console.log(bool)
+  return {
+    type: CONNECT_LOAD_USER_INFO,
+    bool
+  }
+}
+
+export const isLoadSetting = (bool) => {
+  return {
+    type: FETCH_LOAD_SETTING,
+    bool
+  }
+}
+
+export const getProducts = (data) => {
   return {
     type: GET_PRODUCTS,
     data
   }
 };
 
-export const getUserInfo = (id) => {
+export const getUserInfo = (data) => {
+  console.log(data)
   return {
-    type: GET_USER_ID,
-    id
+    type: GET_USER_INFO,
+    data
   }
 };
 
@@ -120,16 +146,29 @@ export const onChooseSizeBySize = (size) => {
 
 export function user(state = initialState, action) {
   switch (action.type) {
+
+    case CONNECT_LOAD_USER_INFO:
+      return {
+        ...state,
+        isLoadUserInfo: action.bool
+      };
+
+    case FETCH_LOAD_SETTING:
+      return {
+        ...state,
+        isLoadSetting: action.bool
+      };
+
     case CHANGE_GENDER:
       return {
         ...state,
         gender: action.value
       };
 
-    case GET_USER_ID:
+    case GET_USER_INFO:
       return {
         ...state,
-        userID: action.id
+        userInfo: action.data
       };
 
     case CHOOSE_SIZE:

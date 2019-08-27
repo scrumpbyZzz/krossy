@@ -14,8 +14,6 @@ import Sticker from "../Sticker/Sticker";
 const osname = platform();
 
 const ProductCardSmall = ({func, goTo, formSticker, nameSticker, data}) => {
-  // let pictures = "https://via.placeholder.com/156x118"
-
   return (
 
       <div onClick={func}
@@ -25,7 +23,7 @@ const ProductCardSmall = ({func, goTo, formSticker, nameSticker, data}) => {
         <Sticker form={formSticker} icon={nameSticker} />
       </div>
       <div className='product-card-small-pic_wrap'>
-        {data ? <img className='result'
+        {data ? <img className='product-card-small-pic'
                          src={data.pictures[0]}
                          alt='pic'/> : null}
       </div>

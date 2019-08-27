@@ -15,8 +15,8 @@ const RectangleButton = ({title, func, icon, goTo, iconSvg, secondAction}) => {
 
   const onPress = (e) => {
     const temp = e.currentTarget.dataset.to;
-    func(temp);
-   if(secondAction) {secondAction()}
+    if (func) {func(temp)}
+    if (secondAction) {secondAction()}
   };
 
   return (

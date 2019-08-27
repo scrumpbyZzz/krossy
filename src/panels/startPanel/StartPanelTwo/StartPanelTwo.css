@@ -134,5 +134,10 @@
   opacity: 1;
 }
 
+.start-panel-two_warning {
+  color: red;
+  font-weight: 500;
+}
+
 
 

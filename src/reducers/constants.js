@@ -1,5 +1,8 @@
 export const CHANGE_GENDER = "CHANGE_GENDER";
-export const GET_USER_ID = "GET_USER_ID";
+export const GET_USER_INFO = "GET_USER_INFO";
 export const CHOOSE_SIZE = "CHOOSE_SIZE";
 export const CHOOSE_SIZE_BY_SIZE = "CHOOSE_SIZE_BY_SIZE";
 export const GET_PRODUCTS = "GET_PRODUCTS";
+
+export const FETCH_LOAD_SETTING = "FETCH_LOAD_SETTING";
+export const CONNECT_LOAD_USER_INFO = "CONNECT_LOAD_USER_INFO";

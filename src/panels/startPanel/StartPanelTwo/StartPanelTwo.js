@@ -11,6 +11,10 @@ import ApiService from "../../../api/krossy-api";
 
 class StartPanelTwo extends React.PureComponent {
 
+  state = {
+    isSelectedSizes: false
+  };
+
   Service = new ApiService();
 
   onChangeGender = (event) => {
@@ -25,18 +29,26 @@ class StartPanelTwo extends React.PureComponent {
 
   saveUserSettings = () => {
     const {gender, sizeChart, userID} = this.props.data;
-
     const sizes = [];
     sizeChart.forEach(item => {
       if(item.isSelected) {
         sizes.push(item.size)
       }
     });
+
     const form = new FormData();
     form.append("gender", gender);
     form.append("size", JSON.stringify(sizes));
 
+    sizes.length > 0 ?
+      this.goNextScreen(userID, form) :
+      this.setState({isSelectedSizes: true})
+  };
+
+  goNextScreen = (userID, form) => {
+    this.setState({isSelectedSizes: false});
     this.Service.saveSetting(userID, form)
+    this.props.goPanel('start-3');
   };
 
   render() {
@@ -75,7 +87,11 @@ class StartPanelTwo extends React.PureComponent {
             </label>
           </div>
           <div className='start-panel-two_text start-panel-two_text-2'>
-            Выберете до 3-х интересующих Вас размеров кроссовок
+            {
+              this.state.isSelectedSizes ?
+                <div className="start-panel-two_warning">Нужно выбрать хотя бы один размер</div> :
+                <div>Выберете до 3-х интересующих Вас размеров кроссовок</div>
+            }
           </div>
             <div onClick={this.onChangeSize} className='start-panel-two_horizontal_wrap'>
               {
@@ -90,11 +106,11 @@ class StartPanelTwo extends React.PureComponent {
                 })
               }
             </div>
+
           <div className='start-panel-two-button_bottom'>
             <RectangleButton title='Далее'
-                             func={goPanel}
                              secondAction={this.saveUserSettings}
-                             goTo='start-3'/>
+                             goTo={'start-3'} />
           </div>
           <DotsSlide/>
         </div>
