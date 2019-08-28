@@ -28,7 +28,7 @@ class StartPanelTwo extends React.PureComponent {
   };
 
   saveUserSettings = () => {
-    const {gender, sizeChart, userID} = this.props.data;
+    const {gender, sizeChart, userInfo} = this.props.data;
     const sizes = [];
     sizeChart.forEach(item => {
       if(item.isSelected) {
@@ -41,7 +41,7 @@ class StartPanelTwo extends React.PureComponent {
     form.append("size", JSON.stringify(sizes));
 
     sizes.length > 0 ?
-      this.goNextScreen(userID, form) :
+      this.goNextScreen(userInfo.id, form) :
       this.setState({isSelectedSizes: true})
   };
 
