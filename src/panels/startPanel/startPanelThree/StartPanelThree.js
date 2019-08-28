@@ -19,16 +19,6 @@ class StartPanelThree extends React.PureComponent {
 
   Service = new ApiService();
 
-  getProducts= () => {
-    const {userID} = this.props.data
-    this.Service.getProducts(userID)
-      .then(res => {
-        if(res.status === "success" || res.ok) {
-          this.props.products(res.result)
-        }
-      })
-  };
-
   render() {
     const {id, goPanel, goView} = this.props;
     return (
@@ -71,7 +61,6 @@ class StartPanelThree extends React.PureComponent {
           </div>
           <RectangleButton title='Приступить'
                            func={goView}
-                           secondAction={this.getProducts}
                           />
           <DotsSlide />
         </div>
@@ -86,7 +75,5 @@ export default connect(
   state => ({
     data: state.user
   }),
-  dispatch => ({
-    products: data => dispatch(getProducts(data))
-  })
+  null
 )(StartPanelThree);

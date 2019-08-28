@@ -18,16 +18,17 @@ export default class ApiService {
   };
 
   saveSetting = async (id, body) => {
-    await fetch(`${this._apiBase}/settings/${id}`, {
+    const res = await fetch(`${this._apiBase}/settings/${id}`, {
       method: 'POST',
       body: body
-    })
+    });
+    return res;
   };
 
   getProducts = async (userId) => {
     const res = await this.getResource(`/shoes?userId=${userId}`);
     return res;
-  }
+  };
 
 
 }

@@ -5,7 +5,7 @@ import RectangleButton from "../../../components/buttons/rectangleButton/Rectang
 import DotsSlide from "../../../components/dotsSlide/DotsSlide";
 import ApiService from "../../../api/krossy-api";
 import {connect as reduxConnect} from "react-redux";
-import {isLoadSetting, onChangeGender, onChooseSizeBySize} from "../../../reducers/user";
+import {isChangeBoolean, onChangeGender, onChooseSizeBySize} from "../../../reducers/user";
 
 class StartPanelOne extends React.Component {
 
@@ -13,13 +13,13 @@ class StartPanelOne extends React.Component {
 
   loadSettings = () => {
     const id = this.props.data.userInfo.id;
-    this.props.isLoadSetting(true);
+    this.props.isLoad(true);
     this.Service.loadSetting(id)
       .then(res => {
-        if(res.status === "success" || res.ok) {
+        if(res.ok) {
           this.props.gender(res.result.gender);
           res.result.size.forEach(s => this.props.size(s));
-          this.props.isLoadSetting(false);
+          this.props.isLoad(false);
         }
       })
   };
@@ -32,7 +32,6 @@ class StartPanelOne extends React.Component {
 
   render() {
     const { data } = this.props;
-    console.log(this.props)
     return (
       data.isLoadSetting ?
         <ScreenSpinner /> :
@@ -60,7 +59,7 @@ export default reduxConnect(
     data: state.user
   }),
   dispatch => ({
-    isLoadSetting: bool => dispatch(isLoadSetting(bool)),
+    isLoad: bool => dispatch(isChangeBoolean('isLoadSetting', bool)),
     gender: value => dispatch(onChangeGender(value)),
     size: size => dispatch(onChooseSizeBySize(size))
   })

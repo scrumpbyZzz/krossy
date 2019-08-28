@@ -16,7 +16,7 @@ import IconSearch from "../icon/IconSearch";
 import IconKross from '../icon/IconKross';
 import IconHeart from '../icon/IconHeart';
 import IconSetting from '../icon/IconSetting';
-import {getUserInfo, isLoadUserInfo, onChangeGender, onChooseSizeBySize} from "../../reducers/user";
+import {getUserInfo, isChangeBoolean, onChangeGender, onChooseSizeBySize} from "../../reducers/user";
 import ApiService from "../../api/krossy-api";
 
 class App extends React.Component {
@@ -32,10 +32,10 @@ class App extends React.Component {
   }
 
   initApp = async () => {
-    this.props.isLoading(true);
+    this.props.isLoad(true);
     connect.send("VKWebAppGetUserInfo", {})
       .then(e => this.props.init(e.data))
-      .then(() => this.props.isLoading(false))
+      .then(() => this.props.isLoad(false))
   };
 
   goView = (e) => {
@@ -98,8 +98,8 @@ export default reduxConnect(
     data: state.user
   }),
   dispatch => ({
+    isLoad: bool => dispatch(isChangeBoolean('isLoadUserInfo', bool)),
     init: data => dispatch(getUserInfo(data)),
-    isLoading: bool => dispatch(isLoadUserInfo(bool)),
     gender: value => dispatch(onChangeGender(value)),
     size: size => dispatch(onChooseSizeBySize(size))
   })

@@ -5,13 +5,15 @@ import {
   GET_MODEL_BY_ID,
   GET_PRODUCTS,
   GET_USER_ID,
-  GET_USER_INFO
+  GET_USER_INFO, IS_CHANGE_BOOLEAN
 } from "./constants";
 
 const initialState = {
   userInfo: {},
-  isLoadSetting: false,
   isLoadUserInfo: false,
+  isLoadSetting: false,
+  isSaveSetting: false,
+  isLoadProducts: false,
   sizeChart: [
     {
       id: 1,
@@ -93,20 +95,13 @@ const initialState = {
   products: []
 };
 
-export const isLoadUserInfo = (bool) => {
-  console.log(bool)
+export const isChangeBoolean = (field, bool) => {
   return {
-    type: CONNECT_LOAD_USER_INFO,
+    type: IS_CHANGE_BOOLEAN,
+    field,
     bool
   }
-}
-
-export const isLoadSetting = (bool) => {
-  return {
-    type: FETCH_LOAD_SETTING,
-    bool
-  }
-}
+};
 
 export const getProducts = (data) => {
   return {
@@ -147,16 +142,11 @@ export const onChooseSizeBySize = (size) => {
 export function user(state = initialState, action) {
   switch (action.type) {
 
-    case CONNECT_LOAD_USER_INFO:
+    case IS_CHANGE_BOOLEAN:
+      const {field, bool} = action;
       return {
         ...state,
-        isLoadUserInfo: action.bool
-      };
-
-    case FETCH_LOAD_SETTING:
-      return {
-        ...state,
-        isLoadSetting: action.bool
+        [field]: bool
       };
 
     case CHANGE_GENDER:

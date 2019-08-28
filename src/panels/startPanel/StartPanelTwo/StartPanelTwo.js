@@ -4,7 +4,7 @@ import {connect} from "react-redux";
 import './StartPanelTwo.css';
 import RectangleButton from "../../../components/buttons/rectangleButton/RectangleButton";
 
-import {onChangeGender, onChooseSize} from "../../../reducers/user";
+import {isChangeBoolean, onChangeGender, onChooseSize} from "../../../reducers/user";
 import DotsSlide from "../../../components/dotsSlide/DotsSlide";
 import ApiService from "../../../api/krossy-api";
 
@@ -31,7 +31,7 @@ class StartPanelTwo extends React.PureComponent {
     const {gender, sizeChart, userInfo} = this.props.data;
     const sizes = [];
     sizeChart.forEach(item => {
-      if(item.isSelected) {
+      if (item.isSelected) {
         sizes.push(item.size)
       }
     });
@@ -40,7 +40,7 @@ class StartPanelTwo extends React.PureComponent {
     form.append("gender", gender);
     form.append("size", JSON.stringify(sizes));
 
-    sizes.length > 0 ?
+    sizes.length < 4 && sizes.length > 0 ?
       this.goNextScreen(userInfo.id, form) :
       this.setState({isSelectedSizes: true})
   };
@@ -48,12 +48,12 @@ class StartPanelTwo extends React.PureComponent {
   goNextScreen = (userID, form) => {
     this.setState({isSelectedSizes: false});
     this.Service.saveSetting(userID, form)
+      .then(res => {if(res.ok) this.props.isSave(true)});
     this.props.goPanel('start-3');
   };
 
   render() {
     const {id, goPanel, data} = this.props;
-    console.log(data);
     return (
       <Panel id={id}>
         <div className='start-panel-two_wrap'>
@@ -89,7 +89,7 @@ class StartPanelTwo extends React.PureComponent {
           <div className='start-panel-two_text start-panel-two_text-2'>
             {
               this.state.isSelectedSizes ?
-                <div className="start-panel-two_warning">Нужно выбрать хотя бы один размер</div> :
+                <div className="start-panel-two_warning">Нужно выбрать до 3-х интересующих Вас размеров</div> :
                 <div>Выберете до 3-х интересующих Вас размеров кроссовок</div>
             }
           </div>
@@ -124,6 +124,7 @@ export default connect(
     data: state.user
   }),
   dispatch => ({
+    isSave: bool => dispatch(isChangeBoolean('isSaveSetting', bool)),
     onChangeGender: value => dispatch(onChangeGender(value)),
     onPickSize: id => dispatch(onChooseSize(id))
   })

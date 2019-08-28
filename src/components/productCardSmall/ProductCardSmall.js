@@ -13,40 +13,54 @@ import Sticker from "../Sticker/Sticker";
 
 const osname = platform();
 
-const ProductCardSmall = ({func, goTo, formSticker, nameSticker, data}) => {
-  return (
+class ProductCardSmall extends React.PureComponent {
+  constructor(props){
+    super(props)
+    this.imageHeight = React.createRef()
+  }
 
+
+  componentDidMount() {
+    console.log(this.imageHeight.current.offsetHeight)
+  }
+
+  render() {
+    const {func, goTo, formSticker, nameSticker, data} = this.props;
+    const image = data.pictures[0];
+    return (
       <div onClick={func}
-                  data-to={goTo}
-                  className='product-card-small_wrap'>
-      <div className='product-card-small-sticker_wrap'>
-        <Sticker form={formSticker} icon={nameSticker} />
-      </div>
-      <div className='product-card-small-pic_wrap'>
-        {data ? <img className='product-card-small-pic'
-                         src={data.pictures[0]}
-                         alt='pic'/> : null}
-      </div>
-      <div className='product-card-small-brand_wrap'>
-        {data ?
+           data-to={goTo}
+           className='product-card-small_wrap'>
+        <div className='product-card-small-sticker_wrap'>
+          <Sticker form={formSticker}
+                   icon={nameSticker} />
+        </div>
+        <div className='product-card-small-pic_wrap'>
+          <img ref={this.imageHeight}
+               className='product-card-small-pic'
+               src={image}
+               alt='pic'/>
+        </div>
+        <div className='product-card-small-brand_wrap'>
           <ProductBrandView
             name={data.name}
             model={data.model}
-            logo={brandLogo}/> : null}
+            logo={brandLogo}/>
+        </div>
+        <div className='product-card-small-price_wrap'>
+          <ProductPriceView price={data.price}
+                            oldPrice={data.oldPrice}
+                            discount={data.discount}/>
+        </div>
+        <div className='product-card-small_footer'>
+          <ProductSizeChartView sizes={data.sizes}/>
+          <ProductCountShopView shops={data.shops}/>
+        </div>
       </div>
-      <div className='product-card-small-price_wrap'>
-        {data ? <ProductPriceView price={data.price}
-                                  oldPrice={data.oldPrice}
-                                  discount={data.discount}/> : null}
-      </div>
-      <div className='product-card-small_footer'>
-        {data ? <ProductSizeChartView sizes={data.sizes}/> : null}
-        {data ? <ProductCountShopView shops={data.shops}/> : null}
-      </div>
-    </div>
 
 
-  )
+    )
+  }
 };
 
 export default ProductCardSmall;

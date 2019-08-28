@@ -7,40 +7,34 @@ import Advertising from '../../components/advertising/Advertising';
 import {platform, IOS} from "@vkontakte/vkui";
 import HeaderHome from "../../components/headerHome/HeaderHome";
 import {connect as reduxConnect} from "react-redux";
-import {getUserInfo, onChangeGender, onChooseSizeBySize} from "../../reducers/user";
+import {getProducts, getUserInfo, onChangeGender, onChooseSizeBySize} from "../../reducers/user";
+import ApiService from "../../api/krossy-api";
 
 const osname = platform();
 
 class HomePanel extends React.Component {
 
+  Service = new ApiService();
+
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
       contextOpened: false,
       fetching: false,
       mode: 'all',
-      products:[]
     };
 
     this.onRefresh = () => {
+      const {id} = this.props.data.userInfo;
       this.setState({ fetching: true });
-
-      setTimeout(
-        () => {
-          this.setState({fetching: false})
-        } ,2000);
-    }
-  }
-
-  componentDidMount() {
-    console.log(this.props)
-    setTimeout(() => {
-      this.setState({
-        products: this.props.data.products
-      })
-    }, 1000)
-  }
-
+      this.Service.getProducts(id)
+        .then(res => {
+          if(res.ok) {
+            this.props.products(res.result);
+            this.setState({fetching: false})
+        }
+    })
+  }}
 
   toggleContext = () => {
     this.setState({contextOpened: !this.state.contextOpened});
@@ -56,7 +50,6 @@ class HomePanel extends React.Component {
   render() {
     const {contextOpened, mode} = this.state;
     const {data} = this.props;
-
     return (
       <Panel  id={this.props.id}>
         <HeaderHome toggleContext={this.toggleContext}
@@ -64,10 +57,11 @@ class HomePanel extends React.Component {
                     contextOpened={contextOpened}
                     mode={mode} />
         <Div className='all-product-page_wrap'>
-          <PullToRefresh onRefresh={this.onRefresh} isFetching={this.state.fetching}>
+          <PullToRefresh onRefresh={this.onRefresh}
+                         isFetching={this.state.fetching}>
             <div className='all-product-page_content'>
               {
-                this.state.products.map(item => {
+                data.products.map(item => {
                   return <ProductCardSmall key={item.id}
                                            data={item}
                                            func={this.props.go}
@@ -76,27 +70,6 @@ class HomePanel extends React.Component {
                                            nameSticker='star'/>
                 })
               }
-
-
-
-
-              {/*<ProductCardSmall func={this.props.go}
-                                goTo='productCardPanel'
-                                formSticker='round'
-                                nameSticker='star'/>
-              <ProductCardSmall func={this.props.go}
-                                goTo='productCardPanel'
-                                formSticker='round'
-                                nameSticker='trend'/>
-              <Advertising func={this.props.go} goTo='productCardPanel'/>
-              <ProductCardSmall func={this.props.go}
-                                goTo='productCardPanel'
-                                formSticker='round'
-                                nameSticker='star'/>
-              <ProductCardSmall func={this.props.go}
-                                goTo='productCardPanel'
-                                formSticker='round'
-                                nameSticker='like'/>*/}
             </div>
           </PullToRefresh>
         </Div>
@@ -110,8 +83,6 @@ export default reduxConnect(
     data: state.user
   }),
   dispatch => ({
-    init: id => dispatch(getUserInfo(id)),
-    gender: value => dispatch(onChangeGender(value)),
-    size: size => dispatch(onChooseSizeBySize(size))
+    products: data => dispatch(getProducts(data))
   })
 )(HomePanel);
