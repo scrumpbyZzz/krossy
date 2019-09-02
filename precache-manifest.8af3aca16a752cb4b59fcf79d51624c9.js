@@ -4,7 +4,7 @@ self.__precacheManifest = [
     "url": "/krossy/static/media/backTinder.7378d2e0.svg"
   },
   {
-    "revision": "5a7811b8cb2c84bd4ba3",
+    "revision": "b29b41b40a864e4bddc6",
     "url": "/krossy/static/css/main.abe87779.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = [
     "url": "/krossy/static/media/iOS 3.b4df673e.svg"
   },
   {
-    "revision": "fdc9c40b64c4af17f3ec",
-    "url": "/krossy/static/js/2.fdc9c40b.chunk.js"
+    "revision": "c1ba871403f2511fc303",
+    "url": "/krossy/static/js/2.c1ba8714.chunk.js"
   },
   {
     "revision": "b663df13c7e344cb16e890dc1c66b6e2",
@@ -44,8 +44,8 @@ self.__precacheManifest = [
     "url": "/krossy/static/media/Rectangle 1533@2x.7d248541.png"
   },
   {
-    "revision": "5a7811b8cb2c84bd4ba3",
-    "url": "/krossy/static/js/main.5a7811b8.chunk.js"
+    "revision": "b29b41b40a864e4bddc6",
+    "url": "/krossy/static/js/main.b29b41b4.chunk.js"
   },
   {
     "revision": "ffd2a1a4fa8e4c07f9ce40daa7773d7b",
@@ -80,11 +80,11 @@ self.__precacheManifest = [
     "url": "/krossy/static/media/iOS 2.2db023b3.svg"
   },
   {
-    "revision": "fdc9c40b64c4af17f3ec",
+    "revision": "c1ba871403f2511fc303",
     "url": "/krossy/static/css/2.ec8068f3.chunk.css"
   },
   {
-    "revision": "015928bd1555442d7a9c1f7ea12d8a00",
+    "revision": "b36e1f34044fb795de1203d8d5bc8875",
     "url": "/krossy/index.html"
   }
 ];
