@@ -10,25 +10,44 @@ import ProductPriceView from "../product/productPriceView/ProductPriceView";
 import ProductBrandView from "../product/productBrandView/ProductBrandView";
 import ProductCountShopView from "../product/productCountShopView/ProductCountShopView";
 import Sticker from "../Sticker/Sticker";
+import ApiService from "../../api/krossy-api";
+import {connect as reduxConnect} from "react-redux";
+import {getData, isChangeBoolean} from "../../reducers/user";
+import {getColorsSelector} from "../../reducers/selectors";
 
 const osname = platform();
 
 class ProductCardSmall extends React.PureComponent {
+
+  Service = new ApiService();
+
   constructor(props){
-    super(props)
+    super(props);
     this.imageHeight = React.createRef()
   }
 
-
-  componentDidMount() {
-    console.log(this.imageHeight.current.offsetHeight)
-  }
+  goProduct = (e) => {
+    const {data} = this.props;
+    const goTo = e.currentTarget.dataset.to;
+    const target = +e.currentTarget.dataset.goodId;
+    this.props.isLoad(true);
+    this.Service.getModels(target, data.userInfo.id)
+      .then(res => {
+        if (res.ok) {
+          this.props.models(res.result);
+          const colors = getColorsSelector(res.result);
+          this.props.colors(colors);
+          this.props.isLoad(false);
+        }
+      });
+    this.props.func(goTo)
+  };
 
   render() {
-    const {func, goTo, formSticker, nameSticker, data} = this.props;
-    const image = data.pictures[0];
+    const { goTo, productId, formSticker, nameSticker, product } = this.props;
     return (
-      <div onClick={func}
+      <div onClick={this.goProduct}
+           data-good-id={productId}
            data-to={goTo}
            className='product-card-small_wrap'>
         <div className='product-card-small-sticker_wrap'>
@@ -36,31 +55,44 @@ class ProductCardSmall extends React.PureComponent {
                    icon={nameSticker} />
         </div>
         <div className='product-card-small-pic_wrap'>
-          <img ref={this.imageHeight}
-               className='product-card-small-pic'
-               src={image}
-               alt='pic'/>
+          { product ?
+            <img ref={this.imageHeight}
+                className='product-card-small-pic'
+                src={product.pictures[0]}
+                alt='pic'/> : null
+          }
         </div>
         <div className='product-card-small-brand_wrap'>
-          <ProductBrandView
-            name={data.name}
-            model={data.model}
-            logo={brandLogo}/>
+          { product ?
+            <ProductBrandView
+            name={product.name}
+            model={product.model}
+            logo={brandLogo}/> : null
+          }
         </div>
         <div className='product-card-small-price_wrap'>
-          <ProductPriceView price={data.price}
-                            oldPrice={data.oldPrice}
-                            discount={data.discount}/>
+          { product ?
+            <ProductPriceView price={product.price}
+                             oldPrice={product.oldPrice}
+                             discount={product.discount}/> : null
+          }
         </div>
         <div className='product-card-small_footer'>
-          <ProductSizeChartView sizes={data.sizes}/>
-          <ProductCountShopView shops={data.shops}/>
+          {product ? <ProductSizeChartView sizes={product.sizes}/> : null}
+          {product ? <ProductCountShopView shops={product.shops}/> : null}
         </div>
       </div>
-
-
     )
   }
 };
 
-export default ProductCardSmall;
+export default reduxConnect(
+  state => ({
+    data: state.user
+  }),
+  dispatch => ({
+    isLoad: bool => dispatch(isChangeBoolean('isLoadModels', bool)),
+    models: data => dispatch(getData('models', data)),
+    colors: data => dispatch(getData('modelColors', data))
+  })
+)(ProductCardSmall);

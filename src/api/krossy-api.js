@@ -30,12 +30,9 @@ export default class ApiService {
     return res;
   };
 
+  getModels = async  (goodId, userId) => {
+    const res = await this.getResource(`/goods/${goodId}/models?userId=${userId}`);
+    return res;
+  }
 
 }
-
-/*
-JSON.stringify ({
-  userId: body.userId,
-  size: body.size,
-  gender: body.gender
-})*/

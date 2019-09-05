@@ -2,8 +2,24 @@ import React from 'react';
 import './ProductColorView.css';
 
 const ProductColorView = ({color}) => {
+
+  let selectedColor;
+  switch (color) {
+    case "черный":
+      selectedColor = "black";
+      break;
+    case "белый":
+      selectedColor = "white";
+      break;
+    case "синий":
+      selectedColor = "blue";
+      break;
+    default:
+      selectedColor = "transparent"
+  }
+
   let divStyle = {
-    backgroundColor: `${color}`
+    backgroundColor: `${selectedColor}`
   };
 
   return (

@@ -17,6 +17,8 @@ import ShopList from "../../components/shopList/ShopList";
 import ProductSelectShop from "../../components/product/productSelectShop/ProductSelectShop";
 import ProductCardNotification from "../../components/productCardNotification/ProductCardNotification";
 import Sticker from "../../components/Sticker/Sticker";
+import {connect as reduxConnect} from "react-redux";
+import {getData, isChangeBoolean} from "../../reducers/user";
 
 class ProductCardPanel extends React.PureComponent {
   constructor(props) {
@@ -28,6 +30,7 @@ class ProductCardPanel extends React.PureComponent {
     }
   }
 
+
   handleOpenSelect = () => {
     this.setState({isOpenShopList: !this.state.isOpenShopList})
   };
@@ -36,7 +39,12 @@ class ProductCardPanel extends React.PureComponent {
     this.setState({isOpenNotification: !this.state.isOpenNotification})
   };
 
+  goBack = () => {
+    this.props.go('homePanel');
+  };
+
   render() {
+    const { data } = this.props;
     const osname = platform();
     const fontStyleAndroid = {
       fontFamily: 'Roboto, sans-serif',
@@ -55,8 +63,7 @@ class ProductCardPanel extends React.PureComponent {
     return (
       <Panel id={this.props.id}
              style={osname === IOS ? fontStyleIOS : fontStyleAndroid}>
-        <Header func={this.props.go}
-                goTo='homePanel'
+        <Header func={this.goBack}
                 iconIOS={true}
                 iconAndroid={true}
                 title={<Sticker form='rectangle' icon='trend'/>}/>
@@ -87,9 +94,14 @@ class ProductCardPanel extends React.PureComponent {
             </div>
             <div className='product-card_attribute'>
               <div className='product-card_attribute-color'>
-                <ProductColorView color='#86DEE8'/>
+                {
+                  data ? data.modelColors.map((item, index) => {
+                 return <ProductColorView key={index} color={item}/>
+                }) : null
+                }
+                {/*<ProductColorView color='#86DEE8'/>
                 <ProductColorView color='#FE389B'/>
-                <ProductColorView color='#353535'/>
+                <ProductColorView color='#353535'/>*/}
               </div>
               <div className='product-card_attribute-size'>
                 <ProductSizeChartView/>
@@ -121,4 +133,9 @@ class ProductCardPanel extends React.PureComponent {
   }
 }
 
-export default ProductCardPanel;
+export default reduxConnect(
+  state => ({
+    data: state.user
+  }),
+  null
+)(ProductCardPanel);

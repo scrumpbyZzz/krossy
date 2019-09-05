@@ -7,7 +7,7 @@ import Advertising from '../../components/advertising/Advertising';
 import {platform, IOS} from "@vkontakte/vkui";
 import HeaderHome from "../../components/headerHome/HeaderHome";
 import {connect as reduxConnect} from "react-redux";
-import {getProducts, getUserInfo, onChangeGender, onChooseSizeBySize} from "../../reducers/user";
+import {getData, getProducts, getUserInfo, onChangeGender, onChooseSizeBySize} from "../../reducers/user";
 import ApiService from "../../api/krossy-api";
 
 const osname = platform();
@@ -63,7 +63,8 @@ class HomePanel extends React.Component {
               {
                 data.products.map(item => {
                   return <ProductCardSmall key={item.id}
-                                           data={item}
+                                           productId={item.id}
+                                           product={item}
                                            func={this.props.go}
                                            goTo='productCardPanel'
                                            formSticker='round'
@@ -82,7 +83,5 @@ export default reduxConnect(
   state => ({
     data: state.user
   }),
-  dispatch => ({
-    products: data => dispatch(getProducts(data))
-  })
+  null
 )(HomePanel);

@@ -3,7 +3,7 @@ import HomePanel from "../../panels/homePanel/HomePanel";
 import ProductCardPanel from "../../panels/productCardPanel/ProductCardPanel";
 import {ScreenSpinner, View} from "@vkontakte/vkui";
 import {connect as reduxConnect} from "react-redux";
-import {getProducts, isChangeBoolean, onChangeGender, onChooseSizeBySize} from "../../reducers/user";
+import { getData, isChangeBoolean } from "../../reducers/user";
 import ApiService from "../../api/krossy-api";
 
 class HomeView extends React.Component {
@@ -32,9 +32,9 @@ class HomeView extends React.Component {
     this.getProducts()
   }
 
-  go = (e) => {
+  go = (panel) => {
     this.setState({
-      activePanel: e.currentTarget.dataset.to
+      activePanel: panel
     })
   };
 
@@ -59,6 +59,6 @@ export default reduxConnect(
   }),
   dispatch => ({
     isLoad: bool => dispatch(isChangeBoolean('isLoadProducts', bool)),
-    products: data => dispatch(getProducts(data))
+    products: data => dispatch(getData('products', data))
   })
 )(HomeView);

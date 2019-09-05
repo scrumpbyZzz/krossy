@@ -1,7 +1,7 @@
 import {
   CHANGE_GENDER,
   CHOOSE_SIZE,
-  CHOOSE_SIZE_BY_SIZE, CONNECT_LOAD_USER_INFO, FETCH_LOAD_SETTING,
+  CHOOSE_SIZE_BY_SIZE, CONNECT_LOAD_USER_INFO, FETCH_LOAD_SETTING, GET_DATA,
   GET_MODEL_BY_ID,
   GET_PRODUCTS,
   GET_USER_ID,
@@ -14,6 +14,7 @@ const initialState = {
   isLoadSetting: false,
   isSaveSetting: false,
   isLoadProducts: false,
+  isLoadModels: false,
   sizeChart: [
     {
       id: 1,
@@ -92,7 +93,10 @@ const initialState = {
     }
   ],
   gender: 'male',
-  products: []
+  products: [],
+  models: [],
+  modelColors: [],
+  modelSizes: []
 };
 
 export const isChangeBoolean = (field, bool) => {
@@ -103,15 +107,15 @@ export const isChangeBoolean = (field, bool) => {
   }
 };
 
-export const getProducts = (data) => {
+export const getData = (field, data) => {
   return {
-    type: GET_PRODUCTS,
+    type: GET_DATA,
+    field,
     data
   }
 };
 
 export const getUserInfo = (data) => {
-  console.log(data)
   return {
     type: GET_USER_INFO,
     data
@@ -143,10 +147,9 @@ export function user(state = initialState, action) {
   switch (action.type) {
 
     case IS_CHANGE_BOOLEAN:
-      const {field, bool} = action;
       return {
         ...state,
-        [field]: bool
+        [action.field]: action.bool
       };
 
     case CHANGE_GENDER:
@@ -177,10 +180,10 @@ export function user(state = initialState, action) {
         sizeChart: tempBySize
       };
 
-    case GET_PRODUCTS:
+    case GET_DATA:
       return {
         ...state,
-        products: action.data
+        [action.field]: action.data
       }
   }
   return state;
