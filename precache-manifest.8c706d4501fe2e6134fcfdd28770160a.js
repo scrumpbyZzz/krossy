@@ -4,8 +4,8 @@ self.__precacheManifest = [
     "url": "/krossy/static/media/backTinder.7378d2e0.svg"
   },
   {
-    "revision": "b29b41b40a864e4bddc6",
-    "url": "/krossy/static/css/main.abe87779.chunk.css"
+    "revision": "d2923d216bdb2beb64df",
+    "url": "/krossy/static/css/main.40e25933.chunk.css"
   },
   {
     "revision": "5ebd78a4d372e3aee23c",
@@ -16,8 +16,8 @@ self.__precacheManifest = [
     "url": "/krossy/static/media/iOS 3.b4df673e.svg"
   },
   {
-    "revision": "c1ba871403f2511fc303",
-    "url": "/krossy/static/js/2.c1ba8714.chunk.js"
+    "revision": "f4a563b623b6f2c14d5e",
+    "url": "/krossy/static/js/2.f4a563b6.chunk.js"
   },
   {
     "revision": "b663df13c7e344cb16e890dc1c66b6e2",
@@ -44,8 +44,8 @@ self.__precacheManifest = [
     "url": "/krossy/static/media/Rectangle 1533@2x.7d248541.png"
   },
   {
-    "revision": "b29b41b40a864e4bddc6",
-    "url": "/krossy/static/js/main.b29b41b4.chunk.js"
+    "revision": "d2923d216bdb2beb64df",
+    "url": "/krossy/static/js/main.d2923d21.chunk.js"
   },
   {
     "revision": "ffd2a1a4fa8e4c07f9ce40daa7773d7b",
@@ -60,12 +60,12 @@ self.__precacheManifest = [
     "url": "/krossy/static/media/SFUIText-Regular.1e1d803a.ttf"
   },
   {
-    "revision": "e4286ca7dd7b3af5fad228ebcb84842b",
-    "url": "/krossy/static/media/SFUIText-Medium.e4286ca7.ttf"
-  },
-  {
     "revision": "34dfe822161ceb31dc5889d742ab591c",
     "url": "/krossy/static/media/SFUIText-Semibold.34dfe822.ttf"
+  },
+  {
+    "revision": "e4286ca7dd7b3af5fad228ebcb84842b",
+    "url": "/krossy/static/media/SFUIText-Medium.e4286ca7.ttf"
   },
   {
     "revision": "49d167fd00ec879e285af5661cc763aa",
@@ -80,11 +80,11 @@ self.__precacheManifest = [
     "url": "/krossy/static/media/iOS 2.2db023b3.svg"
   },
   {
-    "revision": "c1ba871403f2511fc303",
+    "revision": "f4a563b623b6f2c14d5e",
     "url": "/krossy/static/css/2.ec8068f3.chunk.css"
   },
   {
-    "revision": "b36e1f34044fb795de1203d8d5bc8875",
+    "revision": "17f522f575be86f2fa05e1176673fdfd",
     "url": "/krossy/index.html"
   }
 ];
