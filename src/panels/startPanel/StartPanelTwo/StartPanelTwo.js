@@ -39,6 +39,7 @@ class StartPanelTwo extends React.PureComponent {
     const form = new FormData();
     form.append("gender", gender);
     form.append("size", JSON.stringify(sizes));
+    form.append("bdate",  userInfo.bdate)
 
     sizes.length < 4 && sizes.length > 0 ?
       this.goNextScreen(userInfo.id, form) :
