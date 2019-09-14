@@ -1,23 +1,23 @@
 self.__precacheManifest = [
   {
-    "revision": "ffd2a1a4fa8e4c07f9ce40daa7773d7b",
-    "url": "/krossy/static/media/Rectangle 1276.ffd2a1a4.png"
+    "revision": "801bee8d6b19fae8e3b9",
+    "url": "/krossy/static/css/main.bb6ddfbd.chunk.css"
   },
   {
-    "revision": "104aa4d60c221a639e41",
-    "url": "/krossy/static/css/main.14fd225c.chunk.css"
+    "revision": "801bee8d6b19fae8e3b9",
+    "url": "/krossy/static/js/main.801bee8d.chunk.js"
   },
   {
     "revision": "5ebd78a4d372e3aee23c",
     "url": "/krossy/static/js/runtime~main.5ebd78a4.js"
   },
   {
-    "revision": "b4df673ec0e2fe9649e8c28e4b458b79",
-    "url": "/krossy/static/media/iOS 3.b4df673e.svg"
+    "revision": "9a9234fc8852b9df5567",
+    "url": "/krossy/static/css/2.ec8068f3.chunk.css"
   },
   {
-    "revision": "da4296f75879b05119c0",
-    "url": "/krossy/static/js/2.da4296f7.chunk.js"
+    "revision": "9a9234fc8852b9df5567",
+    "url": "/krossy/static/js/2.9a9234fc.chunk.js"
   },
   {
     "revision": "81ec8c101b6bc92f7ae4e69db407f8eb",
@@ -44,8 +44,8 @@ self.__precacheManifest = [
     "url": "/krossy/static/media/backTinder.7378d2e0.svg"
   },
   {
-    "revision": "104aa4d60c221a639e41",
-    "url": "/krossy/static/js/main.104aa4d6.chunk.js"
+    "revision": "ffd2a1a4fa8e4c07f9ce40daa7773d7b",
+    "url": "/krossy/static/media/Rectangle 1276.ffd2a1a4.png"
   },
   {
     "revision": "b663df13c7e344cb16e890dc1c66b6e2",
@@ -56,20 +56,20 @@ self.__precacheManifest = [
     "url": "/krossy/static/media/SFUIText-Light.dcf70311.woff"
   },
   {
-    "revision": "1e1d803a7a614c854ce213acf143edc2",
-    "url": "/krossy/static/media/SFUIText-Regular.1e1d803a.ttf"
-  },
-  {
-    "revision": "34dfe822161ceb31dc5889d742ab591c",
-    "url": "/krossy/static/media/SFUIText-Semibold.34dfe822.ttf"
-  },
-  {
     "revision": "e4286ca7dd7b3af5fad228ebcb84842b",
     "url": "/krossy/static/media/SFUIText-Medium.e4286ca7.ttf"
   },
   {
+    "revision": "1e1d803a7a614c854ce213acf143edc2",
+    "url": "/krossy/static/media/SFUIText-Regular.1e1d803a.ttf"
+  },
+  {
     "revision": "49d167fd00ec879e285af5661cc763aa",
     "url": "/krossy/static/media/SFUIText-Bold.49d167fd.ttf"
+  },
+  {
+    "revision": "34dfe822161ceb31dc5889d742ab591c",
+    "url": "/krossy/static/media/SFUIText-Semibold.34dfe822.ttf"
   },
   {
     "revision": "38b062c83b8e9658a37e55f75040594d",
@@ -80,11 +80,11 @@ self.__precacheManifest = [
     "url": "/krossy/static/media/iOS 2.2db023b3.svg"
   },
   {
-    "revision": "da4296f75879b05119c0",
-    "url": "/krossy/static/css/2.ec8068f3.chunk.css"
+    "revision": "b4df673ec0e2fe9649e8c28e4b458b79",
+    "url": "/krossy/static/media/iOS 3.b4df673e.svg"
   },
   {
-    "revision": "406b586f53ece8292230e4901a5d58ba",
+    "revision": "c1a36c87bd4ceb9876eff30c3a1e58e1",
     "url": "/krossy/index.html"
   }
 ];
