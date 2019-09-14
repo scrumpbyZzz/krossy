@@ -96,7 +96,8 @@ const initialState = {
   products: [],
   models: [],
   modelColors: [],
-  modelSizes: []
+  modelSizes: [],
+  productCard: {}
 };
 
 export const isChangeBoolean = (field, bool) => {

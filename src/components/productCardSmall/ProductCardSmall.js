@@ -13,7 +13,7 @@ import Sticker from "../Sticker/Sticker";
 import ApiService from "../../api/krossy-api";
 import {connect as reduxConnect} from "react-redux";
 import {getData, isChangeBoolean} from "../../reducers/user";
-import {getColorsSelector} from "../../reducers/selectors";
+import {getColorsSelector, getPictures, getSizeSelector} from "../../reducers/selectors";
 
 const osname = platform();
 
@@ -26,25 +26,37 @@ class ProductCardSmall extends React.PureComponent {
     this.imageHeight = React.createRef()
   }
 
-  goProduct = (e) => {
+  goProduct = async (e) => {
     const {data} = this.props;
     const goTo = e.currentTarget.dataset.to;
     const target = +e.currentTarget.dataset.goodId;
     this.props.isLoad(true);
-    this.Service.getModels(target, data.userInfo.id)
+    await this.Service.getModels(target, data.userInfo.id)
       .then(res => {
         if (res.ok) {
           this.props.models(res.result);
           const colors = getColorsSelector(res.result);
+          const sizes = getSizeSelector(res.result);
+          const pictures = getPictures(res.result);
+
+          const initProduct = {
+            sizes: sizes,
+            pictures:pictures
+          };
+
+          this.props.prod(initProduct);
           this.props.colors(colors);
+          this.props.sizes(sizes);
           this.props.isLoad(false);
         }
       });
-    this.props.func(goTo)
+
+    await this.props.func(goTo)
   };
 
   render() {
     const { goTo, productId, formSticker, nameSticker, product } = this.props;
+
     return (
       <div onClick={this.goProduct}
            data-good-id={productId}
@@ -93,6 +105,8 @@ export default reduxConnect(
   dispatch => ({
     isLoad: bool => dispatch(isChangeBoolean('isLoadModels', bool)),
     models: data => dispatch(getData('models', data)),
-    colors: data => dispatch(getData('modelColors', data))
+    colors: data => dispatch(getData('modelColors', data)),
+    sizes: data => dispatch(getData('modelSizes', data)),
+    prod: data => dispatch(getData('productCard', data))
   })
 )(ProductCardSmall);

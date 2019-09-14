@@ -19,6 +19,7 @@ import ProductCardNotification from "../../components/productCardNotification/Pr
 import Sticker from "../../components/Sticker/Sticker";
 import {connect as reduxConnect} from "react-redux";
 import {getData, isChangeBoolean} from "../../reducers/user";
+import {getModel} from "../../reducers/selectors";
 
 class ProductCardPanel extends React.PureComponent {
   constructor(props) {
@@ -29,7 +30,6 @@ class ProductCardPanel extends React.PureComponent {
       isOpenNotification: false
     }
   }
-
 
   handleOpenSelect = () => {
     this.setState({isOpenShopList: !this.state.isOpenShopList})
@@ -43,8 +43,19 @@ class ProductCardPanel extends React.PureComponent {
     this.props.go('homePanel');
   };
 
+  onChangeColor = (e) => {
+    const color = e.currentTarget.dataset.color;
+    const { models } = this.props;
+    const temp = getModel(models, color);
+    const initProduct = {
+      sizes: temp.sizes,
+      pictures: temp.pic
+    };
+    this.props.product(initProduct);
+  };
+
   render() {
-    const { data } = this.props;
+    const { data, prod } = this.props;
     const osname = platform();
     const fontStyleAndroid = {
       fontFamily: 'Roboto, sans-serif',
@@ -76,13 +87,13 @@ class ProductCardPanel extends React.PureComponent {
           <div className='product-card-image_wrap'>
             <Gallery slideIndex={this.state.slideIndex}
                      bullets='dark'
-                     style={{height: heightStyle}}>
-              <img src={pic}
-                   alt='pic'/>
-              <img src={pic}
-                   alt='pic'/>
-              <img src={pic}
-                   alt='pic'/>
+                     >
+              {
+                prod.pictures.map((item, index) => {
+                  return <img key={index} src={item}
+                              alt='pic'/>
+                })
+              }
             </Gallery>
           </div>
           <Div className='product-card-content'>
@@ -95,16 +106,15 @@ class ProductCardPanel extends React.PureComponent {
             <div className='product-card_attribute'>
               <div className='product-card_attribute-color'>
                 {
-                  data ? data.modelColors.map((item, index) => {
-                 return <ProductColorView key={index} color={item}/>
-                }) : null
+                  data.modelColors.map((item, index) => {
+                    return <ProductColorView action={this.onChangeColor} key={index} color={item}/>
+                  })
                 }
-                {/*<ProductColorView color='#86DEE8'/>
-                <ProductColorView color='#FE389B'/>
-                <ProductColorView color='#353535'/>*/}
               </div>
               <div className='product-card_attribute-size'>
-                <ProductSizeChartView/>
+
+                <ProductSizeChartView sizes={prod.sizes}/>
+
               </div>
               <div className='product-card_attribute-sex'>
                 Мужской
@@ -135,7 +145,11 @@ class ProductCardPanel extends React.PureComponent {
 
 export default reduxConnect(
   state => ({
-    data: state.user
+    data: state.user,
+    models: state.user.models,
+    prod: state.user.productCard
   }),
-  null
+  dispatch => ({
+    product: data => dispatch(getData('productCard', data))
+  })
 )(ProductCardPanel);

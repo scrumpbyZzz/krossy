@@ -3,7 +3,7 @@ import React from 'react';
 import './ProductSizeChartView.css';
 import IconDone from '../../icon/IconDone';
 
-const ProductSizeChartView = ({sizes = []}) => {
+const ProductSizeChartView = ({sizes}) => {
   return (
     <div className='product-size-block-wrap'>
       <div className='product-size-block_icon'><IconDone/></div>

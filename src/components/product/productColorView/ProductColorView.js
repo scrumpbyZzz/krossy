@@ -1,9 +1,7 @@
 import React from 'react';
 import './ProductColorView.css';
 
-const ProductColorView = ({color}) => {
-
-
+const ProductColorView = ({color, action}) => {
 
   let selectedColor;
   switch (color) {
@@ -63,7 +61,8 @@ const ProductColorView = ({color}) => {
   }
 
   return (
-    <div className={`product-color-view bg_${selectedColor}`}>
+    <div onClick={action} data-color={color}
+         className={`product-color-view bg_${selectedColor}`}>
     </div>
   )
 };
